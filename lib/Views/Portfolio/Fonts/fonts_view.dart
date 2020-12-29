@@ -41,7 +41,9 @@ class FontsView extends StatelessWidget {
               child: Material(
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
-                  onTap: (){locator<NavigationService>().navigateTo(HomeRoute);},
+                  onTap: () {
+                    locator<NavigationService>().navigateTo(HomeRoute);
+                  },
                   splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(
                     width: 100,
@@ -65,7 +67,9 @@ class FontsView extends StatelessWidget {
               child: Material(
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
-                  onTap: (){locator<NavigationService>().navigateTo(AboutRoute);},
+                  onTap: () {
+                    locator<NavigationService>().navigateTo('');
+                  },
                   splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(
                     width: 100,
@@ -74,9 +78,9 @@ class FontsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.addressBook),
+                        Icon(FontAwesomeIcons.mobileAlt),
                         Text(
-                          'About',
+                          'Apps',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],
@@ -89,7 +93,35 @@ class FontsView extends StatelessWidget {
               child: Material(
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
-                  onTap: (){locator<NavigationService>().navigateTo(ContactRoute);},
+                  onTap: () {
+                    locator<NavigationService>().navigateTo('');
+                  },
+                  splashColor: Colors.lightGreenAccent, // inkwell color
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(FontAwesomeIcons.ghost),
+                        Text(
+                          'Games',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            ClipOval(
+              child: Material(
+                color: Colors.lightGreenAccent[700], // button color
+                child: InkWell(
+                  onTap: () {
+                    locator<NavigationService>().navigateTo('');
+                  },
                   splashColor: Colors.lightGreenAccent,
                   child: Container(
                     width: 100,
@@ -98,9 +130,9 @@ class FontsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.phoneAlt),
+                        Icon(FontAwesomeIcons.draftingCompass),
                         Text(
-                          'Contact',
+                          'Protos',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],
