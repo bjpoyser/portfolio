@@ -1,0 +1,53 @@
+name: portfolio
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.1
+  font_awesome_flutter: ^8.11.0
+
+  responsive_builder: ^0.3.0
+
+  get_it: ^5.0.3
+
+  fab_circular_menu: ^1.0.1
+
+  url_launcher: ^5.5.0
+  
+  mailto: ^1.1.0
+
+  awesome_dialog: ^1.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: Open Sans
+      fonts:
+        - asset: assets/fonts/OpenSans-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/OpenSans-Regular.ttf
+          weight: 400
+    - family: Space Me Out
+      fonts:
+        - asset: assets/fonts/SpaceMeOut-Regular.otf
+          weight: 400
