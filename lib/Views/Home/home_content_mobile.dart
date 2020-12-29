@@ -9,18 +9,13 @@ class HomeContentMobile extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 40, bottom: 20, left: 20, right: 20),
-              child: PresentationCard(title: 'About Me', picName: 'lol', navigationPath: AboutRoute, isMobile: true,),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40, bottom: 40, left: 20, right: 20),
-              child: PresentationCard(title: 'Portfolio', picName: 'keyboard', navigationPath: PortfolioRoute, isMobile: true,),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 40, left: 20, right: 20),
-              child: PresentationCard(title: 'Contact Me', picName: 'coffee', navigationPath: ContactRoute, isMobile: true,),
-            )
+            SizedBox(height: 50),
+            PresentationCard(title: 'About Me', picName: 'lol', navigationPath: AboutRoute, isMobile: true,),
+            SizedBox(height: 50),
+            PresentationCard(title: 'Portfolio', picName: 'keyboard', navigationPath: PortfolioRoute, isMobile: true,),
+            SizedBox(height: 50),
+            PresentationCard(title: 'Contact Me', picName: 'coffee', navigationPath: ContactRoute, isMobile: true,),
+            SizedBox(height: 50),
           ],
         ),
       ),

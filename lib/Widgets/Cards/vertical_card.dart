@@ -25,7 +25,7 @@ class VerticalCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey,
-              offset: Offset(2, 2),
+              offset: Offset(0, 0),
               blurRadius: 10.0,
               spreadRadius: 1.0,
             ),

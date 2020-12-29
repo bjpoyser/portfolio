@@ -18,11 +18,9 @@ class ColorChangeableImage extends StatelessWidget {
       colorFilter: isHover || isMobile
           ? ColorFilter.mode(Colors.white, BlendMode.multiply)
           : ColorFilter.mode(Colors.grey, BlendMode.saturation),
-      child: Container(
-        child: Image(
-          image: AssetImage('assets/images/$picName.png'),
-          fit: BoxFit.cover,
-        ),
+      child: Image(
+        image: AssetImage('assets/images/$picName.png'),
+        fit: BoxFit.cover,
       ),
     );
   }

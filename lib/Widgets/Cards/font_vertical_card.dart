@@ -14,7 +14,7 @@ class FontVerticalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * 0.8,
+      width: size.width * 0.9,
       height: 150,
       decoration: BoxDecoration(
         boxShadow: [
@@ -61,7 +61,7 @@ class FontVerticalCard extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 50.0, vertical: 20),
                               child: TextField(
-                                style: TextStyle(fontFamily: 'Space Me Out', fontSize: 50),
+                                style: TextStyle(fontFamily: 'Space Me Out', fontSize: 30),
                               ),
                             ),
                           ],

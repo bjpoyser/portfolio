@@ -4,7 +4,6 @@ import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Images/color_changeable_image.dart';
-import 'package:portfolio/Extensions/hover_extensions.dart';
 
 class PresentationCard extends StatefulWidget {
   final String title;
@@ -29,92 +28,102 @@ class _PresentationCardState extends State<PresentationCard> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onHover: (e) => _mouseEnter(true),
-      onExit: (e) => _mouseEnter(false),
-      child: GestureDetector(
-        onTap: () {
-          locator<NavigationService>().navigateTo(widget.navigationPath);
-        },
-        child: widget.isMobile ? Container(
-          width: 300,
-          height: 370,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(2, 2),
-                blurRadius: 10.0,
-                spreadRadius: 1.0,
-              ),
-            ],
-            color: Colors.white,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 300,
-                height: 70,
-                child: Center(
-                  child: Text(
-                    widget.title,
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.black,
-                    ),
+    return !widget.isMobile
+        ? MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onHover: (e) => _mouseEnter(true),
+            onExit: (e) => _mouseEnter(false),
+            child: GestureDetector(
+              onTap: () {
+                locator<NavigationService>().navigateTo(widget.navigationPath);
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Container(
+                  width: 300,
+                  height: 370,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(0, 0),
+                        blurRadius: 10.0,
+                        spreadRadius: 1.0,
+                      ),
+                    ],
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 70,
+                        child: Center(
+                          child: Text(
+                            widget.title,
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: isHover || widget.isMobile
+                                  ? Colors.black
+                                  : Global.titleColor,
+                            ),
+                          ),
+                        ),
+                      ),
+                      ColorChangeableImage(
+                        isHover: isHover,
+                        picName: widget.picName,
+                        isMobile: widget.isMobile,
+                      ),
+                    ],
                   ),
                 ),
               ),
-              ColorChangeableImage(
-                isHover: isHover,
-                picName: widget.picName,
-                isMobile: widget.isMobile,
-              ),
-            ],
-          ),
-        )
-        : Container(
-          width: 300,
-          height: 370,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(2, 2),
-                blurRadius: 10.0,
-                spreadRadius: 1.0,
-              ),
-            ],
-            color: Colors.white,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
+            ),
+          )
+        : GestureDetector(
+            onTap: () {
+              locator<NavigationService>().navigateTo(widget.navigationPath);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
                 width: 300,
-                height: 70,
-                child: Center(
-                  child: Text(
-                    widget.title,
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: isHover ? Colors.black : Global.titleColor,
+                height: 370,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(0, 0),
+                      blurRadius: 10.0,
+                      spreadRadius: 1.0,
                     ),
-                  ),
+                  ],
+                  color: Colors.white,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 300,
+                      height: 70,
+                      child: Center(
+                        child: Text(
+                          widget.title,
+                          style: TextStyle(fontSize: 40, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                    Image(
+                      image: AssetImage('assets/images/${widget.picName}.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ],
                 ),
               ),
-              ColorChangeableImage(
-                isHover: isHover,
-                picName: widget.picName,
-                isMobile: widget.isMobile,
-              ),
-            ],
-          ),
-        ).moveUpOnHover
-      ),
-    );
+            ),
+          );
   }
 
   void _mouseEnter(bool hovering) {

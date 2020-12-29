@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Images/sizeable_image.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio/Extensions/hover_extensions.dart';
 
-class HorizontalCard extends StatelessWidget {
+import '../description_texts.dart';
+
+class HorizontalCard extends StatefulWidget {
   final String picName;
   final String picURL;
   final String title;
@@ -30,122 +31,57 @@ class HorizontalCard extends StatelessWidget {
       : super(key: key);
 
   @override
+  _HorizontalCardState createState() => _HorizontalCardState();
+}
+
+class _HorizontalCardState extends State<HorizontalCard> {
+  bool isHover = false;
+
+  @override
   Widget build(BuildContext context) {
-    return isLeft
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  _launchURL(picURL);
-                },
-                child: SizeableImage(
-                  width: 350,
-                  height: 200,
-                  picName: picName,
-                ).showCursorOnHover,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Container(
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    title != ''
-                        ? Text(title,
-                            style: TextStyle(
-                                fontSize: 30, color: Global.titleColor))
-                        : Container(),
-                    subtitle != ''
-                        ? Text(subtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    secondSubtitle != ''
-                        ? Text(secondSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    thirdSubtitle != ''
-                        ? Text(thirdSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    fourthSubtitle != ''
-                        ? Text(fourthSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    fifthSubtitle != ''
-                        ? Text(fifthSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container()
-                  ],
+    return MouseRegion(
+      onEnter: (e) => _mouseEnter(true),
+      onExit: (e) => _mouseEnter(false),
+      child: widget.isLeft
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    _launchURL(widget.picURL);
+                  },
+                  child: SizeableImage(
+                    width: 350,
+                    height: 200,
+                    picName: widget.picName,
+                  ).showCursorOnHover,
                 ),
-              )
-            ],
-          ).moveRightOnHover
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    title != ''
-                        ? Text(title,
-                            style: TextStyle(
-                                fontSize: 30, color: Global.titleColor))
-                        : Container(),
-                    subtitle != ''
-                        ? Text(subtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    secondSubtitle != ''
-                        ? Text(secondSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    thirdSubtitle != ''
-                        ? Text(thirdSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    fourthSubtitle != ''
-                        ? Text(fourthSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container(),
-                    fifthSubtitle != ''
-                        ? Text(fifthSubtitle,
-                            style: TextStyle(
-                                fontSize: 20, color: Global.titleColor))
-                        : Container()
-                  ],
+                SizedBox(
+                  width: 30,
                 ),
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              GestureDetector(
-                onTap: () {
-                  _launchURL(picURL);
-                },
-                child: SizeableImage(
-                  width: 350,
-                  height: 200,
-                  picName: picName,
-                ).showCursorOnHover,
-              ),
-            ],
-          ).moveLeftOnHover;
+                DescriptionTexts(widget: widget, isHover: isHover),
+              ],
+            ).moveRightOnHover
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                DescriptionTexts(widget: widget, isHover: isHover),
+                SizedBox(
+                  width: 30,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    _launchURL(widget.picURL);
+                  },
+                  child: SizeableImage(
+                    width: 350,
+                    height: 200,
+                    picName: widget.picName,
+                  ).showCursorOnHover,
+                ),
+              ],
+            ).moveLeftOnHover,
+    );
   }
 
   void _launchURL(url) async {
@@ -155,4 +91,12 @@ class HorizontalCard extends StatelessWidget {
       throw 'No se pudo cargar la dirección';
     }
   }
+
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
+  }
 }
+
+

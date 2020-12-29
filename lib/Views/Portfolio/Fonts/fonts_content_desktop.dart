@@ -28,7 +28,7 @@ class _FontsContentDesktopState extends State<FontsContentDesktop> {
               ),
             ),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 15.0),
               child: Container(
                 decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
               ),
