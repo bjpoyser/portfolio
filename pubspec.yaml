@@ -9,7 +9,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter:
+  flutter_web_plugins:
     sdk: flutter
 
   cupertino_icons: ^1.0.1
@@ -27,6 +27,10 @@ dependencies:
 
   awesome_dialog: ^1.2.1
 
+  chewie: ^0.12.0
+
+  video_player: ^1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -39,6 +43,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/logos/
 
   fonts:
     - family: Open Sans

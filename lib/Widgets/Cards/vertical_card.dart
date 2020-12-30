@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Images/sizeable_image.dart';
 
 class VerticalCard extends StatelessWidget {
@@ -21,16 +22,7 @@ class VerticalCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Container(
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0, 0),
-              blurRadius: 10.0,
-              spreadRadius: 1.0,
-            ),
-          ],
-        ),
+        decoration: Global.cardBoxDecoration,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

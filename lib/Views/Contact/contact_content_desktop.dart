@@ -26,16 +26,6 @@ class _ContactContentDesktopState extends State<ContactContentDesktop> {
             IconCard(title: 'Email', icon: FontAwesomeIcons.envelope, isMail: true,)
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.all(100.0),
-          child: Column(
-            children: [
-              Text('Benoit Poyser Acuña', style: TextStyle(fontSize: 60),),
-              SizedBox(height: 10,),
-              Text('Español - English', style: TextStyle(fontSize: 25),)
-            ],
-          ),
-        ),
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Links/SimpleLink.dart';
 
 class FontHorizontalCard extends StatelessWidget {
@@ -16,17 +17,7 @@ class FontHorizontalCard extends StatelessWidget {
     return Container(
       width: size.width * 0.8,
       height: 300,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            offset: Offset(2, 2),
-            blurRadius: 10.0,
-            spreadRadius: 1.0,
-          ),
-        ],
-        color: Colors.white,
-      ),
+      decoration: Global.cardBoxDecoration,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

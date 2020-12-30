@@ -4,14 +4,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Views/Portfolio/Fonts/fonts_content_desktop.dart';
-import 'package:portfolio/Views/Portfolio/Fonts/fonts_content_mobile.dart';
+import 'package:portfolio/Views/Portfolio/Prototypes/protos_content_desktop.dart';
+import 'package:portfolio/Views/Portfolio/Prototypes/protos_content_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 
-class FontsView extends StatelessWidget {
+class ProtosView extends StatefulWidget {
+  @override
+  _ProtosViewState createState() => _ProtosViewState();
+}
+
+class _ProtosViewState extends State<ProtosView> {
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +25,8 @@ class FontsView extends StatelessWidget {
         children: [
           Expanded(
               child: ScreenTypeLayout(
-            desktop: FontsContentDesktop(),
-            mobile: FontsContentMobile(),
+            desktop: ProtosContentDesktop(),
+            mobile: ProtosContentMobile(),
           ))
         ],
       ),
@@ -120,7 +125,7 @@ class FontsView extends StatelessWidget {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(ProtosRoute);
+                    locator<NavigationService>().navigateTo(FontsRoute);
                   },
                   splashColor: Colors.lightGreenAccent,
                   child: Container(
@@ -130,9 +135,9 @@ class FontsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.draftingCompass),
+                        Icon(FontAwesomeIcons.font),
                         Text(
-                          'Protos',
+                          'Fonts',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],

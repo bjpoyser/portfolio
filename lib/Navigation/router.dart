@@ -7,6 +7,8 @@ import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
 import 'package:portfolio/Views/Portfolio/Fonts/fonts_view.dart';
+import 'package:portfolio/Views/Portfolio/Prototypes/MarketMap/market_map_view.dart';
+import 'package:portfolio/Views/Portfolio/Prototypes/protos_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
 
 const String HomeRoute = '/';
@@ -14,29 +16,58 @@ const String AboutRoute = '/about';
 const String ContactRoute = '/contact';
 const String PortfolioRoute = '/portfolio';
 const String FontsRoute = '/fonts';
+const String ProtosRoute = '/prototypes';
+const String MarketMapRoute = '/prototypes/market-map';
 const String UnderConstructionRoute = '/underConstruction';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case HomeRoute:
-      return _getPageRoute(HomeView());
+      return _getPageRoute(HomeView(), settings);
     case AboutRoute:
-      return _getPageRoute(AboutView());
+      return _getPageRoute(AboutView(), settings);
     case ContactRoute:
-      return _getPageRoute(ContactView());
+      return _getPageRoute(ContactView(), settings);
     case PortfolioRoute:
-      return _getPageRoute(PortfolioView());
+      return _getPageRoute(PortfolioView(), settings);
     case FontsRoute:
-      return _getPageRoute(FontsView());
+      return _getPageRoute(FontsView(), settings);
+    case ProtosRoute:
+      return _getPageRoute(ProtosView(), settings);
+    case MarketMapRoute:
+      return _getPageRoute(MarketMapView(), settings);
     default:
-      return _getPageRoute(UnderConstruction());
+      return _getPageRoute(UnderConstruction(), settings);
   }
 }
 
-PageRoute _getPageRoute(Widget child) {
-  return MaterialPageRoute(
-    builder: (context) => child,
-  );
+PageRoute _getPageRoute(Widget child, RouteSettings settings) {
+  return _FadeRoute(child: child, routeName: settings.name);
+}
+
+class _FadeRoute extends PageRouteBuilder {
+  final Widget child;
+  final String routeName;
+  _FadeRoute({this.child, this.routeName})
+      : super(
+          settings: RouteSettings(name: routeName),
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              child,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
 }
 
 class UnderConstruction extends StatelessWidget {

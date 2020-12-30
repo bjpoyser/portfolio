@@ -24,7 +24,7 @@ class PortfolioContentDesktop extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               IconRouteCard(title: 'Fonts', icon: FontAwesomeIcons.font, navigationPath: FontsRoute,),
-              IconRouteCard(title: 'Prototypes', icon: FontAwesomeIcons.draftingCompass, navigationPath: UnderConstructionRoute,)
+              IconRouteCard(title: 'Prototypes', icon: FontAwesomeIcons.draftingCompass, navigationPath: ProtosRoute,)
             ],
           ),
         ],

@@ -42,17 +42,7 @@ class _PresentationCardState extends State<PresentationCard> {
                 child: Container(
                   width: 300,
                   height: 370,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0, 0),
-                        blurRadius: 10.0,
-                        spreadRadius: 1.0,
-                      ),
-                    ],
-                    color: Colors.white,
-                  ),
+                  decoration: Global.cardBoxDecoration,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -91,17 +81,7 @@ class _PresentationCardState extends State<PresentationCard> {
               child: Container(
                 width: 300,
                 height: 370,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(0, 0),
-                      blurRadius: 10.0,
-                      spreadRadius: 1.0,
-                    ),
-                  ],
-                  color: Colors.white,
-                ),
+                decoration: Global.cardBoxDecoration,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
