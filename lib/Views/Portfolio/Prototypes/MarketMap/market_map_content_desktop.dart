@@ -12,7 +12,6 @@ class MarketMapContentDesktop extends StatefulWidget {
 }
 
 class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -27,6 +26,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
             children: [
               ProjectDescriptionCard(
                 width: size.width * 0.8,
+                fontSize: size.width * 0.015,
                 title: 'Market Map',
                 desc:
                     'This project tries to reduce COVID-19 spread in crowded places like markets. With the help of this app, people could see all market\'s stores on a map. Also, the app offers a section where you can make an auto checking of COVID-19 based on a point system, so, according to your answers, you will receive 1 of 4 results. It is just a prototype, there are many more functions that could be present in a final version.',
@@ -48,6 +48,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                       children: [
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Role',
                           description: Text(
                             '* Developer',
@@ -56,6 +57,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Framework',
                           description: Text(
                             '* Flutter',
@@ -64,6 +66,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Team Size',
                           description: Text(
                             '* 1',
@@ -72,6 +75,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Duration',
                           description: Text(
                             '* 8 Hours',
@@ -80,6 +84,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Platforms',
                           description: Padding(
                             padding: const EdgeInsets.only(top: 8),
@@ -106,6 +111,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Year',
                           description: Text(
                             '* 2020',
@@ -114,6 +120,7 @@ class _MarketMapContentDesktopState extends State<MarketMapContentDesktop> {
                         ),
                         ProjectFeatureCard(
                           width: size.width * 0.5,
+                          fontSize: fontSize,
                           title: 'Status',
                           description: Text(
                             '* Finished',

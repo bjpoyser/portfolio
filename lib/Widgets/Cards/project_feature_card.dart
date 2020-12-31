@@ -6,18 +6,19 @@ class ProjectFeatureCard extends StatelessWidget {
     Key key,
     @required this.width,
     @required this.title,
-    @required this.description,
+    @required this.description, @required this.fontSize,
+
   }) : super(key: key);
 
   final double width;
   final String title;
   final Widget description;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
-    double fontSize = width * 0.03;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
         width: width,
         decoration: Global.cardBoxDecoration,

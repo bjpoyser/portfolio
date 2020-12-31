@@ -5,17 +5,17 @@ class ProjectDescriptionCard extends StatelessWidget {
   final String title;
   final String desc;
   final double width;
+  final double fontSize;
 
   const ProjectDescriptionCard({
     Key key,
     @required this.title,
     @required this.desc,
-    @required this.width,
+    @required this.width, @required this.fontSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double fontSize = width * 0.02;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
       child: Container(
