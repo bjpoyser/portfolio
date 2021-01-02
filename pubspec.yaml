@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logos/
+    - assets/images/silhouettes/
 
   fonts:
     - family: Open Sans

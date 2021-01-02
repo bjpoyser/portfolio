@@ -15,8 +15,8 @@ class PortfolioContentDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              IconRouteCard(title: 'Apps', icon: FontAwesomeIcons.mobileAlt, navigationPath: UnderConstructionRoute,),
-              IconRouteCard(title: 'Games', icon: FontAwesomeIcons.ghost, navigationPath: UnderConstructionRoute,)
+              IconRouteCard(title: 'Apps', icon: FontAwesomeIcons.mobileAlt, navigationPath: AppsRoute,),
+              IconRouteCard(title: 'Games', icon: FontAwesomeIcons.ghost, navigationPath: GamesRoute,)
             ],
           ),
           Row(

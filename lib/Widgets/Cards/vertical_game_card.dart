@@ -2,33 +2,32 @@ import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Links/SimpleLink.dart';
 import 'package:flutter/material.dart';
 
-class VerticalProtoCard extends StatelessWidget {
+class VerticalGameCard extends StatelessWidget {
   final String description;
   final double width;
-  final String framework;
+  final String genre;
   final Widget platforms;
   final double fontSize;
   final String role;
   final dynamic moreAction;
   final String picName;
-  final String status;
+  final String engine;
 
-  const VerticalProtoCard({
+  const VerticalGameCard({
     Key key,
     @required this.description,
     @required this.width,
-    @required this.framework,
+    @required this.genre,
     @required this.platforms,
     @required this.moreAction,
     @required this.role,
     @required this.picName,
-    @required this.status,
+    @required this.engine,
     this.fontSize = 25,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Container(
@@ -53,56 +52,35 @@ class VerticalProtoCard extends StatelessWidget {
                     style: TextStyle(fontSize: fontSize, color: Colors.black),
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Framework: ',
+                          text: 'Genre: ',
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: framework)
+                      TextSpan(text: genre)
                     ]),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: size.width < 325
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(
-                              fontSize: fontSize,
-                              color: Colors.black,
-                            ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Platforms: ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                            ],
+              child: Row(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: fontSize,
+                        color: Colors.black,
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'Platforms: ',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        platforms,
-                        SizedBox(height: 10,)
-                      ],
-                    )
-                  : Row(
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(
-                              fontSize: fontSize,
-                              color: Colors.black,
-                            ),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Platforms: ',
-                                style: TextStyle(fontWeight: FontWeight.bold,),
-                              ),
-                            ],
-                          ),
-                        ),
-                        platforms
                       ],
                     ),
+                  ),
+                  platforms
+                ],
+              ),
             ),
             Padding(
               padding:
@@ -112,9 +90,9 @@ class VerticalProtoCard extends StatelessWidget {
                     style: TextStyle(fontSize: fontSize, color: Colors.black),
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Status: ',
+                          text: 'Engine: ',
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: status)
+                      TextSpan(text: engine)
                     ]),
               ),
             ),

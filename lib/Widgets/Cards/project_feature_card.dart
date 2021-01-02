@@ -18,7 +18,7 @@ class ProjectFeatureCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       child: Container(
         width: width,
         decoration: Global.cardBoxDecoration,
@@ -33,7 +33,7 @@ class ProjectFeatureCard extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                       text: title,
-                      style: TextStyle(
+                      style: TextStyle(color: Colors.black,
                           fontSize: fontSize, fontWeight: FontWeight.bold),
                     ),
                   ],

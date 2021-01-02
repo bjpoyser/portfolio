@@ -6,12 +6,13 @@ class ProjectDescriptionCard extends StatelessWidget {
   final String desc;
   final double width;
   final double fontSize;
+  final bool isMobile;
 
   const ProjectDescriptionCard({
     Key key,
     @required this.title,
     @required this.desc,
-    @required this.width, @required this.fontSize,
+    @required this.width, @required this.fontSize, this.isMobile = false,
   }) : super(key: key);
 
   @override
@@ -29,7 +30,7 @@ class ProjectDescriptionCard extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: fontSize + 25),
+                  style: TextStyle(fontSize: isMobile ? fontSize + 20: fontSize + 25),
                 ),
               ),
               Text(

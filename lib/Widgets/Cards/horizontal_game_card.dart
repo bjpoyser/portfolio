@@ -4,28 +4,28 @@ import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Links/SimpleLink.dart';
 import 'package:flutter/material.dart';
 
-class HorizontalProtoCard extends StatelessWidget {
+class HorizontalGameCard extends StatelessWidget {
   final String description;
   final double width;
   final double height;
-  final String framework;
+  final String genre;
   final Widget platforms;
   final double fontSize;
   final dynamic moreAction;
   final String role;
-  final String status;
+  final String engine;
   final String picName;
 
-  const HorizontalProtoCard(
+  const HorizontalGameCard(
       {Key key,
       @required this.description,
       @required this.width,
       @required this.height,
-      @required this.framework,
+      @required this.genre,
       @required this.platforms,
       @required this.moreAction,
       @required this.role,
-      @required this.status,
+      @required this.engine,
       @required this.picName,
       this.fontSize = 25,})
       : super(key: key);
@@ -65,10 +65,10 @@ class HorizontalProtoCard extends StatelessWidget {
                             style: TextStyle(fontSize: fontSize, color: Colors.black),
                             children: <TextSpan>[
                               TextSpan(
-                                text: 'Framework: ',
+                                text: 'Genre: ',
                                 style: TextStyle(fontWeight: FontWeight.bold)
                               ),
-                              TextSpan(text: framework)
+                              TextSpan(text: genre)
                             ],
                           ),
                         ),
@@ -102,10 +102,10 @@ class HorizontalProtoCard extends StatelessWidget {
                             style: TextStyle(fontSize: fontSize, color: Colors.black),
                             children: <TextSpan>[
                               TextSpan(
-                                text: 'Status: ',
+                                text: 'Engine: ',
                                 style: TextStyle(fontWeight: FontWeight.bold)
                               ),
-                              TextSpan(text: status)
+                              TextSpan(text: engine)
                             ],
                           ),
                         ),

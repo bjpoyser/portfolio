@@ -73,7 +73,7 @@ class _ProtosViewState extends State<ProtosView> {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(UnderConstructionRoute);
+                    locator<NavigationService>().navigateTo(AppsRoute);
                   },
                   splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(
@@ -99,7 +99,7 @@ class _ProtosViewState extends State<ProtosView> {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(UnderConstructionRoute);
+                    locator<NavigationService>().navigateTo(GamesRoute);
                   },
                   splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(

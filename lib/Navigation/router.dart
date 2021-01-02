@@ -6,7 +6,9 @@ import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
+import 'package:portfolio/Views/Portfolio/Apps/apps_view.dart';
 import 'package:portfolio/Views/Portfolio/Fonts/fonts_view.dart';
+import 'package:portfolio/Views/Portfolio/Games/games_view.dart';
 import 'package:portfolio/Views/Portfolio/Prototypes/MarketMap/market_map_view.dart';
 import 'package:portfolio/Views/Portfolio/Prototypes/protos_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
@@ -15,9 +17,11 @@ const String HomeRoute = '/';
 const String AboutRoute = '/about';
 const String ContactRoute = '/contact';
 const String PortfolioRoute = '/portfolio';
-const String FontsRoute = '/fonts';
-const String ProtosRoute = '/prototypes';
-const String MarketMapRoute = '/prototypes/market-map';
+const String FontsRoute = '/portfolio/fonts';
+const String ProtosRoute = '/portfolio/prototypes';
+const String MarketMapRoute = '/portfolio/prototypes/market-map';
+const String AppsRoute = '/portfolio/apps';
+const String GamesRoute = '/portfolio/games';
 const String UnderConstructionRoute = '/underConstruction';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -36,6 +40,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(ProtosView(), settings);
     case MarketMapRoute:
       return _getPageRoute(MarketMapView(), settings);
+    case AppsRoute:
+      return _getPageRoute(AppsView(), settings);
+    case GamesRoute:
+      return _getPageRoute(GamesView(), settings);
     default:
       return _getPageRoute(UnderConstruction(), settings);
   }

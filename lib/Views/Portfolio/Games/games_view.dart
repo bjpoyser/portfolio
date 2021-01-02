@@ -4,14 +4,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Views/Portfolio/Fonts/fonts_content_desktop.dart';
-import 'package:portfolio/Views/Portfolio/Fonts/fonts_content_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'games_content_desktop.dart';
+import 'games_content_mobile.dart';
 
-class FontsView extends StatelessWidget {
+
+class GamesView extends StatefulWidget {
+  @override
+  _GamesViewState createState() => _GamesViewState();
+}
+
+class _GamesViewState extends State<GamesView> {
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +26,8 @@ class FontsView extends StatelessWidget {
         children: [
           Expanded(
               child: ScreenTypeLayout(
-            desktop: FontsContentDesktop(),
-            mobile: FontsContentMobile(),
+            desktop: GamesContentDesktop(),
+            mobile: GamesContentMobile(),
           ))
         ],
       ),
@@ -94,9 +100,9 @@ class FontsView extends StatelessWidget {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(GamesRoute);
+                    locator<NavigationService>().navigateTo(FontsRoute);
                   },
-                  splashColor: Colors.lightGreenAccent, // inkwell color
+                  splashColor: Colors.lightGreenAccent,
                   child: Container(
                     width: 100,
                     height: 100,
@@ -104,9 +110,9 @@ class FontsView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.ghost),
+                        Icon(FontAwesomeIcons.font),
                         Text(
-                          'Games',
+                          'Fonts',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],
@@ -122,7 +128,7 @@ class FontsView extends StatelessWidget {
                   onTap: () {
                     locator<NavigationService>().navigateTo(ProtosRoute);
                   },
-                  splashColor: Colors.lightGreenAccent,
+                  splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(
                     width: 100,
                     height: 100,

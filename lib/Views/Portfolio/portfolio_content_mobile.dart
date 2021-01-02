@@ -6,42 +6,46 @@ import 'package:portfolio/Widgets/Cards/icon_route_card.dart';
 class PortfolioContentMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
         child: SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 50,),
-          IconRouteCard(
-            title: 'Apps',
-            icon: FontAwesomeIcons.mobileAlt,
-            navigationPath: UnderConstructionRoute,
-            isMobile: true,
-          ),
-          SizedBox(height: 50,),
-          IconRouteCard(
-            title: 'Games',
-            icon: FontAwesomeIcons.ghost,
-            navigationPath: UnderConstructionRoute,
-            isMobile: true,
-          ),
-          SizedBox(height: 50,),
-          IconRouteCard(
-            title: 'Fonts',
-            icon: FontAwesomeIcons.font,
-            navigationPath: FontsRoute,
-            isMobile: true,
-          ),
-          SizedBox(height: 50,),
-          IconRouteCard(
-            title: 'Prototypes',
-            icon: FontAwesomeIcons.draftingCompass,
-            navigationPath: ProtosRoute,
-            isMobile: true,
-          ),
-          SizedBox(height: 50,),
-        ],
+      child: Container(
+        width: size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 50,),
+            IconRouteCard(
+              title: 'Apps',
+              icon: FontAwesomeIcons.mobileAlt,
+              navigationPath: AppsRoute,
+              isMobile: true,
+            ),
+            SizedBox(height: 50,),
+            IconRouteCard(
+              title: 'Games',
+              icon: FontAwesomeIcons.ghost,
+              navigationPath: GamesRoute,
+              isMobile: true,
+            ),
+            SizedBox(height: 50,),
+            IconRouteCard(
+              title: 'Fonts',
+              icon: FontAwesomeIcons.font,
+              navigationPath: FontsRoute,
+              isMobile: true,
+            ),
+            SizedBox(height: 50,),
+            IconRouteCard(
+              title: 'Prototypes',
+              icon: FontAwesomeIcons.draftingCompass,
+              navigationPath: ProtosRoute,
+              isMobile: true,
+            ),
+            SizedBox(height: 50,),
+          ],
+        ),
       ),
     ));
   }

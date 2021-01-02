@@ -14,7 +14,18 @@ class _FontsContentMobileState extends State<FontsContentMobile> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Center(
-      child: FontVerticalCard(size: size),
+      child: SingleChildScrollView(
+        child: Container(
+          width: size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              FontVerticalCard(size: size),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
