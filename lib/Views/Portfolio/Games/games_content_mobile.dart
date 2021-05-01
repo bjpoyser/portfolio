@@ -1,10 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Widgets/Cards/vertical_game_summary_card.dart';
+import 'package:portfolio/Widgets/Cards/project_card.dart';
 
 class GamesContentMobile extends StatefulWidget {
   @override
@@ -25,79 +24,34 @@ class _GamesContentMobileState extends State<GamesContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                VerticalGameSummaryCard(
+                SizedBox(height: 30),
+                ProjectCard(
                   title: 'Space Me Out!',
-                  description: 'Avoid obstacles between you and the space. Collect all the rockets and reach a higher altitude in each game.',
-                  genre: 'Runner',
-                  engine: 'Unity 3D',
-                  role: 'Developer',
                   picName: 'smo',
-                  platforms: Row(
-                    children: [
-                      Icon(
-                        Icons.android_outlined,
-                        size: 40,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.apple,
-                        size: 40,
-                      ),
-                    ],
-                  ),
-                  width: size.width * 0.9,
-                  moreAction: () {
-                    locator<NavigationService>()
-                        .navigateTo(UnderConstructionRoute);
+                  action: () {
+                    locator<NavigationService>().navigateTo(SMORoute);
                   },
-                ),
-                SizedBox(
-                  height: 100,
-                ),
-                VerticalGameSummaryCard(
-                  title: 'Frienemies: Fighting Game',
-                  description: 'Are we friends or enemies? Lets figure it out fighting. This is a fighting game with simple mechanics and graphics.',
-                  genre: 'Fighting',
-                  engine: 'Unity 3D',
                   role: 'Developer',
+                ),
+                SizedBox(height: 50),
+                ProjectCard(
+                  title: 'Frienemies',
                   picName: 'frienemies',
-                  platforms: Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.laptop,
-                        size: 40,
-                      ),
-                    ],
-                  ),
-                  width: size.width * 0.9,
-                  moreAction: () {
-                    locator<NavigationService>()
-                        .navigateTo(UnderConstructionRoute);
+                  action: () {
+                    locator<NavigationService>().navigateTo(FrienemiesRoute);
                   },
-                ),
-                SizedBox(
-                  height: 100,
-                ),
-                VerticalGameSummaryCard(
-                  title: 'School Day',
-                  description: 'Simple memory game with school items. This was a demo of an attempted university project.',
-                  genre: 'Puzzle',
-                  engine: 'Unity 3D',
                   role: 'Developer',
-                  picName: 'school-day',
-                  platforms: Row(
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.internetExplorer,
-                        size: 40,
-                      ),
-                    ],
-                  ),
-                  width: size.width * 0.9,
-                  moreAction: () {
-                    locator<NavigationService>()
-                        .navigateTo(UnderConstructionRoute);
-                  },
                 ),
+                SizedBox(height: 50),
+                ProjectCard(
+                  title: 'School Day',
+                  picName: 'school-day',
+                  action: () {
+                    locator<NavigationService>().navigateTo(SchoolDayRoute);
+                  },
+                  role: 'Game Designer & Developer',
+                ),
+                SizedBox(height: 30),
               ],
             ),
           ),

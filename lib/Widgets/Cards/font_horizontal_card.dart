@@ -41,7 +41,7 @@ class FontHorizontalCard extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            'Write Someting',
+                            'Write Something',
                             style: TextStyle(fontSize: 30),
                           ),
                           Padding(

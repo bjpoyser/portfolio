@@ -6,11 +6,17 @@ import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
+import 'package:portfolio/Views/Portfolio/Apps/LxF/lxf_view.dart';
+import 'package:portfolio/Views/Portfolio/Apps/MarketMap/market_map_view.dart';
+import 'package:portfolio/Views/Portfolio/Apps/Misas/mass_view.dart';
 import 'package:portfolio/Views/Portfolio/Apps/apps_view.dart';
 import 'package:portfolio/Views/Portfolio/Fonts/fonts_view.dart';
+import 'package:portfolio/Views/Portfolio/Games/Frienemies/frienemies_view.dart';
+import 'package:portfolio/Views/Portfolio/Games/SMO/smo_view.dart';
+import 'package:portfolio/Views/Portfolio/Games/SchoolDay/school_day_view.dart';
 import 'package:portfolio/Views/Portfolio/Games/games_view.dart';
-import 'package:portfolio/Views/Portfolio/Prototypes/MarketMap/market_map_view.dart';
-import 'package:portfolio/Views/Portfolio/Prototypes/protos_view.dart';
+import 'package:portfolio/Views/Portfolio/Tools/Color2Prefab/c2p_view.dart';
+import 'package:portfolio/Views/Portfolio/Tools/tools_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
 
 const String HomeRoute = '/';
@@ -18,10 +24,16 @@ const String AboutRoute = '/about';
 const String ContactRoute = '/contact';
 const String PortfolioRoute = '/portfolio';
 const String FontsRoute = '/portfolio/fonts';
-const String ProtosRoute = '/portfolio/prototypes';
-const String MarketMapRoute = '/portfolio/prototypes/market-map';
+const String ToolsRoute = '/portfolio/assets';
+const String C2PRoute = '/portfolio/assets/c2p';
 const String AppsRoute = '/portfolio/apps';
+const String LxFRoute = '/portfolio/apps/lxf';
+const String MassRoute = '/portfolio/apps/misas-lourdes';
+const String MarketMapRoute = '/portfolio/APPS/market-map';
 const String GamesRoute = '/portfolio/games';
+const String SchoolDayRoute = '/portfolio/games/school-day';
+const String FrienemiesRoute = '/portfolio/games/frienemies';
+const String SMORoute = '/portfolio/games/smo';
 const String UnderConstructionRoute = '/underConstruction';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -36,14 +48,26 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(PortfolioView(), settings);
     case FontsRoute:
       return _getPageRoute(FontsView(), settings);
-    case ProtosRoute:
+    case ToolsRoute:
       return _getPageRoute(ProtosView(), settings);
-    case MarketMapRoute:
-      return _getPageRoute(MarketMapView(), settings);
+    case C2PRoute:
+      return _getPageRoute(Color2PrefabView(), settings);
     case AppsRoute:
       return _getPageRoute(AppsView(), settings);
+    case LxFRoute:
+      return _getPageRoute(LxFView(), settings);
+    case MassRoute:
+      return _getPageRoute(MassView(), settings);
+    case MarketMapRoute:
+      return _getPageRoute(MarketMapView(), settings);
     case GamesRoute:
       return _getPageRoute(GamesView(), settings);
+    case SchoolDayRoute:
+      return _getPageRoute(SchoolDayView(), settings);
+    case FrienemiesRoute:
+      return _getPageRoute(FrienemiesView(), settings);
+    case SMORoute:
+      return _getPageRoute(SMOView(), settings);
     default:
       return _getPageRoute(UnderConstruction(), settings);
   }

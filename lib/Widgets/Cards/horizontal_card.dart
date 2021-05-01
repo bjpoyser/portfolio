@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Images/sizeable_image.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:portfolio/Extensions/hover_extensions.dart';
 
 import '../description_texts.dart';
@@ -48,7 +48,7 @@ class _HorizontalCardState extends State<HorizontalCard> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    _launchURL(widget.picURL);
+                    Global.launchURL(widget.picURL);
                   },
                   child: SizeableImage(
                     width: 350,
@@ -71,7 +71,7 @@ class _HorizontalCardState extends State<HorizontalCard> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    _launchURL(widget.picURL);
+                    Global.launchURL(widget.picURL);
                   },
                   child: SizeableImage(
                     width: 350,
@@ -82,14 +82,6 @@ class _HorizontalCardState extends State<HorizontalCard> {
               ],
             ).moveLeftOnHover,
     );
-  }
-
-  void _launchURL(url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'No se pudo cargar la dirección';
-    }
   }
 
   void _mouseEnter(bool hovering) {

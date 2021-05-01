@@ -24,32 +24,32 @@ class DescriptionTexts extends StatelessWidget {
           widget.title != ''
               ? Text(widget.title,
                   style: TextStyle(
-                      fontSize: 30, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 30, color: Colors.black))
               : Container(),
           widget.subtitle != ''
               ? Text(widget.subtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.secondSubtitle != ''
               ? Text(widget.secondSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.thirdSubtitle != ''
               ? Text(widget.thirdSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.fourthSubtitle != ''
               ? Text(widget.fourthSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.fifthSubtitle != ''
               ? Text(widget.fifthSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container()
         ],
       ) : Column(
@@ -59,32 +59,32 @@ class DescriptionTexts extends StatelessWidget {
           widget.title != ''
               ? Text(widget.title,
                   style: TextStyle(
-                      fontSize: 30, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 30, color: Colors.black))
               : Container(),
           widget.subtitle != ''
               ? Text(widget.subtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.secondSubtitle != ''
               ? Text(widget.secondSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.thirdSubtitle != ''
               ? Text(widget.thirdSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.fourthSubtitle != ''
               ? Text(widget.fourthSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container(),
           widget.fifthSubtitle != ''
               ? Text(widget.fifthSubtitle,
                   style: TextStyle(
-                      fontSize: 20, color: isHover ? Colors.black : Global.titleColor))
+                      fontSize: 20, color: Colors.black))
               : Container()
         ],
       ),

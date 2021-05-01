@@ -31,6 +31,7 @@ class ProjectDescriptionCard extends StatelessWidget {
                 child: Text(
                   title,
                   style: TextStyle(fontSize: isMobile ? fontSize + 20: fontSize + 25),
+                  textAlign: TextAlign.center,
                 ),
               ),
               Text(

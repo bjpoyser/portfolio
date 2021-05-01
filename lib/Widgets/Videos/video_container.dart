@@ -38,6 +38,8 @@ class _VideoContainerState extends State<VideoContainer> {
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController,
         autoPlay: false,
+        allowFullScreen: false,
+        allowMuting: true,
         allowPlaybackSpeedChanging: false,
         aspectRatio: _videoPlayerController.value.aspectRatio);
     setState(() {});
@@ -47,7 +49,7 @@ class _VideoContainerState extends State<VideoContainer> {
   Widget build(BuildContext context) {
     return Container(
       width: widget.width,
-      decoration: Global.videoBoxDecoration,
+      decoration: Global.blackBoxDecoration,
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child: _chewieController != null &&
@@ -55,15 +57,17 @@ class _VideoContainerState extends State<VideoContainer> {
             ? Chewie(
                 controller: _chewieController,
               )
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 20),
-                  Text('Loading'),
-                ],
-              ),
+            : Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(),
+                    SizedBox(height: 20),
+                    Text('Loading'),
+                  ],
+                ),
+            ),
       ),
     );
   }

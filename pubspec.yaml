@@ -31,6 +31,8 @@ dependencies:
 
   video_player: ^1.0.1
 
+  carousel_slider: ^2.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,6 +47,12 @@ flutter:
     - assets/images/
     - assets/images/logos/
     - assets/images/silhouettes/
+    - assets/images/QR/
+    - assets/images/backgrounds/
+    - assets/images/carousel/school-day/
+    - assets/images/carousel/frienemies/
+    - assets/images/carousel/smo/
+    - assets/images/carousel/c2p/
 
   fonts:
     - family: Open Sans

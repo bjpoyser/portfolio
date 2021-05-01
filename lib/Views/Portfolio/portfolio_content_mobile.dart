@@ -38,9 +38,9 @@ class PortfolioContentMobile extends StatelessWidget {
             ),
             SizedBox(height: 50,),
             IconRouteCard(
-              title: 'Prototypes',
+              title: 'Assets',
               icon: FontAwesomeIcons.draftingCompass,
-              navigationPath: ProtosRoute,
+              navigationPath: ToolsRoute,
               isMobile: true,
             ),
             SizedBox(height: 50,),

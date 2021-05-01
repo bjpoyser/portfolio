@@ -11,6 +11,7 @@ class FontsContentDesktop extends StatefulWidget {
 }
 
 class _FontsContentDesktopState extends State<FontsContentDesktop> {
+  final ScrollController _scrollController = ScrollController();
   bool isHover = false;
 
   @override
@@ -24,15 +25,18 @@ class _FontsContentDesktopState extends State<FontsContentDesktop> {
           padding: const EdgeInsets.only(top: 150, left: 400),
         ),
         Center(
-          child: SingleChildScrollView(
-            child: Container(
-              width: size.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  FontHorizontalCard(size: size),
-                ],
+          child: Scrollbar(
+            controller: _scrollController,
+            child: SingleChildScrollView(
+              child: Container(
+                width: size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FontHorizontalCard(size: size),
+                  ],
+                ),
               ),
             ),
           ),

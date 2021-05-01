@@ -120,7 +120,7 @@ class FontsView extends StatelessWidget {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(ProtosRoute);
+                    locator<NavigationService>().navigateTo(ToolsRoute);
                   },
                   splashColor: Colors.lightGreenAccent,
                   child: Container(
@@ -132,7 +132,7 @@ class FontsView extends StatelessWidget {
                       children: [
                         Icon(FontAwesomeIcons.draftingCompass),
                         Text(
-                          'Protos',
+                          'Assets',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],

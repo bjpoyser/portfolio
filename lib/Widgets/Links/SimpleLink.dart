@@ -13,8 +13,8 @@ class SimpleLink extends StatefulWidget {
     @required this.text,
     @required this.action,
     this.fontSize = 20.0,
-    this.hoveredColor = Colors.green,
-    this.normalColor = Colors.black,
+    this.hoveredColor = Colors.black,
+    this.normalColor = Colors.green,
   }) : super(key: key);
 
   @override

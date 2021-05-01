@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Widgets/Cards/vertical_project_summary_card.dart';
+import 'package:portfolio/Widgets/Cards/project_card.dart';
 
 class AppsContentMobile extends StatefulWidget {
   @override
@@ -25,68 +25,31 @@ class _AppsContentMobileState extends State<AppsContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                VerticalProjectSummaryCard(
+                ProjectCard(
                   title: 'Locos X El Fútbol',
-                  description: 'It is a system (mobile app & web app) for a 5-a-side soccer court. You can reserve the soccer court with the mobile app. The web app is for managers where they can manage the whole system and the reservations.',
-                  framework: 'Flutter & ASP.NET',
-                  status: 'Finished',
-                  role: 'Project Manager, Programmer & Designer',
                   picName: 'lxf',
-                  platforms: Row(
-                    children: [
-                      Icon(
-                        Icons.android_rounded,
-                        size: 30,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        FontAwesomeIcons.apple,
-                        size: 30,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        FontAwesomeIcons.laptop,
-                        size: 30,
-                      ),
-                    ],
-                  ),
-                  width: size.width * 0.9,
-                  moreAction: () {
-                    locator<NavigationService>()
-                        .navigateTo(UnderConstructionRoute);
+                  action: () {
+                    locator<NavigationService>().navigateTo(SMORoute);
                   },
+                  role: 'Project Manager, Programmer & Designer',
                 ),
-                SizedBox(height: 100,),
-                VerticalProjectSummaryCard(
-                  title: 'Misas Parroquia de Lourdes',
-                  description: 'It is a system (mobile app & web app) where you can reserve your space for a mass in the subsidiaries of Nuestra Señora de Lourdes Parish in Montes de Oca, San José, Costa Rica.',
-                  framework: 'Flutter & Web',
-                  status: 'Released',
-                  role: 'Developer',
+                SizedBox(height: 100),
+                ProjectCard(
+                  title: 'Misas Lourdes',
                   picName: 'misas',
-                  platforms: Row(
-                    children: [
-                      Icon(
-                        Icons.android_rounded,
-                        size: 30,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        FontAwesomeIcons.apple,
-                        size: 30,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        FontAwesomeIcons.laptop,
-                        size: 30,
-                      ),
-                    ],
-                  ),
-                  width: size.width * 0.9,
-                  moreAction: () {
-                    locator<NavigationService>()
-                        .navigateTo(UnderConstructionRoute);
+                  action: () {
+                    locator<NavigationService>().navigateTo(MassRoute);
                   },
+                  role: 'Developer',
+                ),
+                SizedBox(height: 100),
+                ProjectCard(
+                  title: 'Market Map',
+                  picName: 'flutter',
+                  action: () {
+                    locator<NavigationService>().navigateTo(MarketMapRoute);
+                  },
+                  role: 'Developer',
                 ),
               ],
             ),

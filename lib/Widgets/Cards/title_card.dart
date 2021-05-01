@@ -13,7 +13,7 @@ class TitleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      decoration: Global.cardBoxDecoration,
+      decoration: Global.softShadowDecoration,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Text(

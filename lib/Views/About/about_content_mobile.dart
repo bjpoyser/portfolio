@@ -20,7 +20,7 @@ class AboutContentMobile extends StatelessWidget {
                 VerticalCard(
                   picName: 'flag',
                   picURL: 'https://www.instagram.com/p/By_AWSJgG6N/',
-                  title: 'Benoit Poyser Acuña, 21',
+                  title: 'Benoit Poyser Acuña, 22',
                   message: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

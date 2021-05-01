@@ -126,7 +126,7 @@ class _GamesViewState extends State<GamesView> {
                 color: Colors.lightGreenAccent[700], // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(ProtosRoute);
+                    locator<NavigationService>().navigateTo(ToolsRoute);
                   },
                   splashColor: Colors.lightGreenAccent, // inkwell color
                   child: Container(
@@ -138,7 +138,7 @@ class _GamesViewState extends State<GamesView> {
                       children: [
                         Icon(FontAwesomeIcons.draftingCompass),
                         Text(
-                          'Protos',
+                          'Assets',
                           style: TextStyle(fontSize: 20),
                         ),
                       ],
