@@ -59,4 +59,11 @@ abstract class Global {
     );
     await launch('$mailtoLink');
   }
+
+  static String getAge() {
+    DateTime currentDate = DateTime.now(); 
+    DateTime thisYearBday = DateTime(currentDate.year, 1, 7, 0, 0, 0, 0, 0);
+    if(currentDate.isBefore(thisYearBday)) return'${currentDate.year - 1999 - 1}';
+    return '${currentDate.year - 1999}';
+  }
 }

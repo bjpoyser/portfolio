@@ -5,7 +5,7 @@ class SizeableImage extends StatelessWidget {
   final double width;
   final double height;
 
-  const SizeableImage({Key key, this.picName, this.width, this.height,}) : super(key: key);
+  const SizeableImage({Key key, @required this.picName, @required this.width, this.height,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

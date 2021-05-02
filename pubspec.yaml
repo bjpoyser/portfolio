@@ -53,6 +53,7 @@ flutter:
     - assets/images/carousel/frienemies/
     - assets/images/carousel/smo/
     - assets/images/carousel/c2p/
+    - assets/images/about/
 
   fonts:
     - family: Open Sans

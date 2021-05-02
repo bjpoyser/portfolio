@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Cards/vertical_card.dart';
 
 class AboutContentMobile extends StatelessWidget {
@@ -18,9 +19,9 @@ class AboutContentMobile extends StatelessWidget {
                   height: 50,
                 ),
                 VerticalCard(
-                  picName: 'flag',
+                  picName: 'about/me',
                   picURL: 'https://www.instagram.com/p/By_AWSJgG6N/',
-                  title: 'Benoit Poyser Acuña, 22',
+                  title: 'Benoit Poyser Acuña, ${Global.getAge()}',
                   message: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

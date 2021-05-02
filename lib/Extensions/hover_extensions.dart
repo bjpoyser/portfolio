@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:portfolio/Widgets/TranslateOnHover/increase_size_on_hover.dart';
 import 'package:portfolio/Widgets/TranslateOnHover/translate_left_on_hover.dart';
 import 'package:portfolio/Widgets/TranslateOnHover/translate_right_on_hover.dart';
 // ignore: avoid_web_libraries_in_flutter
@@ -31,6 +32,12 @@ extension HoverExtensions on Widget{
 
   Widget get moveRightOnHover {
     return TranslateRightOnHover(
+      child: this
+    );
+  }
+
+  Widget get increaseSizeOnHover{
+    return IncreaseSizeOnHover(
       child: this
     );
   }
