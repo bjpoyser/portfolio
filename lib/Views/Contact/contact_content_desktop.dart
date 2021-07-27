@@ -18,7 +18,7 @@ class _ContactContentDesktopState extends State<ContactContentDesktop> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconCard(title: 'Instagram', icon: FontAwesomeIcons.instagram, link: 'https://www.instagram.com/bj_poyser/'),
-        IconCard(title: 'LinkedIn', icon: FontAwesomeIcons.linkedin, link: 'https://www.linkedin.com/in/benoit-poyser-b26465181/',),
+        IconCard(title: 'LinkedIn', icon: FontAwesomeIcons.linkedin, link: 'https://www.linkedin.com/in/bjpoyser/',),
         IconCard(title: 'Email', icon: FontAwesomeIcons.envelope, isMail: true,)
       ],
     );

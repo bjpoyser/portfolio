@@ -3,20 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
+import 'package:portfolio/Widgets/Images/QR_container.dart';
+import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
-class LxFContentDesktop extends StatefulWidget {
+class DollifyContentDesktop extends StatefulWidget {
   @override
-  _LxFContentDesktopState createState() => _LxFContentDesktopState();
+  _DollifyContentDesktopState createState() => _DollifyContentDesktopState();
 }
 
-class _LxFContentDesktopState extends State<LxFContentDesktop> {
+class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
   final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double fontSize = 25;
+    double fontSize = 20;
+    double cardsSize = size.width * 0.45;
     return Center(
       child: Scrollbar(
         controller: _scrollController,
@@ -26,19 +30,25 @@ class _LxFContentDesktopState extends State<LxFContentDesktop> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ProjectDescriptionCard(
-                      width: size.width * 0.8,
-                      fontSize: fontSize,
-                      title: 'Locos X El Fútbol',
-                      desc: 'It is my graduation project from the university. In this project, we\'ve been going through every step of a project (Planning, Design, Development, Testing, and Release). My role during this project has been a project manager but also as a designer and programmer.\n\nLxF or Locos X el Fútbol is a 5-a-side soccer field located in Curridabat, San José, Costa Rica. With this project, people that want to reserve a date to use the soccer field just have to open the mobile app and select which date they want. Besides, anyone that has the mobile app will be able to create a team to play tournaments, have a list of friends, chat with its friends and with the managers of LxF, manage its profile and receive notifications like friend requests, team requests, and reminders of dates reserved.\n\nFurthermore, there is a web app for the managers of the soccer field, where they can manage dates, clients, analytics, tournaments, chats, broadcasts. If they have an Administrator Role, they could see, create, update, and delete other employees from the system.\n\nThis project uses firebase as a NoSQL database, image storage, functions to push notifications, authentication for mobile apps, and hosting for the web app.'),
+                  TitleCard(width: size.width * 0.8, title: 'Dollify: Duos Update'),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30, bottom: 40),
-                    child: VideoContainer(
-                      width: size.width * 0.8,
-                      videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FLxF-Demo.mp4?alt=media&token=6cf18375-4d61-4c67-b768-4d2561cae0a9',
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProjectDescriptionCard(
+                            width: size.width * 0.38,
+                            fontSize: fontSize,
+                            title: 'Dollify: Duos',
+                            desc: 'Dollify is an app of @Dave.xp, developed by Sunna Entertainment in 2018.\n\nWith this app, you can create dolls using the unique art of @Dave.xp.\n\nDollify has more than 10.000.000 downloads just on Android devices and has a rating of 4.5 in both stores (Android and Apple). I was assigned to this project to develop the Duos Update, released in July 2021.'),
+                        SizedBox(width: 30),
+                        VideoContainer(
+                          width: size.width * 0.4,
+                          videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FDollify-Demo.mp4?alt=media&token=631c301a-aadb-4c07-b969-c24dca164860',
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -46,48 +56,58 @@ class _LxFContentDesktopState extends State<LxFContentDesktop> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35),
+                          child: Container(
+                            width: size.width * 0.29,
+                            child: CarouselWithIndicator(
+                              height: size.width * 0.35,
+                              imgList: imgList,
+                            ),
+                          ),
+                        ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Role',
                               description: Text(
-                                '* Project Manager, Programmer & Designer',
+                                '* Developer',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
-                              title: 'Framework',
+                              title: 'Engine',
                               description: Text(
-                                '* Flutter & ASP.NET',
+                                '* Unity3D',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Team Size',
                               description: Text(
-                                '* 4',
+                                '* 2',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Duration',
                               description: Text(
-                                '* 1 Year',
+                                '* 2 weeks',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Platforms',
                               description: Padding(
@@ -108,52 +128,50 @@ class _LxFContentDesktopState extends State<LxFContentDesktop> {
                                     Icon(
                                       FontAwesomeIcons.apple,
                                       size: fontSize + 5,
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Icon(
-                                      FontAwesomeIcons.internetExplorer,
-                                      size: fontSize + 5,
-                                    ),
+                                    )
                                   ],
                                 ),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Year',
                               description: Text(
-                                '* 2020',
+                                '* 2021',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Status',
                               description: Text(
-                                '* Finished',
+                                '* Published',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 35),
-                          child: Container(
-                            height: size.width * 0.5,
-                            decoration:
-                                BoxDecoration(border: Border.all(width: 5)),
-                            child: Image(
-                              image: AssetImage('assets/images/lxf.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
                       ],
                     ),
+                  ),
+                  SizedBox( height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      QRContainer(
+                        title: 'Scan or Click for Android',
+                        picName: 'dollify-android',
+                        marketURL: 'https://play.google.com/store/apps/details?id=com.davexp.dollify',
+                      ),
+                      QRContainer(
+                        title: 'Scan or Click for Apple',
+                        picName: 'dollify-apple',
+                        marketURL: 'https://apps.apple.com/app/id1444697551',
+                      )
+                    ],
                   ),
                 ],
               ),
@@ -164,3 +182,18 @@ class _LxFContentDesktopState extends State<LxFContentDesktop> {
     );
   }
 }
+
+final List<Image> imgList = [
+  Image(
+    image: AssetImage('images/carousel/dollify/me-doll.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/dollify/me-ella-dolls.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/dollify/wal-zer-dolls.png'),
+    fit: BoxFit.cover,
+  ),
+];

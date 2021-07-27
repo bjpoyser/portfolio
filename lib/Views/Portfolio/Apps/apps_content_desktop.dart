@@ -38,27 +38,18 @@ class _AppsContentDesktopState extends State<AppsContentDesktop> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ProjectCard(
-                          title: 'Locos X El Fútbol',
-                          picName: 'lxf',
+                          title: 'Dollify: Duos',
+                          picName: 'dollify',
                           action: () {
                             locator<NavigationService>().navigateTo(LxFRoute);
                           },
-                          role: 'Project Manager, Programmer & Designer',
+                          role: 'Developer',
                         ),
                         ProjectCard(
                           title: 'Misas Lourdes',
                           picName: 'misas',
                           action: () {
                             locator<NavigationService>().navigateTo(MassRoute);
-                          },
-                          role: 'Developer',
-                        ),
-                        ProjectCard(
-                          title: 'Market Map',
-                          picName: 'flutter',
-                          action: () {
-                            locator<NavigationService>()
-                                .navigateTo(MarketMapRoute);
                           },
                           role: 'Developer',
                         ),

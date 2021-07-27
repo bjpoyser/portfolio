@@ -6,7 +6,7 @@ import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
-import 'package:portfolio/Views/Portfolio/Apps/LxF/lxf_view.dart';
+import 'package:portfolio/Views/Portfolio/Apps/Dollify/dollify_view.dart';
 import 'package:portfolio/Views/Portfolio/Apps/MarketMap/market_map_view.dart';
 import 'package:portfolio/Views/Portfolio/Apps/Misas/mass_view.dart';
 import 'package:portfolio/Views/Portfolio/Apps/apps_view.dart';
@@ -55,7 +55,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case AppsRoute:
       return _getPageRoute(AppsView(), settings);
     case LxFRoute:
-      return _getPageRoute(LxFView(), settings);
+      return _getPageRoute(DollifyView(), settings);
     case MassRoute:
       return _getPageRoute(MassView(), settings);
     case MarketMapRoute:

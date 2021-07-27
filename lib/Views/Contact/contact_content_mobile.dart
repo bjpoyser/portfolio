@@ -28,7 +28,7 @@ class ContactContentMobile extends StatelessWidget {
                 child: IconCard(
                   title: 'LinkedIn',
                   icon: FontAwesomeIcons.linkedin,
-                  link: 'https://www.linkedin.com/in/benoit-poyser-b26465181/',
+                  link: 'https://www.linkedin.com/in/bjpoyser/',
                   isMobile: true,
                 ),
               ),

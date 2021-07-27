@@ -37,7 +37,6 @@ class _ProjectCardState extends State<ProjectCard> {
   Widget build(BuildContext context) {
     return !widget.isMobile
         ? MouseRegion(
-            cursor: SystemMouseCursors.click,
             onHover: (e) => _mouseEnter(true),
             onExit: (e) => _mouseEnter(false),
             child: GestureDetector(
@@ -61,7 +60,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
             ).moveUpOnHover,
-          )
+          ).showCursorOnHover
         : GestureDetector(
             onTap: widget.action,
             child: Container(

@@ -40,7 +40,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
             child: Center(
               child: Container(
                 width: 800,
-                height: 584,
+                height: 574,
                 decoration: Global.cardBoxDecoration,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 50),
@@ -54,18 +54,16 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                             padding: const EdgeInsets.only(
                                 left: 50.0, right: 50.0, bottom: 5),
                             child: GestureDetector(
-                              onTap: () {
-                                Global.launchURL(
-                                    'https://www.instagram.com/p/CJXM-LKMMuz/');
-                              },
+                              onTap: () { Global.launchURL('https://www.instagram.com/p/CRzUmYysgOI/');},
                               child: SizeableImage(
                                 picName: 'about/me',
                                 width: 250,
                               ).showCursorOnHover,
                             ),
                           ),
-                          Text('Benoit Jamal Poyser Acuña',
-                              style: TextStyle(fontSize: nomalFontSize)),
+                          Text('Benoit Jamal Poyser Acuña', style: TextStyle(fontSize: nomalFontSize)),
+                          Text('January 7th, 1999', style: TextStyle(fontSize: nomalFontSize)),
+                          SizedBox(height: 10),
                           Text(
                             'Developer',
                             style: TextStyle(fontSize: nomalFontSize),
@@ -78,11 +76,8 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                             },
                             fontSize: smallFontSize,
                           ).increaseSizeOnHover,
-                          Text('Living in Costa Rica',
-                              style: TextStyle(fontSize: nomalFontSize)),
-                          SizedBox(
-                            height: 20,
-                          ),
+                          Text('Living in Costa Rica', style: TextStyle(fontSize: nomalFontSize)),
+                          SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -98,7 +93,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                   icon: FontAwesomeIcons.linkedin,
                                   action: () {
                                     Global.launchURL(
-                                        'https://www.linkedin.com/in/benoit-poyser-b26465181/');
+                                        'https://www.linkedin.com/in/bjpoyser/');
                                   }),
                               SizedBox(
                                 width: 20,
@@ -109,7 +104,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                     Global.launchMailto();
                                   })
                             ],
-                          )
+                          ),
                         ],
                       ),
                       Column(
@@ -119,6 +114,18 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                           Text('About Me', style: TextStyle(fontSize: bigFontSize)),
                           SizedBox(height: 5),
                           Container(color: Colors.green, height: 2, width: 400,),
+                          SizedBox(height: 10),
+                          Container(
+                            width: 400,
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Gamer and computer systems engineer with a personal emphasis on software development and game design, born in Costa Rica. Self-taught person, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
+                                  style: TextStyle(fontSize: smallFontSize),
+                                )
+                              ],
+                            ),
+                          ),
                           SizedBox(height: 10),
                           Text(
                             'Bilingual',
@@ -140,50 +147,6 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                 ),
                                 Text(
                                   '- French (A1, currently learning it)',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Knowledge',
-                            style: TextStyle(fontSize: nomalFontSize),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 5),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  '- Unity3D, Photoshop, Blender3D (basic)',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- HTML, CSS, BootStrap, JS, PHP, JQUERY',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- SQL, PL/SQL, NoSQL, Firebase',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- C#, JAVA, ASP.NET Framework, Dart',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- Android Studio, Xamarin, Flutter',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- R, PowerBI',
-                                  style: TextStyle(fontSize: smallFontSize),
-                                ),
-                                Text(
-                                  '- CCNA (Certified)',
                                   style: TextStyle(fontSize: smallFontSize),
                                 ),
                               ],

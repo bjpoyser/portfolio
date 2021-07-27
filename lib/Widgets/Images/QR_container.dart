@@ -17,8 +17,8 @@ class QRContainer extends StatelessWidget {
     @required this.title,
     @required this.picName,
     @required this.marketURL,
-    this.fontSize = 40,
-    this.picWidth = 500,
+    this.fontSize = 30,
+    this.picWidth = 400,
   }) : super(key: key);
 
   @override

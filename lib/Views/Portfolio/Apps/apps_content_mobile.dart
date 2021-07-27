@@ -26,12 +26,12 @@ class _AppsContentMobileState extends State<AppsContentMobile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ProjectCard(
-                  title: 'Locos X El Fútbol',
-                  picName: 'lxf',
+                  title: 'Dollify: Duos',
+                  picName: 'dollify',
                   action: () {
-                    locator<NavigationService>().navigateTo(SMORoute);
+                    locator<NavigationService>().navigateTo(LxFRoute);
                   },
-                  role: 'Project Manager, Programmer & Designer',
+                  role: 'Developer',
                 ),
                 SizedBox(height: 100),
                 ProjectCard(
@@ -41,16 +41,7 @@ class _AppsContentMobileState extends State<AppsContentMobile> {
                     locator<NavigationService>().navigateTo(MassRoute);
                   },
                   role: 'Developer',
-                ),
-                SizedBox(height: 100),
-                ProjectCard(
-                  title: 'Market Map',
-                  picName: 'flutter',
-                  action: () {
-                    locator<NavigationService>().navigateTo(MarketMapRoute);
-                  },
-                  role: 'Developer',
-                ),
+                )
               ],
             ),
           ),

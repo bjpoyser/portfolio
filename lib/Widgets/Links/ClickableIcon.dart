@@ -30,7 +30,6 @@ class _ClickableIconState extends State<ClickableIcon> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      cursor: SystemMouseCursors.click,
       onHover: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
       child: GestureDetector(
@@ -41,7 +40,7 @@ class _ClickableIconState extends State<ClickableIcon> {
           color: isHover ? widget.hoverColor: widget.normalColor,
         ).increaseSizeOnHover,
       ),
-    );
+    ).showCursorOnHover;
   }
 
   void _mouseEnter(bool hovering) {

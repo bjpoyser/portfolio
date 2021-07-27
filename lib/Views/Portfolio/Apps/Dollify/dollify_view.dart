@@ -4,17 +4,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Views/Portfolio/Apps/LxF/lxf_content_desktop.dart';
-import 'package:portfolio/Views/Portfolio/Apps/LxF/lxf_content_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'dollify_content_desktop.dart';
+import 'dollify_content_mobile.dart';
 
-class LxFView extends StatefulWidget {
+
+class DollifyView extends StatefulWidget {
   @override
-  _LxFViewState createState() => _LxFViewState();
+  _DollifyViewState createState() => _DollifyViewState();
 }
 
-class _LxFViewState extends State<LxFView> {
+class _DollifyViewState extends State<DollifyView> {
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
 
   @override
@@ -25,8 +26,8 @@ class _LxFViewState extends State<LxFView> {
         children: [
           Expanded(
               child: ScreenTypeLayout(
-            desktop: LxFContentDesktop(),
-            mobile: LxFContentMobile(),
+            desktop: DollifyContentDesktop(),
+            mobile: DollifyContentMobile(),
           ))
         ],
       ),

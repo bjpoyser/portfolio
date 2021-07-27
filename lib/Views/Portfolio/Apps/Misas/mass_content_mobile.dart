@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/QR_container.dart';
+import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
 class MassContentMobile extends StatefulWidget {
@@ -26,13 +28,17 @@ class _MassContentMobileState extends State<MassContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ProjectDescriptionCard(
-                  isMobile: true,
-                  width: size.width * 0.8,
-                  title: 'Misas Parroquia de Lourdes',
-                  fontSize: 18,
-                  desc:
-                      'It is a non-profit project for Nuestra Señora de Lourdes parish of the Catholic Church.\n\nI\'ve been developing a system to control the number of assistants per mass in all of the subsidiaries of this parish. With the mobile app, people can reserve spaces by choosing a subsidiary, and a scheduled mass. Also, the app offers a section where you can take an autochecking of COVID-19 survey based on a point system, so, according to your answers, you will receive 1 out of 4 results.\n\nBesides, there is a web app where people in charge of the management of the parish, can schedule masses and register people to them.',
+                TitleCard(width: size.width * 0.8, title: 'Misas: Parroquia de Lourdes', fontSize: 25,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: ProjectDescriptionCard(
+                    isMobile: true,
+                    width: size.width * 0.8,
+                    title: 'Misas Parroquia de Lourdes',
+                    fontSize: 18,
+                    desc:
+                        'It is a non-profit project for Nuestra Señora de Lourdes parish of the Catholic Church.\n\nI\'ve been developing a system to control the number of assistants per mass in all of the subsidiaries of this parish. With the mobile app, people can reserve spaces by choosing a subsidiary, and a scheduled mass. Also, the app offers a section where you can take an autochecking of COVID-19 survey based on a point system, so, according to your answers, you will receive 1 out of 4 results.\n\nBesides, there is a web app where people in charge of the management of the parish, can schedule masses and register people to them.',
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, bottom: 30),
@@ -139,12 +145,10 @@ class _MassContentMobileState extends State<MassContentMobile> {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 20),
                           child: Container(
-                            height: size.width,
-                            decoration:
-                                BoxDecoration(border: Border.all(width: 5)),
-                            child: Image(
-                              image: AssetImage('assets/images/mass.png'),
-                              fit: BoxFit.cover,
+                            width: size.width,
+                            child: CarouselWithIndicator(
+                              height: size.width,
+                              imgList: imgList,
                             ),
                           ),
                         ),
@@ -158,12 +162,11 @@ class _MassContentMobileState extends State<MassContentMobile> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             QRContainer(
-                              title: 'Scan or Tap for Android',
+                              title: 'Tap for Android',
                               picName: 'mass-android',
                               marketURL: 'https://play.google.com/store/apps/details?id=com.bjpoyser.MisasLourdes',
-                              picWidth: size.width,
-                              fontSize: size.width * 0.06,
-                            )
+                              fontSize: 16,
+                            ),
                           ],
                         ),
                       ),
@@ -178,3 +181,34 @@ class _MassContentMobileState extends State<MassContentMobile> {
     );
   }
 }
+
+final List<Image> imgList = [
+  Image(
+    image: AssetImage('images/carousel/mass/mass.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/lourdes.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/vargas.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/cedros.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/granadilla.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/people.png'),
+    fit: BoxFit.cover,
+  ),
+  Image(
+    image: AssetImage('images/carousel/mass/mass-list.png'),
+    fit: BoxFit.cover,
+  ),
+];

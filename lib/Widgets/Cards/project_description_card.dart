@@ -17,29 +17,18 @@ class ProjectDescriptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-      child: Container(
-        width: width,
-        decoration: Global.cardBoxDecoration,
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  title,
-                  style: TextStyle(fontSize: isMobile ? fontSize + 20: fontSize + 25),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Text(
-                desc,
-                style: TextStyle(fontSize: fontSize),
-              ),
-            ],
-          ),
+    return Container(
+      width: width,
+      decoration: Global.cardBoxDecoration,
+      child: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          children: [
+            Text(
+              desc,
+              style: TextStyle(fontSize: fontSize),
+            ),
+          ],
         ),
       ),
     );
