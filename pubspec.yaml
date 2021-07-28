@@ -48,6 +48,8 @@ flutter:
     - assets/images/logos/
     - assets/images/silhouettes/
     - assets/images/QR/
+    - assets/images/carousel/mass/
+    - assets/images/carousel/dollify/
     - assets/images/carousel/school-day/
     - assets/images/carousel/frienemies/
     - assets/images/carousel/smo/

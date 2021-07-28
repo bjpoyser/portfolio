@@ -184,31 +184,31 @@ class _MassContentMobileState extends State<MassContentMobile> {
 
 final List<Image> imgList = [
   Image(
-    image: AssetImage('images/carousel/mass/mass.png'),
+    image: AssetImage('assets/images/carousel/mass/mass.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/lourdes.png'),
+    image: AssetImage('assets/images/carousel/mass/lourdes.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/vargas.png'),
+    image: AssetImage('assets/images/carousel/mass/vargas.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/cedros.png'),
+    image: AssetImage('assets/images/carousel/mass/cedros.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/granadilla.png'),
+    image: AssetImage('assets/images/carousel/mass/granadilla.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/people.png'),
+    image: AssetImage('assets/images/carousel/mass/people.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/mass/mass-list.png'),
+    image: AssetImage('assets/images/carousel/mass/mass-list.png'),
     fit: BoxFit.cover,
   ),
 ];

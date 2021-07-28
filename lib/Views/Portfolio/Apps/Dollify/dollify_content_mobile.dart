@@ -182,15 +182,15 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
 
 final List<Image> imgList = [
   Image(
-    image: AssetImage('images/carousel/dollify/me-doll.png'),
+    image: AssetImage('assets/images/carousel/dollify/me-doll.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/dollify/me-ella-dolls.png'),
+    image: AssetImage('assets/images/carousel/dollify/me-ella-dolls.png'),
     fit: BoxFit.cover,
   ),
   Image(
-    image: AssetImage('images/carousel/dollify/wal-zer-dolls.png'),
+    image: AssetImage('assets/images/carousel/dollify/wal-zer-dolls.png'),
     fit: BoxFit.cover,
   ),
 ];

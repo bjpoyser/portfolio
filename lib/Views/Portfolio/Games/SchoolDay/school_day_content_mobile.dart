@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Links/SimpleLink.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
@@ -28,16 +29,20 @@ class _SchoolDayContentMobileState extends State<SchoolDayContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ProjectDescriptionCard(
-                  isMobile: true,
-                  width: size.width * 0.8,
-                  title: 'School Day',
-                  fontSize: 18,
-                  desc:
-                      'School day was a demo for a project for a non-profit foundation that wanted to create a website with educational videogames for kids.\n\nI was the game designer and programmer of this demo game, and a friend was in charge of art and sound effects. We had to developed it like if it was a gamejam because the foundation wanted to see a quick demo of our work and we had just 12 hours to send it but we hadn\'t any project yet.\n\nThis game is a simple memory game with 8 cards (4 pairs) with school items like pencils and backpacks.\n\nWith this project I have learned how to work with another person in my team, and that gave me more freedom and time to work in the code.',
+                TitleCard(width: size.width * 0.8, title: 'School Day', fontSize: 25,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30.0),
+                  child: ProjectDescriptionCard(
+                    isMobile: true,
+                    width: size.width * 0.8,
+                    title: 'School Day',
+                    fontSize: 18,
+                    desc:
+                        'School Day was a demo for a project for a non-profit foundation that wanted to create a website with educational video games for kids.\n\nI was the game designer and developer of this demo game, and a friend was in charge of art and sound effects. We had to develop it in 12 hours as part of the selection process.\n\nThis game is a simple memory game with 8 cards (4 pairs) with school items like pencils and backpacks.\n\nWith this project, I have learned how to work with another person in my team. That gave me more freedom and time to work in the code.',
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25, bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: VideoContainer(
                     width: size.width * 0.8,
                     videoURL:
@@ -169,7 +174,7 @@ class _SchoolDayContentMobileState extends State<SchoolDayContentMobile> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text('Make Pairs of cards touching them to reveal their item', style: TextStyle(fontSize: 20),),
+                            Text('Make Pairs of cards by touching them to reveal their item', style: TextStyle(fontSize: 20),),
                           ],
                         ),
                       ),

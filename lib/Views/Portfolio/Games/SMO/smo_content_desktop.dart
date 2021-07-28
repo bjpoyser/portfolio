@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
@@ -18,7 +19,8 @@ class _SMOContentDesktopState extends State<SMOContentDesktop> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double fontSize = 25;
+    double fontSize = 20;
+    double cardsSize = size.width * 0.45;
     return Center(
       child: Scrollbar(
         controller: _scrollController,
@@ -28,20 +30,25 @@ class _SMOContentDesktopState extends State<SMOContentDesktop> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ProjectDescriptionCard(
-                    width: size.width * 0.8,
-                    fontSize: fontSize,
-                    title: 'Space Me Out!',
-                    desc: 'SMO is an arcade game where you have to avoid obstacles and collect starst to buy new rocket skins.\n\nIt was inspired by the spaceX mission to the space station in 2020 and its primary goal was to learn how to develop a videogame from scratch. Before starting this project, I took an online course of game development and right after finish it I\'ve made this game a reason to start my path on the world of game design as my life goal.',
-                  ),
+                  TitleCard(width: size.width * 0.8, title: 'Space Me Out!'),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30, bottom: 40),
-                    child: VideoContainer(
-                      width: size.width * 0.8,
-                      videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FSMO-Trailer.mp4?alt=media&token=384d8485-8b65-49d2-8a5a-cf50dedb6607',
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProjectDescriptionCard(
+                            width: size.width * 0.38,
+                            fontSize: fontSize,
+                            title: 'Space Me Out!',
+                            desc: 'SMO is an arcade game where you have to avoid obstacles and collect stars to buy new rockets. Its primary goal was to learn how to develop a videogame from scratch.\n\nBefore starting this project, I took an online course in game development, and right after finish it,  I\'ve made this game, a reason to start my path in the world of game design as my life goal.'),
+                        SizedBox(width: 30),
+                        VideoContainer(
+                          width: size.width * 0.4,
+                          videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FSMO-Trailer.mp4?alt=media&token=384d8485-8b65-49d2-8a5a-cf50dedb6607',
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -49,12 +56,22 @@ class _SMOContentDesktopState extends State<SMOContentDesktop> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35),
+                          child: Container(
+                            width: size.width * 0.29,
+                            child: CarouselWithIndicator(
+                              height: size.width * 0.35,
+                              imgList: imgList,
+                            ),
+                          ),
+                        ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Role',
                               description: Text(
@@ -63,34 +80,34 @@ class _SMOContentDesktopState extends State<SMOContentDesktop> {
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Engine',
                               description: Text(
-                                '* Unity 3D',
+                                '* Unity3D',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Team Size',
                               description: Text(
-                                '* 1',
+                                '* 2',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
-                              title: 'Year',
+                              title: 'Duration',
                               description: Text(
-                                '* 2020 - Now',
+                                '* 2 weeks',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Platforms',
                               description: Padding(
@@ -111,32 +128,34 @@ class _SMOContentDesktopState extends State<SMOContentDesktop> {
                                     Icon(
                                       FontAwesomeIcons.apple,
                                       size: fontSize + 5,
-                                    ),
+                                    )
                                   ],
                                 ),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
+                              fontSize: fontSize,
+                              title: 'Year',
+                              description: Text(
+                                '* 2021',
+                                style: TextStyle(fontSize: fontSize),
+                              ),
+                            ),
+                            ProjectFeatureCard(
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Status',
                               description: Text(
-                                '* In-Progress',
+                                '* Published',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                           ],
                         ),
-                        Container(
-                          width: size.width * 0.29,
-                          child: CarouselWithIndicator(
-                            height: size.width * 0.35,
-                            imgList: imgList,
-                          ),
-                        ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

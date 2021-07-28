@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/QR_container.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
@@ -26,15 +27,19 @@ class _Color2PrefabContentMobileState extends State<Color2PrefabContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ProjectDescriptionCard(
-                  isMobile: true,
-                  width: size.width * 0.8,
-                  title: 'Color 2 Prefab',
-                  fontSize: 18,
-                  desc: 'If you need to translate a image to a level this is your tool!\n\nColor 2 Prefab helps you generate a level from an image, saving you time.\n\nI made this tool because in a project I was working on I needed to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers but you can also use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.',
+                TitleCard( width: size.width * 0.8, title: 'Color 2 Prefab', fontSize: 25),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30.0),
+                  child: ProjectDescriptionCard(
+                    isMobile: true,
+                    width: size.width * 0.8,
+                    title: 'Color 2 Prefab',
+                    fontSize: 18,
+                    desc: 'If you need to translate a image to a level this is your tool!\n\nColor 2 Prefab helps you generate a level from an image, saving you time.\n\nI made this tool because in a project I was working on I needed to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers but you can also use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.',
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 30),
                   child: VideoContainer(
                     width: size.width * 0.8,
                     videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FMarket-Demo.mp4?alt=media&token=936964d3-bb78-4cda-a00f-9d22593b984e',
@@ -138,11 +143,10 @@ class _Color2PrefabContentMobileState extends State<Color2PrefabContentMobile> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             QRContainer(
-                              title: 'Scan or Tap to See It',
-                              picName: 'Color-2-Prefab',
+                              title: 'Tap to see',
+                              picName: 'c2p-web',
                               marketURL: 'https://assetstore.unity.com/packages/tools/level-design/color-2-prefab-193922',
-                              picWidth: size.width,
-                              fontSize: size.width * 0.06,
+                              fontSize: 16,
                             )
                           ],
                         ),

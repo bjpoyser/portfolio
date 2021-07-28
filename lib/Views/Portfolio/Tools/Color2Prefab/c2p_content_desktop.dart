@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/QR_container.dart';
+import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
 class Color2PrefabContentDesktop extends StatefulWidget {
@@ -18,7 +20,8 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double fontSize = 25;
+    double fontSize = 20;
+    double cardsSize = size.width * 0.45;
     return Center(
       child: Scrollbar(
         controller: _scrollController,
@@ -28,20 +31,25 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ProjectDescriptionCard(
-                    width: size.width * 0.8,
-                    fontSize: fontSize,
-                    title: 'Color 2 Prefab',
-                    desc: 'If you need to translate a image to a level this is your tool!\n\nColor 2 Prefab helps you generate a level from an image, saving you time.\n\nI made this tool because in a project I was working on I needed to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers but you can also use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.',
-                  ),
+                  TitleCard(width: size.width * 0.8, title: 'Color 2 Prefab'),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30, bottom: 40),
-                    child: VideoContainer(
-                      width: size.width * 0.8,
-                      videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FColor2Prefab.mp4?alt=media&token=1a2c226b-7737-40bd-9f1d-0da6ebe77647',
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProjectDescriptionCard(
+                            width: size.width * 0.38,
+                            fontSize: fontSize,
+                            title: 'Color 2 Prefab',
+                            desc: 'If you need to translate a image to a level this is your tool!\n\nColor 2 Prefab helps you generate a level from an image, saving you time.\n\nI made this tool because in a project I was working on I needed to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers but you can also use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.'),
+                        SizedBox(width: 30),
+                        VideoContainer(
+                          width: size.width * 0.4,
+                          videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FColor2Prefab.mp4?alt=media&token=1a2c226b-7737-40bd-9f1d-0da6ebe77647',
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -49,12 +57,22 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35),
+                          child: Container(
+                            width: size.width * 0.29,
+                            child: CarouselWithIndicator(
+                              height: size.width * 0.35,
+                              imgList: imgList,
+                            ),
+                          ),
+                        ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Role',
                               description: Text(
@@ -63,7 +81,7 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Framework',
                               description: Text(
@@ -72,7 +90,7 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Team Size',
                               description: Text(
@@ -81,18 +99,18 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Duration',
                               description: Text(
-                                '* 1 Month',
+                                '* 3 weeks',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
-                              title: 'Platform',
+                              title: 'Platforms',
                               description: Padding(
                                 padding: const EdgeInsets.only(top: 8),
                                 child: Row(
@@ -106,7 +124,7 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Year',
                               description: Text(
@@ -115,7 +133,7 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Status',
                               description: Text(
@@ -125,30 +143,17 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 35),
-                          child: Container(
-                            height: size.width * 0.5,
-                            decoration: BoxDecoration(border: Border.all(width: 5)),
-                            child: Image(
-                              image: AssetImage('assets/images/carousel/c2p/c2p.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        )
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 100,
-                  ),
+                  SizedBox( height: 10),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       QRContainer(
                         title: 'Scan or Click to See It',
-                        picName: 'Color-2-Prefab',
+                        picName: 'c2p-web',
                         marketURL: 'https://assetstore.unity.com/packages/tools/level-design/color-2-prefab-193922',
                       )
                     ],
@@ -162,3 +167,10 @@ class _Color2PrefabContentDesktopState extends State<Color2PrefabContentDesktop>
     );
   }
 }
+
+final List<Image> imgList = [
+  Image(
+    image: AssetImage('assets/images/carousel/c2p/c2p.png'),
+    fit: BoxFit.cover,
+  ),
+];

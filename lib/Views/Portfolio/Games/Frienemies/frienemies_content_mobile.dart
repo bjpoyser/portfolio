@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
@@ -27,16 +28,20 @@ class _FrienemiesContentMobileState extends State<FrienemiesContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ProjectDescriptionCard(
-                  isMobile: true,
-                  width: size.width * 0.8,
-                  title: 'Frienemies: Fight Game',
-                  fontSize: 18,
-                  desc:
-                      'Frienemies is a fight game, where all the characters are friends-o-mine, and of course, I am a character too.\n\nI have started this project right after finishing a course of videogame structures at the university, I wanted to develop a more complex game by my own. I like a lot fighting games like street fighter and mortal combat, so I decided to create a game based on them, usign my friends as fighters, so that\'s why the name of the game is Frienemies, a combination between the words Friends and Enemies.\n\nThis game has very simple controls (weak punch, strong punch, kick, jump and block), so are the graphics. I have used Adobe Animator to make all the drawings, included the Menus and Scenarios.\n\nFrienemies is still in progress because I have learned a lot of game design since I started developing it, and I want to make it better than is now, with more complex controls, animations and prettier graphics.\n\nAre we friends or enemies? Lets figure it out fighting.',
+                TitleCard(width: size.width * 0.8, title: 'Frienemies: Fight Game', fontSize: 25,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  child: ProjectDescriptionCard(
+                    isMobile: true,
+                    width: size.width * 0.8,
+                    title: 'Frienemies: Fight Game',
+                    fontSize: 18,
+                    desc:
+                        'I have started this project right after finishing a course of videogame structures at the university, I wanted to develop a more complex game by my own. I like a lot fighting games like street fighter and mortal combat, so I decided to create a game based on them, usign my friends as fighters, so that\'s why the name of the game is Frienemies, a combination between the words Friends and Enemies.\n\nAre we friends or enemies? Lets figure it out fighting.',
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25, bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: VideoContainer(
                     width: size.width * 0.8,
                     videoURL:

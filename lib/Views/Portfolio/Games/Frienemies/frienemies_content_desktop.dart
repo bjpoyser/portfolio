@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
+import 'package:portfolio/Widgets/Images/QR_container.dart';
 import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Links/SimpleLink.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
@@ -20,7 +22,8 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double fontSize = 25;
+    double fontSize = 20;
+    double cardsSize = size.width * 0.45;
     return Center(
       child: Scrollbar(
         controller: _scrollController,
@@ -30,21 +33,28 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50.0),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ProjectDescriptionCard(
-                    width: size.width * 0.8,
-                    fontSize: fontSize,
-                    title: 'Frienemies: Fight Game',
-                    desc: 'Frienemies is a fight game, where all the characters are friends-o-mine, and of course, I am a character too.\n\nI have started this project right after finishing a course of videogame structures at the university, I wanted to develop a more complex game by my own. I like a lot fighting games like street fighter and mortal combat, so I decided to create a game based on them, usign my friends as fighters, so that\'s why the name of the game is Frienemies, a combination between the words Friends and Enemies.\n\nThis game has very simple controls (weak punch, strong punch, kick, jump and block), so are the graphics. I have used Adobe Animator to make all the drawings, included the Menus and Scenarios.\n\nFrienemies is still in progress because I have learned a lot of game design since I started developing it, and I want to make it better than is now, with more complex controls, animations and prettier graphics, but still you can play a demo of it right below this box.\n\nAre we friends or enemies? Lets figure it out fighting.',
-                  ),
+                  TitleCard(
+                      width: size.width * 0.8, title: 'Frienemies: Fight Game'),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 30),
-                    child: VideoContainer(
-                      width: size.width * 0.8,
-                      videoURL:
-                          'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FFrienemies-Demo.mp4?alt=media&token=b5653b0c-2d7c-4aa4-a360-2a44bfd80fee',
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProjectDescriptionCard(
+                            width: size.width * 0.38,
+                            fontSize: fontSize,
+                            title: 'Dollify: Duos',
+                            desc:
+                                'I have started this project right after finishing a course of videogame structures at the university, I wanted to develop a more complex game by my own. I like a lot fighting games like street fighter and mortal combat, so I decided to create a game based on them, usign my friends as fighters, so that\'s why the name of the game is Frienemies, a combination between the words Friends and Enemies.\n\nAre we friends or enemies? Lets figure it out fighting.'),
+                        SizedBox(width: 30),
+                        VideoContainer(
+                          width: size.width * 0.4,
+                          videoURL:
+                              'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FFrienemies-Demo.mp4?alt=media&token=b5653b0c-2d7c-4aa4-a360-2a44bfd80fee',
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -52,12 +62,22 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35),
+                          child: Container(
+                            width: size.width * 0.29,
+                            child: CarouselWithIndicator(
+                              height: size.width * 0.35,
+                              imgList: imgList,
+                            ),
+                          ),
+                        ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Role',
                               description: Text(
@@ -66,16 +86,16 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Engine',
                               description: Text(
-                                '* Unity 3D',
+                                '* Unity3D',
                                 style: TextStyle(fontSize: fontSize),
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Team Size',
                               description: Text(
@@ -84,16 +104,7 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
-                              fontSize: fontSize,
-                              title: 'Year',
-                              description: Text(
-                                '* 2019 - Now',
-                                style: TextStyle(fontSize: fontSize),
-                              ),
-                            ),
-                            ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Platforms',
                               description: Padding(
@@ -132,7 +143,16 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
                               ),
                             ),
                             ProjectFeatureCard(
-                              width: size.width * 0.5,
+                              width: cardsSize,
+                              fontSize: fontSize,
+                              title: 'Year',
+                              description: Text(
+                                '* 2019 - Now',
+                                style: TextStyle(fontSize: fontSize),
+                              ),
+                            ),
+                            ProjectFeatureCard(
+                              width: cardsSize,
                               fontSize: fontSize,
                               title: 'Status',
                               description: Text(
@@ -142,16 +162,10 @@ class _FrienemiesContentDesktopState extends State<FrienemiesContentDesktop> {
                             ),
                           ],
                         ),
-                        Container(
-                          width: size.width * 0.29,
-                          child: CarouselWithIndicator(
-                            height: size.width * 0.35,
-                            imgList: imgList,
-                          ),
-                        ),
                       ],
                     ),
                   ),
+                  SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Container(

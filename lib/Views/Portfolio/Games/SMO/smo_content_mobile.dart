@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/project_description_card.dart';
 import 'package:portfolio/Widgets/Cards/project_feature_card.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
@@ -26,15 +27,19 @@ class _SMOContentMobileState extends State<SMOContentMobile> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ProjectDescriptionCard(
-                  isMobile: true,
-                  width: size.width * 0.8,
-                  title: 'Space Me Out!',
-                  fontSize: 18,
-                  desc: 'SMO is an arcade game where you have to avoid obstacles and collect starst to buy new rocket skins.\n\nIt was inspired by the spaceX mission to the space station in 2020 and its primary goal was to learn how to develop a videogame from scratch. Before starting this project, I took an online course of game development and right after finish it I\'ve made this game a reason to start my path on the world of game design as my life goal.',
+                TitleCard( width: size.width * 0.8, title: 'Space Me Out!', fontSize: 25),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 30.0),
+                  child: ProjectDescriptionCard(
+                    isMobile: true,
+                    width: size.width * 0.8,
+                    title: 'Space Me Out!',
+                    fontSize: 18,
+                    desc: 'SMO is an arcade game where you have to avoid obstacles and collect stars to buy new rockets. Its primary goal was to learn how to develop a videogame from scratch.\n\nBefore starting this project, I took an online course in game development, and right after finish it,  I\'ve made this game, a reason to start my path in the world of game design as my life goal.',
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25, bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: VideoContainer(
                     width: size.width * 0.8,
                     videoURL: 'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FSMO-Trailer.mp4?alt=media&token=384d8485-8b65-49d2-8a5a-cf50dedb6607',
@@ -105,7 +110,7 @@ class _SMOContentMobileState extends State<SMOContentMobile> {
                         fontSize: fontSize,
                         title: 'Year',
                         description: Text(
-                          '* 2020',
+                          '* 2020 - Now',
                           style: TextStyle(fontSize: fontSize),
                         ),
                       ),
