@@ -15,27 +15,36 @@ class ContactContentMobile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: IconCard(
                   title: 'Instagram',
+                  containerSize: 200,
+                  iconSize: 100,
+                  fontSize: 30,
                   icon: FontAwesomeIcons.instagram,
-                  link: 'https://www.instagram.com/bj_poyser/',
+                  link: 'https://www.instagram.com/bjpoyser/',
                   isMobile: true,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: IconCard(
                   title: 'LinkedIn',
+                  containerSize: 200,
+                  iconSize: 100,
+                  fontSize: 30,
                   icon: FontAwesomeIcons.linkedin,
                   link: 'https://www.linkedin.com/in/bjpoyser/',
                   isMobile: true,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: IconCard(
                   title: 'Email',
+                  containerSize: 200,
+                  iconSize: 100,
+                  fontSize: 30,
                   icon: FontAwesomeIcons.envelope,
                   isMail: true,
                   isMobile: true,

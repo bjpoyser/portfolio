@@ -1,52 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Widgets/Cards/icon_route_card.dart';
+
+import '../../Navigation/NavigationService.dart';
+import '../../Navigation/locator.dart';
+import '../../Navigation/router.dart';
+import '../../Widgets/Cards/project_card.dart';
 
 class PortfolioContentMobile extends StatelessWidget {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Center(
-        child: SingleChildScrollView(
-      child: Container(
-        width: size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+    return SingleChildScrollView(
+      controller: _scrollController,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+        child: Center(
+            child: Column(
           children: [
-            SizedBox(height: 50,),
-            IconRouteCard(
-              title: 'Apps',
-              icon: FontAwesomeIcons.mobileAlt,
-              navigationPath: AppsRoute,
-              isMobile: true,
+            ProjectCard(
+              title: 'Purple Frog',
+              role: 'Level Designer & Programmer',
+              picName: 'pf',
+              action: () =>
+                  locator<NavigationService>().navigateTo(PurpleFrogRoute),
             ),
-            SizedBox(height: 50,),
-            IconRouteCard(
-              title: 'Games',
-              icon: FontAwesomeIcons.ghost,
-              navigationPath: GamesRoute,
-              isMobile: true,
+            SizedBox(height: 50),
+            ProjectCard(
+              title: 'Dollify',
+              role: 'Developer',
+              picName: 'dollify',
+              action: () =>
+                  locator<NavigationService>().navigateTo(DollifyRoute),
             ),
-            SizedBox(height: 50,),
-            IconRouteCard(
-              title: 'Fonts',
-              icon: FontAwesomeIcons.font,
-              navigationPath: FontsRoute,
-              isMobile: true,
+            SizedBox(height: 50),
+            ProjectCard(
+              title: 'Dance Jam',
+              role: 'Developer',
+              picName: 'dancejam',
+              action: () =>
+                  locator<NavigationService>().navigateTo(DanceJamRoute),
             ),
-            SizedBox(height: 50,),
-            IconRouteCard(
-              title: 'Assets',
-              icon: FontAwesomeIcons.draftingCompass,
-              navigationPath: ToolsRoute,
-              isMobile: true,
+            SizedBox(height: 50),
+            ProjectCard(
+              title: 'Color 2 Prefab',
+              role: 'Developer',
+              picName: 'c2p',
+              action: () => locator<NavigationService>().navigateTo(C2PRoute),
             ),
-            SizedBox(height: 50,),
           ],
-        ),
+        )),
       ),
-    ));
+    );
   }
 }

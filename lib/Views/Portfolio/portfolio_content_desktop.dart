@@ -1,34 +1,120 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/Navigation/NavigationService.dart';
+import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
-import 'package:portfolio/Widgets/Cards/icon_route_card.dart';
+import 'package:portfolio/Widgets/Cards/project_card.dart';
+import 'package:portfolio/Widgets/Images/silhouette_container.dart';
 
 class PortfolioContentDesktop extends StatelessWidget {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              IconRouteCard(title: 'Apps', icon: FontAwesomeIcons.mobileAlt, navigationPath: AppsRoute,),
-              IconRouteCard(title: 'Games', icon: FontAwesomeIcons.ghost, navigationPath: GamesRoute,)
-            ],
+    Size size = MediaQuery.of(context).size;
+    return Stack(
+      children: [
+        SilhouetteContainer(
+          height: 400,
+          width: 800,
+          picName: 'plane',
+          padding: const EdgeInsets.only(top: 200, left: 400),
+        ),
+        SingleChildScrollView(
+          controller: _scrollController,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
+            child: Center(
+              child: size.width > 1200
+                  ? Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
+                              title: 'Purple Frog',
+                              role: 'Level Designer & Additional Programming',
+                              picName: 'pf',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(PurpleFrogRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Dollify',
+                              role: 'Developer',
+                              picName: 'dollify',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DollifyRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Dance Jam',
+                              role: 'Developer',
+                              picName: 'dancejam',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DanceJamRoute),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 80),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
+                              title: 'Color 2 Prefab',
+                              role: 'Developer',
+                              picName: 'c2p',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(C2PRoute),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
+                              title: 'Purple Frog',
+                              role: 'Level Designer & Additional Programming',
+                              picName: 'pf',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(PurpleFrogRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Dollify',
+                              role: 'Developer',
+                              picName: 'dollify',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DollifyRoute),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 80),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
+                              title: 'Dance Jam',
+                              role: 'Developer',
+                              picName: 'dancejam',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DanceJamRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Color 2 Prefab',
+                              role: 'Developer',
+                              picName: 'c2p',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(C2PRoute),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              IconRouteCard(title: 'Fonts', icon: FontAwesomeIcons.font, navigationPath: FontsRoute,),
-              IconRouteCard(title: 'Assets', icon: FontAwesomeIcons.draftingCompass, navigationPath: ToolsRoute,)
-            ],
-          ),
-        ],
-      )
+        ),
+      ],
     );
   }
 }

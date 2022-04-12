@@ -7,8 +7,8 @@ class VideoContainer extends StatefulWidget {
   final double width;
   final String videoURL;
 
-  const VideoContainer({Key key, @required this.width, @required this.videoURL}) : super(key: key);
-
+  const VideoContainer({Key key, @required this.width, @required this.videoURL})
+      : super(key: key);
 
   @override
   _VideoContainerState createState() => _VideoContainerState();
@@ -44,7 +44,7 @@ class _VideoContainerState extends State<VideoContainer> {
         aspectRatio: _videoPlayerController.value.aspectRatio);
     setState(() {});
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,21 +53,23 @@ class _VideoContainerState extends State<VideoContainer> {
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child: _chewieController != null &&
-                _chewieController.videoPlayerController.value.initialized
+                _chewieController.videoPlayerController.value.isInitialized
             ? Chewie(
                 controller: _chewieController,
               )
             : Center(
-              child: Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircularProgressIndicator(),
+                    CircularProgressIndicator(
+                      color: Global.accentColor,
+                    ),
                     SizedBox(height: 20),
                     Text('Loading'),
                   ],
                 ),
-            ),
+              ),
       ),
     );
   }

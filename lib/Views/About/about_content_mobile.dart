@@ -1,166 +1,503 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/Shared/global.dart';
-import 'package:portfolio/Widgets/Cards/vertical_card.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/Extensions/hover_extensions.dart';
+import '../../Widgets/Images/sizeable_image.dart';
+import '../../Widgets/Texts/clickable_icon.dart';
+import '../../Widgets/Texts/list_items.dart';
+import '../../Shared/global.dart';
 
 class AboutContentMobile extends StatelessWidget {
+  final ScrollController _scrollController = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double fontSize = 20;
-    return Center(
-      child: SingleChildScrollView(
-          child: Container(
-            width: size.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 50,
-                ),
-                VerticalCard(
-                  picName: 'about/me',
-                  picURL: 'https://www.instagram.com/p/By_AWSJgG6N/',
-                  title: 'Benoit Poyser Acuña, ${Global.getAge()}',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+    double width = 380;
+
+    return SingleChildScrollView(
+      controller: _scrollController,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                width: width,
+                decoration: Global.cardBoxDecoration,
+                child: Padding(
+                  padding: const EdgeInsets.all(25),
+                  child: Column(
                     children: [
-                      Text('Developer at Sunna Entertainment', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                      SizedBox(height: 20,),
-                      Text('Costa Rica', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 8.0, right: 8.0, bottom: 10, top: 10),
+                            child: GestureDetector(
+                              onTap: () {
+                                Global.launchURL(
+                                    'https://www.instagram.com/bjpoyser/');
+                              },
+                              child: SizeableImage(
+                                picName: 'about/me',
+                                width: width,
+                                hasBorder: true,
+                              ).showCursorOnHover,
+                            ),
+                          ),
+                          Text(
+                            'Benoit Jamal Poyser Acuña',
+                            style: TextStyle(fontSize: Global.subtitleFontSize),
+                          ),
+                          Text(
+                            'Game Designer & Developer',
+                            style: TextStyle(fontSize: Global.linkFontSize),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 15),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            color: Global.accentColor,
+                            height: 3,
+                            width: 425,
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Gamer and computer systems engineer with a personal emphasis on technical game design, born in Costa Rica, living in Florida, USA. Self-taught person, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
+                                  style: TextStyle(
+                                      fontSize: Global.linkFontSize,
+                                      color: Colors.black),
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Column(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Languages',
+                                    style: TextStyle(
+                                        fontSize: Global.subtitleFontSize),
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      ListItem(
+                                        itemText: " Spanish (Native)",
+                                        fontSize: Global.linkFontSize,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      ListItem(
+                                        itemText: " English (B1+)",
+                                        fontSize: Global.linkFontSize,
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      ListItem(
+                                        itemText: " French (A2)",
+                                        fontSize: Global.linkFontSize,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Education',
+                                    style: TextStyle(
+                                        fontSize: Global.subtitleFontSize),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        ListItem(
+                                          itemText: " M.Sc. Game Design",
+                                          fontSize: Global.linkFontSize,
+                                        ),
+                                        ListItem(
+                                          itemText:
+                                              " Full Sail University, USA, present",
+                                          fontSize: Global.itemFontSize,
+                                          listSymbol: "-",
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        ListItem(
+                                          itemText:
+                                              " B.Sc. in Computer Engineering",
+                                          fontSize: Global.linkFontSize,
+                                        ),
+                                        ListItem(
+                                          itemText:
+                                              " Fidélitas University, Costa Rica, 2021",
+                                          fontSize: Global.itemFontSize,
+                                          listSymbol: "-",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 20,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                width: width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: width,
+                      decoration: Global.cardBoxDecoration,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 25.0, vertical: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Career Interests',
+                              style: TextStyle(
+                                fontSize: Global.title2FontSize,
+                              ),
+                            ),
+                            Container(
+                              color: Global.accentColor,
+                              height: 3,
+                              width: 425,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              width: 370,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 5,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "AAA Video Games"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "Technical Game Design"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "Level Design"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                      fontSize: Global.textFontSize,
+                                      itemText: "Character Design",
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                      fontSize: Global.textFontSize,
+                                      itemText: "Tools Development",
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                      fontSize: Global.textFontSize,
+                                      itemText: "Programming",
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "C#",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "C++",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Java",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Unity 3D",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Blueprints",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Unreal Engine",
+                                            listSymbol: "- ",
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Container(
+                      width: width,
+                      decoration: Global.cardBoxDecoration,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 25.0, vertical: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Personal Interests',
+                              style: TextStyle(
+                                fontSize: Global.title2FontSize,
+                              ),
+                            ),
+                            Container(
+                              color: Global.accentColor,
+                              height: 3,
+                              width: 425,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              width: 370,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 5,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "Competitive Video Games"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "Languages & Cultures"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                        fontSize: Global.textFontSize,
+                                        itemText: "Photography"),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                      fontSize: Global.textFontSize,
+                                      itemText: "Traveling. I\'ve been in:",
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Costa Rica",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Panama",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Mexico",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "USA",
+                                            listSymbol: "- ",
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    ListItem(
+                                      fontSize: Global.textFontSize,
+                                      itemText: "Music:",
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 20),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Guitar",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Ukulele",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Singing",
+                                            listSymbol: "- ",
+                                          ),
+                                          ListItem(
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Bass Guitar",
+                                            listSymbol: "- ",
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                VerticalCard(
-                  picName: 'panama',
-                  picURL: 'https://www.instagram.com/p/Bs-lXj1gujM/',
-                  title: 'Computer Systems Engineer',
-                  message: Text('Fidélitas University, Costa Rica', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'panama-beach',
-                  picURL: 'https://www.instagram.com/p/BtS5n9egVo7/',
-                  title: 'Bilingual',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              SizedBox(height: 40),
+              Container(
+                width: width,
+                decoration: Global.cardBoxDecoration,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('- Spanish (Native)', style: TextStyle(fontSize: fontSize),),
-                      SizedBox(height: 15,),
-                      Text('- English (B2+)', style: TextStyle(fontSize: fontSize),),
-                      SizedBox(height: 15,),
-                      Text('- French (Starting)', style: TextStyle(fontSize: fontSize),),
+                      ClickableIcon(
+                        icon: FontAwesomeIcons.instagram,
+                        normalColor: Colors.black,
+                        action: () {
+                          Global.launchURL(
+                              'https://www.instagram.com/bjpoyser/');
+                        },
+                      ),
+                      SizedBox(width: 20),
+                      ClickableIcon(
+                          icon: FontAwesomeIcons.linkedin,
+                          normalColor: Colors.black,
+                          action: () {
+                            Global.launchURL(
+                                'https://www.linkedin.com/in/bjpoyser/');
+                          }),
+                      SizedBox(width: 20),
+                      ClickableIcon(
+                          icon: FontAwesomeIcons.graduationCap,
+                          normalColor: Colors.black,
+                          size: 45,
+                          action: () {
+                            Global.launchURL(
+                                'https://express.adobe.com/page/j9EzXl3iA50tk/');
+                          }),
+                      SizedBox(width: 20),
+                      ClickableIcon(
+                          icon: FontAwesomeIcons.filePdf,
+                          normalColor: Colors.black,
+                          size: 40,
+                          action: () {
+                            Global.launchURL(
+                                'https://drive.google.com/file/d/16KLVcPmqzsx3O0oiuZ7Y_W5UfDhAs0uT/view?usp=sharing');
+                          }),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'cars',
-                  picURL: 'https://www.instagram.com/p/Bv5LuRmAPYp/',
-                  title: 'Programmer',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('- HTML, CSS, BOOTSTRAP, JS & JQUERY', style: TextStyle(fontSize: fontSize - 2),),
-                      SizedBox(height: 15,),
-                      Text('- C#, JAVA & DART', style: TextStyle(fontSize: fontSize - 2),),
-                      SizedBox(height: 15,),
-                      Text('- FLUTTER & ASP.NET', style: TextStyle(fontSize: fontSize - 2),),
-                      SizedBox(height: 15,),
-                      Text('- UNITY 3D & PHOTOSHOP', style: TextStyle(fontSize: fontSize - 2),),
-                      SizedBox(height: 15,),
-                      Text('- SQL, PL/SQL & NoSQL', style: TextStyle(fontSize: fontSize - 2),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'beach',
-                  picURL: 'https://www.instagram.com/p/BtMgQWNgGE0/',
-                  title: 'Photographer',
-                  message: Text('The secret is to find beauty anywhere', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'ukulele',
-                  picURL: 'https://www.instagram.com/p/BUk_XT-g2bS/',
-                  title: 'Musician',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('- Acoustic Guitar', style: TextStyle(fontSize: fontSize),),
-                      SizedBox(height: 15,),
-                      Text('- Bass Guitar', style: TextStyle(fontSize: fontSize),),
-                      SizedBox(height: 15,),
-                      Text('- Ukulele', style: TextStyle(fontSize: fontSize),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'dragon',
-                  picURL: 'https://www.instagram.com/p/Bq0vYzkHKSG/',
-                  title: 'Potter Head',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Wit beyond measure is man\'s greatest treasure', style: TextStyle(fontSize: fontSize),),
-                      SizedBox(height: 15,),
-                      Text('- Rowena Ravenclaw', style: TextStyle(fontSize: fontSize),),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'plane',
-                  picURL: 'https://www.instagram.com/p/Bq8aEfxHL1F/',
-                  title: 'Traveler',
-                  message: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Out there is a whole world waiting for me', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                      SizedBox(height: 15,),
-                      Text('I\'ve been in Costa Rica, Panamá, México & USA', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                VerticalCard(
-                  picName: 'dominoes',
-                  picURL: 'https://www.instagram.com/p/BZpqPNqAekB/',
-                  title: 'Gamer',
-                  message: Text('Life is a game, Play It!', style: TextStyle(fontSize: fontSize), textAlign: TextAlign.center,),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 80,
+              )
+            ],
           ),
         ),
+      ),
     );
   }
 }

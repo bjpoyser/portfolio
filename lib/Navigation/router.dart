@@ -3,37 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
+import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
-import 'package:portfolio/Views/Portfolio/Apps/Dollify/dollify_view.dart';
-import 'package:portfolio/Views/Portfolio/Apps/MarketMap/market_map_view.dart';
-import 'package:portfolio/Views/Portfolio/Apps/Misas/mass_view.dart';
-import 'package:portfolio/Views/Portfolio/Apps/apps_view.dart';
-import 'package:portfolio/Views/Portfolio/Fonts/fonts_view.dart';
-import 'package:portfolio/Views/Portfolio/Games/Frienemies/frienemies_view.dart';
-import 'package:portfolio/Views/Portfolio/Games/SMO/smo_view.dart';
-import 'package:portfolio/Views/Portfolio/Games/SchoolDay/school_day_view.dart';
-import 'package:portfolio/Views/Portfolio/Games/games_view.dart';
-import 'package:portfolio/Views/Portfolio/Tools/Color2Prefab/c2p_view.dart';
-import 'package:portfolio/Views/Portfolio/Tools/tools_view.dart';
+import 'package:portfolio/Views/Portfolio/Color2Prefab/c2p_view.dart';
+import 'package:portfolio/Views/Portfolio/Dollify/dollify_view.dart';
+import 'package:portfolio/Views/Portfolio/PurpleFrog/purple_frog_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
+
+import '../Views/Portfolio/DanceJam/dancejam_view.dart';
 
 const String HomeRoute = '/';
 const String AboutRoute = '/about';
 const String ContactRoute = '/contact';
 const String PortfolioRoute = '/portfolio';
-const String FontsRoute = '/portfolio/fonts';
-const String ToolsRoute = '/portfolio/assets';
-const String C2PRoute = '/portfolio/assets/c2p';
-const String AppsRoute = '/portfolio/apps';
-const String LxFRoute = '/portfolio/apps/lxf';
-const String MassRoute = '/portfolio/apps/misas-lourdes';
-const String MarketMapRoute = '/portfolio/APPS/market-map';
-const String GamesRoute = '/portfolio/games';
-const String SchoolDayRoute = '/portfolio/games/school-day';
-const String FrienemiesRoute = '/portfolio/games/frienemies';
-const String SMORoute = '/portfolio/games/smo';
+const String C2PRoute = '/portfolio/c2p';
+const String DollifyRoute = '/portfolio/dollify';
+const String PurpleFrogRoute = '/portfolio/save-the-purple-frog';
+const String DanceJamRoute = '/portfolio/DanceJam';
 const String UnderConstructionRoute = '/underConstruction';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -46,28 +34,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(ContactView(), settings);
     case PortfolioRoute:
       return _getPageRoute(PortfolioView(), settings);
-    case FontsRoute:
-      return _getPageRoute(FontsView(), settings);
-    case ToolsRoute:
-      return _getPageRoute(ProtosView(), settings);
     case C2PRoute:
       return _getPageRoute(Color2PrefabView(), settings);
-    case AppsRoute:
-      return _getPageRoute(AppsView(), settings);
-    case LxFRoute:
+    case DollifyRoute:
       return _getPageRoute(DollifyView(), settings);
-    case MassRoute:
-      return _getPageRoute(MassView(), settings);
-    case MarketMapRoute:
-      return _getPageRoute(MarketMapView(), settings);
-    case GamesRoute:
-      return _getPageRoute(GamesView(), settings);
-    case SchoolDayRoute:
-      return _getPageRoute(SchoolDayView(), settings);
-    case FrienemiesRoute:
-      return _getPageRoute(FrienemiesView(), settings);
-    case SMORoute:
-      return _getPageRoute(SMOView(), settings);
+    case DanceJamRoute:
+      return _getPageRoute(DanceJamView(), settings);
+    case PurpleFrogRoute:
+      return _getPageRoute(PurpleFrogView(), settings);
     default:
       return _getPageRoute(UnderConstruction(), settings);
   }
@@ -104,7 +78,7 @@ class _FadeRoute extends PageRouteBuilder {
 
 class UnderConstruction extends StatelessWidget {
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,22 +110,25 @@ class UnderConstruction extends StatelessWidget {
         builder: (context) => FabCircularMenu(
           key: fabKey,
           alignment: Alignment.bottomRight,
-          ringColor: Colors.lightGreenAccent[700],
+          ringColor: Global.accentColor,
           ringDiameter: 500.0,
           ringWidth: 150.0,
           fabSize: 65.0,
           fabElevation: 10.0,
           fabIconBorder: CircleBorder(),
-          fabColor: Colors.lightGreenAccent[700],
+          fabColor: Global.accentColor,
+          fabOpenColor: Global.secondAccentColor,
+          fabOpenIcon: Icon(Icons.menu, color: Colors.white),
+          fabCloseIcon: Icon(Icons.close, color: Colors.white),
           children: [
             ClipOval(
               child: Material(
-                color: Colors.lightGreenAccent[700], // button color
+                color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
                     locator<NavigationService>().navigateTo(HomeRoute);
                   },
-                  splashColor: Colors.lightGreenAccent, // inkwell color
+                  splashColor: Global.accentColor, // inkwell color
                   child: Container(
                     width: 100,
                     height: 100,
@@ -159,10 +136,10 @@ class UnderConstruction extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.home),
+                        Icon(FontAwesomeIcons.house, color: Colors.white),
                         Text(
                           'Home',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],
                     ),
@@ -172,12 +149,12 @@ class UnderConstruction extends StatelessWidget {
             ),
             ClipOval(
               child: Material(
-                color: Colors.lightGreenAccent[700], // button color
+                color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
                     locator<NavigationService>().navigateTo(AboutRoute);
                   },
-                  splashColor: Colors.lightGreenAccent, // inkwell color
+                  splashColor: Global.accentColor, // inkwell color
                   child: Container(
                     width: 100,
                     height: 100,
@@ -185,10 +162,10 @@ class UnderConstruction extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.addressBook),
+                        Icon(FontAwesomeIcons.addressBook, color: Colors.white),
                         Text(
                           'About',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],
                     ),
@@ -198,12 +175,12 @@ class UnderConstruction extends StatelessWidget {
             ),
             ClipOval(
               child: Material(
-                color: Colors.lightGreenAccent[700], // button color
+                color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
                     locator<NavigationService>().navigateTo(PortfolioRoute);
                   },
-                  splashColor: Colors.lightGreenAccent, // inkwell color
+                  splashColor: Global.accentColor, // inkwell color
                   child: Container(
                     width: 100,
                     height: 100,
@@ -211,10 +188,10 @@ class UnderConstruction extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.icons),
+                        Icon(FontAwesomeIcons.icons, color: Colors.white),
                         Text(
                           'Portfolio',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],
                     ),
@@ -224,12 +201,12 @@ class UnderConstruction extends StatelessWidget {
             ),
             ClipOval(
               child: Material(
-                color: Colors.lightGreenAccent[700], // button color
+                color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
                     locator<NavigationService>().navigateTo(ContactRoute);
                   },
-                  splashColor: Colors.lightGreenAccent,
+                  splashColor: Global.accentColor,
                   child: Container(
                     width: 100,
                     height: 100,
@@ -237,10 +214,10 @@ class UnderConstruction extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.phoneAlt),
+                        Icon(FontAwesomeIcons.phoneFlip, color: Colors.white),
                         Text(
                           'Contact',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],
                     ),

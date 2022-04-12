@@ -4,7 +4,30 @@ import 'package:url_launcher/url_launcher.dart';
 
 abstract class Global {
   //Colors
-  static const Color titleColor = const Color(0xff7e7e7e);
+  static const Color disabledColor = const Color(0xff7e7e7e);
+
+  //Virtuos Colors
+  static const Color accentColor = const Color(0xff005470);
+  static const Color secondAccentColor = const Color(0xfff4841c);
+
+/*
+  //Rockstar Colors
+  static const Color accentColor = const Color(0xff7947b8);
+  static const Color secondAccentColor = Color(0xFF55A1D3);
+*/
+  /*
+  //My Colors
+  static const Color accentColor = const Color(0xff0FA824);
+  static const Color secondAccentColor = const Color(0xff6b0fa8);
+  */
+
+  //Font Sizes
+  static const double title1FontSize = 40;
+  static const double title2FontSize = 30;
+  static const double subtitleFontSize = 20;
+  static const double textFontSize = 18;
+  static const double linkFontSize = 16;
+  static const double itemFontSize = 14;
 
   //Shadow
   static const BoxDecoration cardBoxDecoration = BoxDecoration(
@@ -43,7 +66,7 @@ abstract class Global {
     color: Colors.white,
   );
 
-   static launchURL(url) async {
+  static launchURL(url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -54,16 +77,9 @@ abstract class Global {
   static launchMailto() async {
     final mailtoLink = Mailto(
       to: ['bj_hubs@hotmail.com'],
-      subject: 'greatings',
-      body: 'Hi Benoit!',
+      subject: '',
+      body: '',
     );
     await launch('$mailtoLink');
-  }
-
-  static String getAge() {
-    DateTime currentDate = DateTime.now(); 
-    DateTime thisYearBday = DateTime(currentDate.year, 1, 7, 0, 0, 0, 0, 0);
-    if(currentDate.isBefore(thisYearBday)) return'${currentDate.year - 1999 - 1}';
-    return '${currentDate.year - 1999}';
   }
 }

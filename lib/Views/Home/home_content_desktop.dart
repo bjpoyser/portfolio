@@ -4,9 +4,12 @@ import 'package:portfolio/Widgets/Cards/presentation_card.dart';
 import 'package:portfolio/Extensions/hover_extensions.dart';
 
 class HomeContentDesktop extends StatelessWidget {
+  final ScrollController _scrollController = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      controller: _scrollController,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +26,7 @@ class HomeContentDesktop extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Game & Software Developer',
+                  'Game Designer & Developer',
                   style: TextStyle(fontSize: 25),
                 )
               ],
@@ -36,7 +39,7 @@ class HomeContentDesktop extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 PresentationCard(
-                  title: 'About Me',
+                  title: 'About',
                   picName: 'lol',
                   navigationPath: AboutRoute,
                 ).moveUpOnHover,
@@ -46,7 +49,7 @@ class HomeContentDesktop extends StatelessWidget {
                   navigationPath: PortfolioRoute,
                 ).moveUpOnHover,
                 PresentationCard(
-                  title: 'Contact Me',
+                  title: 'Contact',
                   picName: 'coffee',
                   navigationPath: ContactRoute,
                 ).moveUpOnHover

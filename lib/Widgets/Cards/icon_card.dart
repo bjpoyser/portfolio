@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Extensions/hover_extensions.dart';
 
@@ -9,7 +8,11 @@ class IconCard extends StatefulWidget {
     this.title,
     this.icon,
     this.link = '',
-    this.isMail = false, this.isMobile = false,
+    this.isMail = false,
+    this.isMobile = false,
+    this.fontSize = 50,
+    this.containerSize = 300,
+    this.iconSize = 200,
   }) : super(key: key);
 
   final String title;
@@ -17,6 +20,9 @@ class IconCard extends StatefulWidget {
   final String link;
   final bool isMail;
   final bool isMobile;
+  final double fontSize;
+  final double containerSize;
+  final double iconSize;
 
   @override
   _IconCardState createState() => _IconCardState();
@@ -36,22 +42,26 @@ class _IconCardState extends State<IconCard> {
           widget.isMail ? Global.launchMailto() : Global.launchURL(widget.link);
         },
         child: Container(
-          width: 300,
-          height: 300,
+          width: widget.containerSize,
+          height: widget.containerSize,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 widget.icon,
-                size: 200,
-                color: isHover || widget.isMobile ? Colors.black : Global.titleColor,
+                size: widget.iconSize,
+                color: isHover || widget.isMobile
+                    ? Colors.black
+                    : Global.disabledColor,
               ),
               Text(
                 widget.title,
                 style: TextStyle(
-                    fontSize: 50,
-                    color: isHover || widget.isMobile ? Colors.black : Global.titleColor),
+                    fontSize: widget.fontSize,
+                    color: isHover || widget.isMobile
+                        ? Colors.black
+                        : Global.disabledColor),
               )
             ],
           ),

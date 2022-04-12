@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:portfolio/Widgets/TranslateOnHover/increase_size_on_hover.dart';
-import 'package:portfolio/Widgets/TranslateOnHover/translate_left_on_hover.dart';
-import 'package:portfolio/Widgets/TranslateOnHover/translate_right_on_hover.dart';
-// ignore: avoid_web_libraries_in_flutter
+import 'package:portfolio/Widgets/Effects/increase_size_on_hover.dart';
+import 'package:portfolio/Widgets/Effects/translate_text_up_on_hover.dart';
 import 'dart:html' as html;
 
-import 'package:portfolio/Widgets/TranslateOnHover/translate_up_on_hover.dart';
+import 'package:portfolio/Widgets/Effects/translate_up_on_hover.dart';
 
-extension HoverExtensions on Widget{
-  static final appContainer = html.window.document.getElementById('app-container');
+extension HoverExtensions on Widget {
+  static final appContainer =
+      html.window.document.getElementById('app-container');
 
-  Widget get showCursorOnHover{
+  Widget get showCursorOnHover {
     return MouseRegion(
       child: this,
       cursor: SystemMouseCursors.click,
@@ -19,26 +17,14 @@ extension HoverExtensions on Widget{
   }
 
   Widget get moveUpOnHover {
-    return TranslateUpOnHover(
-      child: this
-    );
+    return TranslateUpOnHover(child: this);
   }
 
-  Widget get moveLeftOnHover {
-    return TranslateLeftOnHover(
-      child: this
-    );
+  Widget get moveTextUpOnHover {
+    return TranslateTextUpOnHover(child: this);
   }
 
-  Widget get moveRightOnHover {
-    return TranslateRightOnHover(
-      child: this
-    );
-  }
-
-  Widget get increaseSizeOnHover{
-    return IncreaseSizeOnHover(
-      child: this
-    );
+  Widget get increaseSizeOnHover {
+    return IncreaseSizeOnHover(child: this);
   }
 }

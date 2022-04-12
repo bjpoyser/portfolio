@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Shared/global.dart';
-import 'package:portfolio/Widgets/Images/color_changeable_image.dart';
 
 class PresentationCard extends StatefulWidget {
   final String title;
@@ -56,16 +54,16 @@ class _PresentationCardState extends State<PresentationCard> {
                               fontSize: 40,
                               color: isHover || widget.isMobile
                                   ? Colors.black
-                                  : Global.titleColor,
+                                  : Global.disabledColor,
                             ),
                           ),
                         ),
                       ),
-                      ColorChangeableImage(
-                        isHover: isHover,
-                        picName: widget.picName,
-                        isMobile: widget.isMobile,
-                      ),
+                      Image(
+                        image: AssetImage(
+                            'assets/images/home/${widget.picName}.png'),
+                        fit: BoxFit.cover,
+                      )
                     ],
                   ),
                 ),

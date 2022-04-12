@@ -1,11 +1,11 @@
 {
-    "name": "Game & Software Developer Portfolio",
+    "name": "Game Developer & Designer Portfolio",
     "short_name": "Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Game & Software Developer Portfolio made with Flutter Web.",
+    "description": "Game Developer & Designer Portfolio made with Flutter Web.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

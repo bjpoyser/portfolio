@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Shared/global.dart';
-import 'package:portfolio/Widgets/Cards/project_logo.dart';
-import 'package:portfolio/Widgets/Cards/title_card.dart';
 import 'package:portfolio/Extensions/hover_extensions.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
+import 'package:portfolio/Widgets/Images/project_logo.dart';
 
 class ProjectCard extends StatefulWidget {
   final String title;
@@ -48,7 +48,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     TitleCard(
                       width: widget.cardWidth,
                       title: widget.title,
-                      fontSize: 30,
+                      fontSize: Global.title2FontSize,
                     ),
                     ProjectLogo(
                         action: widget.action,
@@ -70,7 +70,7 @@ class _ProjectCardState extends State<ProjectCard> {
                   TitleCard(
                     width: widget.cardWidth,
                     title: widget.title,
-                    fontSize: 30,
+                    fontSize: Global.title2FontSize,
                   ),
                   ProjectLogo(
                       action: widget.action,

@@ -6,7 +6,8 @@ class TitleCard extends StatelessWidget {
   final String title;
   final double fontSize;
 
-  const TitleCard({Key key, @required this.width, @required this.title, this.fontSize = 50})
+  const TitleCard(
+      {Key key, @required this.width, @required this.title, this.fontSize = 50})
       : super(key: key);
 
   @override

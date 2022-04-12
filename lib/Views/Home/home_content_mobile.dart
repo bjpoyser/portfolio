@@ -14,7 +14,7 @@ class HomeContentMobile extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 50),
+                padding: const EdgeInsets.only(top: 40),
                 child: Container(
                   decoration: Global.cardBoxDecoration,
                   child: Padding(
@@ -32,7 +32,7 @@ class HomeContentMobile extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          'Game & Software Developer',
+                          'Game Designer & Developer',
                           style: TextStyle(fontSize: 20),
                           textAlign: TextAlign.center,
                         )
@@ -41,28 +41,28 @@ class HomeContentMobile extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
               PresentationCard(
-                title: 'About Me',
-                picName: 'lol',
+                title: 'About',
+                picName: 'home/lol',
                 navigationPath: AboutRoute,
                 isMobile: true,
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 15),
               PresentationCard(
                 title: 'Portfolio',
-                picName: 'keyboard',
+                picName: 'home/keyboard',
                 navigationPath: PortfolioRoute,
                 isMobile: true,
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 15),
               PresentationCard(
-                title: 'Contact Me',
-                picName: 'coffee',
+                title: 'Contact',
+                picName: 'home/coffee',
                 navigationPath: ContactRoute,
                 isMobile: true,
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 30),
             ],
           ),
         ),
