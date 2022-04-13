@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Bj Poyser - Game Developer',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.orange,
         textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
       ),
       builder: (context, child) => child,

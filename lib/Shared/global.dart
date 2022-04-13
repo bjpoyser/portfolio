@@ -15,12 +15,11 @@ abstract class Global {
   static const Color accentColor = const Color(0xff7947b8);
   static const Color secondAccentColor = Color(0xFF55A1D3);
 */
-  /*
+/*
   //My Colors
   static const Color accentColor = const Color(0xff0FA824);
   static const Color secondAccentColor = const Color(0xff6b0fa8);
-  */
-
+*/
   //Font Sizes
   static const double title1FontSize = 40;
   static const double title2FontSize = 30;

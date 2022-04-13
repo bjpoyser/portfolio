@@ -5,6 +5,7 @@ import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
 import 'package:portfolio/Shared/global.dart';
+import 'package:portfolio/Views/Portfolio/Color2Prefab/c2p_content_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'c2p_content_desktop.dart';
@@ -28,7 +29,7 @@ class _Color2PrefabViewState extends State<Color2PrefabView> {
               child: ScreenTypeLayout(
             desktop: Color2PrefabContentDesktop(),
             mobile: Color2PrefabContentMobile(),
-            tablet: Color2PrefabContentDesktop(),
+            tablet: Color2PrefabContentTablet(),
           ))
         ],
       ),

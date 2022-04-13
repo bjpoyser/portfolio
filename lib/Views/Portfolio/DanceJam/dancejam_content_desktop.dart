@@ -92,7 +92,7 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Dance Jam is based is a classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
+                          'Dance Jam is based in the classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
@@ -175,38 +175,38 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
       ),
     );
   }
+
+  final List<Widget> imgList = [
+    smallImage(240, 'carousel/dj/dj-1'),
+    smallImage(240, 'carousel/dj/dj-2'),
+    smallImage(240, 'carousel/dj/dj-3'),
+    smallImage(240, 'carousel/dj/dj-4'),
+    smallImage(240, 'carousel/dj/dj-5'),
+  ];
+
+  final List<Image> qrList = [
+    Image(
+      image: AssetImage('assets/images/QR/dollify-android.png'),
+      fit: BoxFit.cover,
+    ),
+    Image(
+      image: AssetImage('assets/images/QR/dollify-iOS.png'),
+      fit: BoxFit.cover,
+    ),
+  ];
+
+  final List<String> devList = [
+    'Genre: Casual',
+    'Engine: Unity 3D',
+    'Platform: Android & IOS',
+    'Game Mode: Single Player'
+  ];
+
+  final List<String> dutiesList = [
+    'UI Design',
+    'Bug Fixing',
+    'Assets Integration',
+    'QA',
+    'Functionality Integration'
+  ];
 }
-
-final List<Widget> imgList = [
-  smallImage(240, 'carousel/dj/dj-1'),
-  smallImage(240, 'carousel/dj/dj-2'),
-  smallImage(240, 'carousel/dj/dj-3'),
-  smallImage(240, 'carousel/dj/dj-4'),
-  smallImage(240, 'carousel/dj/dj-5'),
-];
-
-final List<Image> qrList = [
-  Image(
-    image: AssetImage('assets/images/QR/dollify-android.png'),
-    fit: BoxFit.cover,
-  ),
-  Image(
-    image: AssetImage('assets/images/QR/dollify-iOS.png'),
-    fit: BoxFit.cover,
-  ),
-];
-
-final List<String> devList = [
-  'Genre: Casual',
-  'Engine: Unity 3D',
-  'Platform: Android & IOS',
-  'Game Mode: Single Player'
-];
-
-final List<String> dutiesList = [
-  'UI Design',
-  'Bug Fixing',
-  'Assets Integration',
-  'QA',
-  'Functionality Integration'
-];

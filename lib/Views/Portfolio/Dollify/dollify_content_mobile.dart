@@ -178,7 +178,7 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                     ImageWithHeaderCard(
                       cardWidth: width,
                       imageWidth: width,
-                      picName: 'carousel/dollify/me-doll',
+                      picName: 'carousel/dollify/ombre-update',
                       title: 'Ombre Update',
                     ),
                   ],
@@ -197,7 +197,7 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                         width: width,
                         child: CarouselWithIndicator(
                           imgList: imgList,
-                          height: width * 1.3,
+                          height: 500,
                         ),
                       ),
                     ],
@@ -244,10 +244,10 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
   }
 
   final List<Widget> imgList = [
-    smallImage(240, 'carousel/dollify/me-doll'),
-    smallImage(240, 'carousel/dollify/wal-zer-dolls'),
-    smallImage(240, 'carousel/dollify/avatar'),
-    smallImage(240, 'carousel/dollify/lucifer'),
+    smallImage(300, 'carousel/dollify/me-doll'),
+    smallImage(300, 'carousel/dollify/wal-zer-dolls'),
+    smallImage(300, 'carousel/dollify/avatar'),
+    smallImage(300, 'carousel/dollify/lucifer'),
   ];
 
   final List<String> devList = [

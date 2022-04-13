@@ -212,7 +212,7 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
                         children: [
                           TitleCard(
                             width: 480,
-                            title: 'Scan to Download',
+                            title: 'Scan or Tap to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
                           Container(

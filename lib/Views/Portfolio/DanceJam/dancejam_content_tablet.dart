@@ -9,17 +9,18 @@ import 'package:portfolio/Widgets/Cards/title_card.dart';
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
 
-class DollifyContentTablet extends StatefulWidget {
+class DanceJamContentTablet extends StatefulWidget {
   @override
-  _DollifyContentTabletState createState() => _DollifyContentTabletState();
+  _DanceJamContentTabletState createState() => _DanceJamContentTabletState();
 }
 
-class _DollifyContentTabletState extends State<DollifyContentTablet> {
+class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
   final ScrollController _scrollController = new ScrollController();
 
   @override
   Widget build(BuildContext context) {
     double width = 730;
+
     return SingleChildScrollView(
       controller: _scrollController,
       child: Center(
@@ -32,8 +33,8 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                 Container(
                   width: width,
                   child: ProjectHeader(
-                    picName: 'logos/logo-dollify',
-                    projectTitle: 'Dollify - Updates',
+                    picName: 'logos/logo-dancejam',
+                    projectTitle: 'Dance Jame - Relaunch',
                     titleContainerSize: 560,
                   ),
                 ),
@@ -42,7 +43,7 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                   child: VideoContainer(
                     width: width,
                     videoURL:
-                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FDollify-Demo.mp4?alt=media&token=631c301a-aadb-4c07-b969-c24dca164860',
+                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FDanceJam.mp4?alt=media&token=54b7eedf-da4b-4a5a-97eb-24ab0bcd1136',
                   ),
                 ),
                 Container(
@@ -51,11 +52,13 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
                             Text(
-                              'Dollify is an app of ',
+                              'Dance Jam is a game of ',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
@@ -79,37 +82,24 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                                       'https://www.instagram.com/sunnastudio/');
                                 }),
                             Text(
-                              ' in 2018.',
-                              style:
-                                  TextStyle(fontSize: Global.subtitleFontSize),
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Text(
-                              'With this app, you can create dolls using the unique art of ',
+                              ' and',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
-                            SimpleLink(
-                                text: '@Dave.xp',
-                                fontSize: Global.subtitleFontSize,
-                                action: () {
-                                  Global.launchURL(
-                                      'https://www.instagram.com/dave.xp/');
-                                }),
-                            Text(
-                              '.',
-                              style:
-                                  TextStyle(fontSize: Global.subtitleFontSize),
-                            )
                           ],
+                        ),
+                        Text(
+                          'relaunch in February, 2022.',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Dollify has more than 10.000.000 downloads just on Android devices and has a rating of 4.5 in both stores (Android and Apple). I was assigned to this project to develop the Duos Update, released in July 2021, The Fantasy Pack, released in September 2021, and Ombre Update Released in February 2022.',
+                          'Dance Jam is based in the classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Earn accorns to unlock new dance moves and skins, and get the premium pack to get more characters, dance moves and environments.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         )
                       ],
@@ -126,7 +116,7 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                       ListContainer(
                         listTitle: 'Development',
                         itemsList: devList,
-                        containerHeight: 385,
+                        containerHeight: 340,
                         containerWidth: 350,
                       ),
                       ListContainer(
@@ -136,34 +126,6 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                       ),
                     ],
                   ),
-                ),
-                SizedBox(height: 40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ImageWithHeaderCard(
-                      cardWidth: 230,
-                      imageWidth: 130,
-                      picName: 'carousel/dollify/me-ella-dolls',
-                      title: 'Duos Update',
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: ImageWithHeaderCard(
-                        cardWidth: 230,
-                        imageWidth: 130,
-                        picName: 'carousel/dollify/chico-bestia',
-                        title: 'Fantasy Update',
-                      ),
-                    ),
-                    ImageWithHeaderCard(
-                      cardWidth: 230,
-                      imageWidth: 130,
-                      picName: 'carousel/dollify/ombre-update',
-                      title: 'Ombre Update',
-                    ),
-                  ],
                 ),
                 SizedBox(height: 40),
                 Row(
@@ -221,17 +183,18 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
   }
 
   final List<Widget> imgList = [
-    smallImage(240, 'carousel/dollify/me-doll'),
-    smallImage(240, 'carousel/dollify/wal-zer-dolls'),
-    smallImage(240, 'carousel/dollify/avatar'),
-    smallImage(240, 'carousel/dollify/lucifer'),
+    smallImage(240, 'carousel/dj/dj-1'),
+    smallImage(240, 'carousel/dj/dj-2'),
+    smallImage(240, 'carousel/dj/dj-3'),
+    smallImage(240, 'carousel/dj/dj-4'),
+    smallImage(240, 'carousel/dj/dj-5'),
   ];
 
   final List<Widget> qrList = [
     GestureDetector(
       onTap: () {
         Global.launchURL(
-            'https://play.google.com/store/apps/details?id=com.davexp.dollify');
+            'https://play.google.com/store/apps/details?id=com.davexp.dancematch');
       },
       child: Image(
         image: AssetImage('assets/images/QR/dollify-android.png'),
@@ -240,7 +203,8 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
     ),
     GestureDetector(
       onTap: () {
-        Global.launchURL('https://apps.apple.com/us/app/dollify/id1444697551');
+        Global.launchURL(
+            'https://apps.apple.com/us/app/dance-jam/id1532622112?msclkid=ea804ad3bac611eca9c30504e90bac02');
       },
       child: Image(
         image: AssetImage('assets/images/QR/dollify-iOS.png'),
@@ -250,7 +214,7 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
   ];
 
   final List<String> devList = [
-    'Genre: Avatar Creator',
+    'Genre: Casual',
     'Engine: Unity 3D',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
@@ -259,7 +223,6 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
   final List<String> dutiesList = [
     'UI Design',
     'Bug Fixing',
-    'Optimization',
     'Assets Integration',
     'QA',
     'Functionality Integration'

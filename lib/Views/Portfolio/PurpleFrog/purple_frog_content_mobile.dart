@@ -98,6 +98,29 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
                 SizedBox(height: 40),
                 Container(
                   width: width,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ListContainer(
+                        listTitle: 'Development',
+                        itemsList: devList,
+                        titleSize: 25,
+                        listSize: Global.textFontSize,
+                      ),
+                      SizedBox(height: 40),
+                      ListContainer(
+                        listTitle: 'Resposibilities',
+                        itemsList: dutiesList,
+                        titleSize: 25,
+                        listSize: Global.textFontSize,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 40),
+                Container(
+                  width: width,
                   decoration: Global.cardBoxDecoration,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
@@ -121,29 +144,6 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
                         ),
                       ],
                     ),
-                  ),
-                ),
-                SizedBox(height: 40),
-                Container(
-                  width: width,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ListContainer(
-                        listTitle: 'Development',
-                        itemsList: devList,
-                        titleSize: 25,
-                        listSize: Global.textFontSize,
-                      ),
-                      SizedBox(height: 40),
-                      ListContainer(
-                        listTitle: 'Resposibilities',
-                        itemsList: dutiesList,
-                        titleSize: 25,
-                        listSize: Global.textFontSize,
-                      ),
-                    ],
                   ),
                 ),
                 SizedBox(height: 40),
@@ -184,7 +184,7 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
                         width: width,
                         child: CarouselWithIndicator(
                           imgList: imgList,
-                          height: width * 1.3,
+                          height: 500,
                         ),
                       ),
                     ],
@@ -245,11 +245,11 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
   }
 
   final List<Widget> imgList = [
-    smallImage(1000, 'carousel/pf/pf-1'),
-    smallImage(1000, 'carousel/pf/pf-2'),
-    smallImage(1000, 'carousel/pf/pf-3'),
-    smallImage(1000, 'carousel/pf/pf-4'),
-    smallImage(1000, 'carousel/pf/pf-5'),
+    smallImage(300, 'carousel/pf/pf-1'),
+    smallImage(300, 'carousel/pf/pf-2'),
+    smallImage(300, 'carousel/pf/pf-3'),
+    smallImage(300, 'carousel/pf/pf-4'),
+    smallImage(300, 'carousel/pf/pf-5'),
   ];
 
   final List<String> devList = [

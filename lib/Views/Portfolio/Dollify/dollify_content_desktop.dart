@@ -155,7 +155,7 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
                     ImageWithHeaderCard(
                       cardWidth: 240,
                       imageWidth: 130,
-                      picName: 'carousel/dollify/me-doll',
+                      picName: 'carousel/dollify/ombre-update',
                       title: 'Ombre Update',
                     ),
                   ],
