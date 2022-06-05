@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
 import '../../../Shared/global.dart';
 import '../../../Widgets/Cards/icon_card.dart';
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Widgets/Cards/list_container.dart';
-import '../../../Widgets/Cards/title_card.dart';
 import '../../../Widgets/Texts/simple_link.dart';
 
 class DanceJamContentMobile extends StatefulWidget {
@@ -144,71 +142,54 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    ImageWithHeaderCard(
+                      cardWidth: width,
+                      imageWidth: width,
+                      picName: 'carousel/dj/dj-1',
+                      title: 'Main Menu',
+                    ),
+                    SizedBox(height: 40),
+                    ImageWithHeaderCard(
+                      cardWidth: width,
+                      imageWidth: width,
+                      picName: 'carousel/dj/dj-2',
+                      title: 'Casual Game Mode',
+                    ),
+                    SizedBox(height: 40),
+                    ImageWithHeaderCard(
+                      cardWidth: width,
+                      imageWidth: width,
+                      picName: 'carousel/dj/dj-5',
+                      title: 'Pair Matched',
+                    ),
+                    SizedBox(height: 40),
                     Container(
                       decoration: Global.cardBoxDecoration,
-                      child: Column(
-                        children: [
-                          TitleCard(
-                            width: width,
-                            title: 'Results',
-                            fontSize: Global.subtitleFontSize,
-                          ),
-                          Container(
-                            width: width,
-                            child: CarouselWithIndicator(
-                              imgList: imgList,
-                              height: 500,
-                            ),
-                          ),
-                        ],
+                      child: IconCard(
+                        icon: FontAwesomeIcons.android,
+                        link:
+                            'https://play.google.com/store/apps/details?id=com.davexp.dancematch',
+                        title: 'Download in Android',
+                        iconSize: 150,
+                        isMobile: true,
+                        containerSize: width,
+                        fontSize: 25,
                       ),
                     ),
                     SizedBox(height: 40),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Center(
-                                child: Container(
-                                  decoration: Global.cardBoxDecoration,
-                                  child: IconCard(
-                                    icon: FontAwesomeIcons.android,
-                                    link:
-                                        'https://play.google.com/store/apps/details?id=com.davexp.dancematch',
-                                    title: 'Download in Android',
-                                    iconSize: 150,
-                                    isMobile: true,
-                                    containerSize: width,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 40),
-                              Center(
-                                child: Container(
-                                  decoration: Global.cardBoxDecoration,
-                                  child: IconCard(
-                                    icon: FontAwesomeIcons.appStore,
-                                    link:
-                                        'https://apps.apple.com/us/app/dance-jam/id1532622112?msclkid=ea804ad3bac611eca9c30504e90bac02',
-                                    title: 'Download in iOS',
-                                    iconSize: 150,
-                                    isMobile: true,
-                                    containerSize: width,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    )
+                    Container(
+                      decoration: Global.cardBoxDecoration,
+                      child: IconCard(
+                        icon: FontAwesomeIcons.appStore,
+                        link:
+                            'https://apps.apple.com/us/app/dance-jam/id1532622112?msclkid=ea804ad3bac611eca9c30504e90bac02',
+                        title: 'Download in iOS',
+                        iconSize: 150,
+                        isMobile: true,
+                        containerSize: width,
+                        fontSize: 25,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -218,14 +199,6 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
       ),
     );
   }
-
-  final List<Widget> imgList = [
-    smallImage(300, 'carousel/dj/dj-1'),
-    smallImage(300, 'carousel/dj/dj-2'),
-    smallImage(300, 'carousel/dj/dj-3'),
-    smallImage(300, 'carousel/dj/dj-4'),
-    smallImage(300, 'carousel/dj/dj-5'),
-  ];
 
   final List<Image> qrList = [
     Image(
@@ -240,7 +213,7 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
 
   final List<String> devList = [
     'Genre: Casual',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

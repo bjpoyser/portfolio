@@ -9,8 +9,6 @@ import '../../../Shared/global.dart';
 import '../../../Widgets/Cards/icon_card.dart';
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Widgets/Cards/list_container.dart';
-import '../../../Widgets/Cards/title_card.dart';
-import '../../../Widgets/Images/carousel_with_indicator.dart';
 import '../../../Widgets/Texts/simple_link.dart';
 
 class Color2PrefabContentMobile extends StatefulWidget {
@@ -132,39 +130,24 @@ class _Color2PrefabContentMobileState extends State<Color2PrefabContentMobile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      decoration: Global.cardBoxDecoration,
-                      child: Column(
-                        children: [
-                          TitleCard(
-                            width: width,
-                            title: 'Results',
-                            fontSize: Global.subtitleFontSize,
-                          ),
-                          Container(
-                            width: width,
-                            child: CarouselWithIndicator(
-                              imgList: imgList,
-                              height: 500,
-                            ),
-                          ),
-                        ],
-                      ),
+                    ImageWithHeaderCard(
+                      cardWidth: width,
+                      imageWidth: width,
+                      picName: 'carousel/c2p/c2p-3',
+                      title: 'Color Dictionary',
                     ),
                     SizedBox(height: 40),
-                    Center(
-                      child: Container(
-                        decoration: Global.cardBoxDecoration,
-                        child: IconCard(
-                          icon: FontAwesomeIcons.internetExplorer,
-                          link:
-                              'https://assetstore.unity.com/packages/tools/level-design/color-2-prefab-193922',
-                          title: 'Open in Asset Store',
-                          iconSize: 150,
-                          isMobile: true,
-                          containerSize: width,
-                          fontSize: 25,
-                        ),
+                    Container(
+                      decoration: Global.cardBoxDecoration,
+                      child: IconCard(
+                        icon: FontAwesomeIcons.internetExplorer,
+                        link:
+                            'https://assetstore.unity.com/packages/tools/level-design/color-2-prefab-193922',
+                        title: 'Open in Asset Store',
+                        iconSize: 150,
+                        isMobile: true,
+                        containerSize: width,
+                        fontSize: 25,
                       ),
                     ),
                   ],
@@ -177,16 +160,10 @@ class _Color2PrefabContentMobileState extends State<Color2PrefabContentMobile> {
     );
   }
 
-  final List<Widget> imgList = [
-    smallImage(300, 'carousel/c2p/c2p-1'),
-    smallImage(300, 'carousel/c2p/c2p-2'),
-    smallImage(300, 'carousel/c2p/c2p-3'),
-  ];
-
   final List<String> devList = [
-    'Genre: Level Design Tool',
     'Framework: Unity Editor',
-    'Engine: Unity 3D'
+    'Engine: Unity 3D C#',
+    'Type: Level Design Tool',
   ];
 
   final List<String> dutiesList = [

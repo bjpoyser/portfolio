@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Widgets/Cards/list_container.dart';
 import 'package:portfolio/Widgets/Cards/project_header.dart';
-import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
 import 'package:portfolio/Widgets/Texts/simple_link.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
-import 'package:portfolio/Widgets/Cards/title_card.dart';
 
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
+import '../../../Widgets/Cards/title_card.dart';
+import '../../../Widgets/Images/carousel_with_indicator.dart';
 
-class DanceJamContentTablet extends StatefulWidget {
+class AIContentTablet extends StatefulWidget {
   @override
-  _DanceJamContentTabletState createState() => _DanceJamContentTabletState();
+  _AIContentTabletState createState() => _AIContentTabletState();
 }
 
-class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
+class _AIContentTabletState extends State<AIContentTablet> {
   final ScrollController _scrollController = new ScrollController();
 
   @override
@@ -25,7 +25,7 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
       controller: _scrollController,
       child: Center(
         child: Container(
-          width: 750,
+          width: width,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Column(
@@ -33,17 +33,28 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
                 Container(
                   width: width,
                   child: ProjectHeader(
-                    picName: 'logos/logo-dancejam',
-                    projectTitle: 'Dance Jame - Relaunch',
+                    picName: 'logos/logo-unreal',
+                    projectTitle: 'AI Control System',
                     titleContainerSize: 560,
                   ),
                 ),
+                SizedBox(height: 40),
+                TitleCard(width: width, title: 'System Showcase'),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 30),
+                  padding: const EdgeInsets.only(bottom: 30),
                   child: VideoContainer(
                     width: width,
                     videoURL:
-                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FDanceJam.mp4?alt=media&token=54b7eedf-da4b-4a5a-97eb-24ab0bcd1136',
+                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FAI-Showcase.mp4?alt=media&token=38447810-19a2-49ac-bb93-0b616e61b3c8',
+                  ),
+                ),
+                TitleCard(width: width, title: 'Blueprint Explaination'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: VideoContainer(
+                    width: width,
+                    videoURL:
+                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FAI-Blueprints-Explaination.mp4?alt=media&token=ac63f53b-cc94-41f6-a6b3-acb49410c753',
                   ),
                 ),
                 Container(
@@ -55,53 +66,50 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          'This is an university project. The course was about technical design, so we',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
                         Row(
                           children: [
                             Text(
-                              'Dance Jam is a game of ',
+                              'had to create a ',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
                             SimpleLink(
-                                text: '@Dave.xp',
+                                text: 'Technical Design Document',
                                 fontSize: Global.subtitleFontSize,
                                 action: () {
                                   Global.launchURL(
-                                      'https://www.instagram.com/dave.xp/');
+                                      'https://drive.google.com/file/d/11wQbALPDyUhaVKQn__-tKkzEdWpGg6qf/view?usp=sharing');
                                 }),
                             Text(
-                              ', developed by ',
-                              style:
-                                  TextStyle(fontSize: Global.subtitleFontSize),
-                            ),
-                            SimpleLink(
-                                text: '@SunnaStudio',
-                                fontSize: Global.subtitleFontSize,
-                                action: () {
-                                  Global.launchURL(
-                                      'https://www.instagram.com/sunnastudio/');
-                                }),
-                            Text(
-                              ' and',
+                              ' for a system of our choise',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
                           ],
                         ),
                         Text(
-                          'relaunch in February, 2022.',
+                          'and then use that document to develop the system using Unreal Engine 5.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Dance Jam is based in the classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
+                          'I decided to create a system to control an AI using a command wheel. The system have 4 actions (Follow the player, Stay, Explore, and Come and Stay).',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Earn accorns to unlock new dance moves and skins, and get the premium pack to get more characters, dance moves and environments.',
+                          'The system was developed using blueprints.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
-                        )
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Apart from the AI Control System, I added a Debug system that allow us to track the AI behavior. Also I added a personalization system for the characters to change their colors.',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
                       ],
                     ),
                   ),
@@ -116,64 +124,36 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
                       ListContainer(
                         listTitle: 'Development',
                         itemsList: devList,
-                        containerHeight: 340,
-                        containerWidth: 350,
+                        containerWidth: 355,
                       ),
                       ListContainer(
                         listTitle: 'Resposibilities',
                         itemsList: dutiesList,
-                        containerWidth: 350,
+                        containerWidth: 360,
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: Global.cardBoxDecoration,
-                      child: Column(
-                        children: [
-                          TitleCard(
-                            width: 230,
-                            title: 'Results',
-                            fontSize: Global.subtitleFontSize,
-                          ),
-                          Container(
-                            width: 230,
-                            child: CarouselWithIndicator(
-                              imgList: imgList,
-                              height: 330,
-                            ),
-                          ),
-                        ],
+                Container(
+                  decoration: Global.cardBoxDecoration,
+                  child: Column(
+                    children: [
+                      TitleCard(
+                        width: 800,
+                        title: 'Screenshots',
+                        fontSize: Global.title2FontSize,
                       ),
-                    ),
-                    SizedBox(width: 20),
-                    Container(
-                      decoration: Global.cardBoxDecoration,
-                      child: Column(
-                        children: [
-                          TitleCard(
-                            width: 480,
-                            title: 'Scan or Tap to Download',
-                            fontSize: Global.subtitleFontSize,
-                          ),
-                          Container(
-                            width: 480,
-                            child: CarouselWithIndicator(
-                              imgList: qrList,
-                              height: 330,
-                              transition: Duration(seconds: 6),
-                            ),
-                          ),
-                        ],
+                      Container(
+                        width: 800,
+                        child: CarouselWithIndicator(
+                          imgList: imgList,
+                          height: 400,
+                        ),
                       ),
-                    )
-                  ],
-                )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
@@ -183,11 +163,11 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
   }
 
   final List<Widget> imgList = [
-    smallImage(240, 'carousel/dj/dj-1'),
-    smallImage(240, 'carousel/dj/dj-2'),
-    smallImage(240, 'carousel/dj/dj-3'),
-    smallImage(240, 'carousel/dj/dj-4'),
-    smallImage(240, 'carousel/dj/dj-5'),
+    smallImage(730, 'carousel/ai/ai-1'),
+    smallImage(730, 'carousel/ai/ai-2'),
+    smallImage(730, 'carousel/ai/ai-3'),
+    smallImage(730, 'carousel/ai/ai-4'),
+    smallImage(730, 'carousel/ai/ai-5')
   ];
 
   final List<Widget> qrList = [
@@ -214,17 +194,14 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
   ];
 
   final List<String> devList = [
-    'Genre: Casual',
-    'Engine: Unity 3D C#',
-    'Platform: Android & IOS',
-    'Game Mode: Single Player'
+    'Engine: Unreal 5 Blueprints',
+    'Platform: PC',
+    'Type: System'
   ];
 
   final List<String> dutiesList = [
-    'UI Design',
-    'Bug Fixing',
-    'Assets Integration',
-    'QA',
-    'Functionality Integration'
+    'Technical Design Document',
+    'Developer',
+    'Debug',
   ];
 }

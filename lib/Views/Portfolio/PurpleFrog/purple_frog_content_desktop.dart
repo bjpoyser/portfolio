@@ -241,7 +241,7 @@ class _PurpleFrogContentDesktopState extends State<PurpleFrogContentDesktop> {
 
   final List<Image> qrList = [
     Image(
-      image: AssetImage('assets/images/QR/PF-android.png'),
+      image: AssetImage('assets/images/QR/PF-Android.png'),
       fit: BoxFit.cover,
     ),
     Image(
@@ -252,7 +252,7 @@ class _PurpleFrogContentDesktopState extends State<PurpleFrogContentDesktop> {
 
   final List<String> devList = [
     'Genre: Arcade, Action',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

@@ -235,7 +235,7 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
 
   final List<String> devList = [
     'Genre: Avatar Creator',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

@@ -56,6 +56,7 @@ flutter:
     - assets/images/carousel/c2p/
     - assets/images/carousel/pf/
     - assets/images/carousel/dj/
+    - assets/images/carousel/ai/
     - assets/images/about/
 
   fonts:

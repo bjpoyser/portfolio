@@ -7,12 +7,14 @@ import 'package:portfolio/Shared/global.dart';
 import 'package:portfolio/Views/About/about_view.dart';
 import 'package:portfolio/Views/Contact/contact_view.dart';
 import 'package:portfolio/Views/Home/home_view.dart';
+import 'package:portfolio/Views/Portfolio/AI/ai_view.dart';
 import 'package:portfolio/Views/Portfolio/Color2Prefab/c2p_view.dart';
 import 'package:portfolio/Views/Portfolio/Dollify/dollify_view.dart';
 import 'package:portfolio/Views/Portfolio/PurpleFrog/purple_frog_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
 
 import '../Views/Portfolio/DanceJam/dancejam_view.dart';
+import '../Views/Portfolio/PCE/pce_view.dart';
 
 const String HomeRoute = '/';
 const String AboutRoute = '/about';
@@ -22,6 +24,8 @@ const String C2PRoute = '/portfolio/c2p';
 const String DollifyRoute = '/portfolio/dollify';
 const String PurpleFrogRoute = '/portfolio/save-the-purple-frog';
 const String DanceJamRoute = '/portfolio/DanceJam';
+const String PCERoute = '/portfolio/PCE';
+const String AIRoute = '/portfolio/AI-Control-System';
 const String UnderConstructionRoute = '/underConstruction';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -42,6 +46,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(DanceJamView(), settings);
     case PurpleFrogRoute:
       return _getPageRoute(PurpleFrogView(), settings);
+    case PCERoute:
+      return _getPageRoute(PCEView(), settings);
+    case AIRoute:
+      return _getPageRoute(AIView(), settings);
     default:
       return _getPageRoute(UnderConstruction(), settings);
   }

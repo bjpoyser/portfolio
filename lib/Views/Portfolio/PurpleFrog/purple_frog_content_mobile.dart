@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Cards/icon_card.dart';
+import 'package:portfolio/Widgets/Images/sizeable_image.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
 import '../../../Shared/global.dart';
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Widgets/Cards/list_container.dart';
-import '../../../Widgets/Cards/title_card.dart';
-import '../../../Widgets/Images/carousel_with_indicator.dart';
 import '../../../Widgets/Texts/simple_link.dart';
 
 class PurpleFrogContentMobile extends StatefulWidget {
@@ -168,74 +167,42 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
                         imageWidth: width,
                         picName: '/carousel/pf/pf-integration',
                         title: '3. Integration'),
-                  ],
-                ),
-                SizedBox(height: 40),
-                Container(
-                  decoration: Global.cardBoxDecoration,
-                  child: Column(
-                    children: [
-                      TitleCard(
-                        width: width,
-                        title: 'Results',
-                        fontSize: Global.subtitleFontSize,
+                    SizedBox(height: 40),
+                    ImageWithHeaderCard(
+                        cardWidth: width,
+                        imageWidth: width,
+                        picName: 'carousel/pf/pf-3',
+                        title: 'In-Game View'),
+                    SizedBox(height: 40),
+                    Container(
+                      decoration: Global.cardBoxDecoration,
+                      child: IconCard(
+                        icon: FontAwesomeIcons.android,
+                        link:
+                            'https://play.google.com/store/apps/details?id=com.ontheedge.savethepurplefrog',
+                        title: 'Download in Android',
+                        iconSize: 150,
+                        isMobile: true,
+                        containerSize: width,
+                        fontSize: 25,
                       ),
-                      Container(
-                        width: width,
-                        child: CarouselWithIndicator(
-                          imgList: imgList,
-                          height: 500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 40),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Container(
-                              decoration: Global.cardBoxDecoration,
-                              child: IconCard(
-                                icon: FontAwesomeIcons.android,
-                                link:
-                                    'https://play.google.com/store/apps/details?id=com.ontheedge.savethepurplefrog',
-                                title: 'Download in Android',
-                                iconSize: 150,
-                                isMobile: true,
-                                containerSize: width,
-                                fontSize: 25,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 40),
-                          Center(
-                            child: Container(
-                              decoration: Global.cardBoxDecoration,
-                              child: IconCard(
-                                icon: FontAwesomeIcons.appStore,
-                                link:
-                                    'https://apps.apple.com/us/app/save-the-purple-frog/id1569647982',
-                                title: 'Download in iOS',
-                                iconSize: 150,
-                                isMobile: true,
-                                containerSize: width,
-                                fontSize: 25,
-                              ),
-                            ),
-                          ),
-                        ],
+                    ),
+                    SizedBox(height: 40),
+                    Container(
+                      decoration: Global.cardBoxDecoration,
+                      child: IconCard(
+                        icon: FontAwesomeIcons.appStore,
+                        link:
+                            'https://apps.apple.com/us/app/save-the-purple-frog/id1569647982',
+                        title: 'Download in iOS',
+                        iconSize: 150,
+                        isMobile: true,
+                        containerSize: width,
+                        fontSize: 25,
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -245,16 +212,16 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
   }
 
   final List<Widget> imgList = [
-    smallImage(300, 'carousel/pf/pf-1'),
-    smallImage(300, 'carousel/pf/pf-2'),
-    smallImage(300, 'carousel/pf/pf-3'),
-    smallImage(300, 'carousel/pf/pf-4'),
-    smallImage(300, 'carousel/pf/pf-5'),
+    SizeableImage(picName: 'carousel/pf/pf-1', width: 300),
+    SizeableImage(picName: 'carousel/pf/pf-2', width: 300),
+    SizeableImage(picName: 'carousel/pf/pf-3', width: 300),
+    SizeableImage(picName: 'carousel/pf/pf-4', width: 300),
+    SizeableImage(picName: 'carousel/pf/pf-5', width: 300),
   ];
 
   final List<String> devList = [
     'Genre: Arcade, Action',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

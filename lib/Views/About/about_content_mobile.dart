@@ -106,7 +106,7 @@ class AboutContentMobile extends StatelessWidget {
                                         height: 10,
                                       ),
                                       ListItem(
-                                        itemText: " English (B1+)",
+                                        itemText: " English (B2/C1)",
                                         fontSize: Global.linkFontSize,
                                       ),
                                       SizedBox(
@@ -199,7 +199,7 @@ class AboutContentMobile extends StatelessWidget {
                             Text(
                               'Career Interests',
                               style: TextStyle(
-                                fontSize: Global.title2FontSize,
+                                fontSize: 25,
                               ),
                             ),
                             Container(
@@ -321,7 +321,7 @@ class AboutContentMobile extends StatelessWidget {
                             Text(
                               'Personal Interests',
                               style: TextStyle(
-                                fontSize: Global.title2FontSize,
+                                fontSize: 25,
                               ),
                             ),
                             Container(

@@ -161,7 +161,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                             height: 10,
                                           ),
                                           ListItem(
-                                            itemText: " English (B1+)",
+                                            itemText: " English (B2/C1)",
                                             fontSize: Global.linkFontSize,
                                           ),
                                           SizedBox(

@@ -251,7 +251,7 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
             'https://play.google.com/store/apps/details?id=com.ontheedge.savethepurplefrog');
       },
       child: Image(
-        image: AssetImage('assets/images/QR/PF-android.png'),
+        image: AssetImage('assets/images/QR/PF-Android.png'),
         fit: BoxFit.cover,
       ),
     ),
@@ -269,7 +269,7 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
 
   final List<String> devList = [
     'Genre: Arcade, Action',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

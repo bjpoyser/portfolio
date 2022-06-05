@@ -11,6 +11,11 @@ abstract class Global {
   static const Color secondAccentColor = const Color(0xfff4841c);
 
 /*
+  //Ubisoft Colors
+  static const Color accentColor = Color(0xFF35B0DA);
+  static const Color secondAccentColor = const Color(0xfff4841c);
+*/
+/*
   //Rockstar Colors
   static const Color accentColor = const Color(0xff7947b8);
   static const Color secondAccentColor = Color(0xFF55A1D3);

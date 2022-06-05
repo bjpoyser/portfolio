@@ -33,7 +33,7 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                   width: 800,
                   child: ProjectHeader(
                     picName: 'logos/logo-dancejam',
-                    projectTitle: 'Dance Jame - Relaunch',
+                    projectTitle: 'Dance Jam - Relaunch',
                   ),
                 ),
                 Padding(
@@ -80,14 +80,14 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                                       'https://www.instagram.com/sunnastudio/');
                                 }),
                             Text(
-                              ' and relaunch in',
+                              ' and relaunched',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
                           ],
                         ),
                         Text(
-                          'February, 2022.',
+                          'in February, 2022.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
@@ -197,7 +197,7 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
 
   final List<String> devList = [
     'Genre: Casual',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

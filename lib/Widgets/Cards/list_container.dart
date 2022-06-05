@@ -41,7 +41,7 @@ class ListContainer extends StatelessWidget {
               style: TextStyle(fontSize: titleSize),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
               child: Container(
                 color: Global.accentColor,
                 height: 3,

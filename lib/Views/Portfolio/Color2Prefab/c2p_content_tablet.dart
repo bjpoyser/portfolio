@@ -154,7 +154,7 @@ class _Color2PrefabContentTabletState extends State<Color2PrefabContentTablet> {
                                       'https://assetstore.unity.com/packages/tools/level-design/color-2-prefab-193922');
                                 },
                                 child: SizeableImage(
-                                  picName: '/qr/c2p-web',
+                                  picName: '/QR/c2p-web',
                                   width: 360,
                                 ),
                               ),
@@ -186,9 +186,9 @@ class _Color2PrefabContentTabletState extends State<Color2PrefabContentTablet> {
   ];
 
   final List<String> devList = [
-    'Genre: Level Design Tool',
     'Framework: Unity Editor',
-    'Engine: Unity 3D'
+    'Engine: Unity 3D C#',
+    'Type: Level Design Tool',
   ];
 
   final List<String> dutiesList = [

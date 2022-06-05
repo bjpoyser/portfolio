@@ -8,6 +8,7 @@ class CarouselWithIndicator extends StatefulWidget {
   final List<Widget> imgList;
   final Duration transition;
   final EdgeInsetsGeometry carouselPadding;
+  final bool optimaze;
 
   const CarouselWithIndicator({
     Key key,
@@ -16,6 +17,7 @@ class CarouselWithIndicator extends StatefulWidget {
     this.transition = const Duration(seconds: 4),
     this.carouselPadding =
         const EdgeInsets.only(top: 20, bottom: 15, left: 20, right: 20),
+    this.optimaze = false,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,10 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
             items: widget.imgList,
             options: CarouselOptions(
                 height: widget.height,
-                enlargeCenterPage: true,
+                enlargeCenterPage: !widget.optimaze,
+                autoPlayCurve:
+                    widget.optimaze ? Curves.linear : Curves.fastOutSlowIn,
+                pageSnapping: !widget.optimaze,
                 viewportFraction: 1,
                 autoPlay: true,
                 autoPlayInterval: widget.transition,

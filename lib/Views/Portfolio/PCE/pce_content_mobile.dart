@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
 
 import '../../../Shared/global.dart';
-import '../../../Widgets/Cards/icon_card.dart';
-import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Widgets/Cards/list_container.dart';
 import '../../../Widgets/Texts/simple_link.dart';
 
-class DollifyContentMobile extends StatefulWidget {
+class PCEContentMobile extends StatefulWidget {
   @override
-  _DollifyContentMobileState createState() => _DollifyContentMobileState();
+  _PCEContentMobileState createState() => _PCEContentMobileState();
 }
 
-class _DollifyContentMobileState extends State<DollifyContentMobile> {
+class _PCEContentMobileState extends State<PCEContentMobile> {
   final ScrollController _scrollController = new ScrollController();
 
   @override
   Widget build(BuildContext context) {
     double width = 380;
+
     return SingleChildScrollView(
       controller: _scrollController,
       child: Center(
@@ -36,7 +34,7 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Dollify: Updates',
+                        'Planet Cube: Edge',
                         style: TextStyle(fontSize: 28),
                       ),
                     ],
@@ -47,43 +45,26 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                   child: VideoContainer(
                     width: width,
                     videoURL:
-                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FDollify-Demo.mp4?alt=media&token=631c301a-aadb-4c07-b969-c24dca164860',
+                        'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FPlanet%20Cube_%20Edge%20%20-%20Steam%20Trailer.mp4?alt=media&token=8f4dd4f2-b733-4bd8-831a-1e12ed220ebd',
                   ),
                 ),
                 Container(
-                  width: width,
+                  width: 800,
                   decoration: Global.cardBoxDecoration,
                   child: Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Dollify is an app of ',
-                              style:
-                                  TextStyle(fontSize: Global.subtitleFontSize),
-                            ),
-                            SimpleLink(
-                                text: '@Dave.xp',
-                                fontSize: Global.subtitleFontSize,
-                                action: () {
-                                  Global.launchURL(
-                                      'https://www.instagram.com/dave.xp/');
-                                }),
-                            Text(
-                              ', ',
-                              style:
-                                  TextStyle(fontSize: Global.subtitleFontSize),
-                            ),
-                          ],
+                        Text(
+                          'Planet Cube: Edge is a game',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         Row(
                           children: [
                             Text(
-                              'developed by ',
+                              'of ',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
@@ -94,38 +75,98 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                                   Global.launchURL(
                                       'https://www.instagram.com/sunnastudio/');
                                 }),
+                            Text(
+                              '.',
+                              style:
+                                  TextStyle(fontSize: Global.subtitleFontSize),
+                            ),
                           ],
                         ),
+                        SizedBox(height: 20),
                         Text(
-                          'in 2018.',
+                          'It is a 2D run \'n gun platformer, where you have to overcome deadly challenges while a unknown force is invading your planet.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'With this app, you can create dolls using the unique art of ',
+                          'This is the first IP of Sunna. My role consisted in implement enemies, hazzards, fix bugs, and other implementations like UI, Save System, etc.',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'This game received very good comments in the GDC 2022, ',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'having an article in ',
+                              style:
+                                  TextStyle(fontSize: Global.subtitleFontSize),
+                            ),
+                            SimpleLink(
+                                text: '4gamer.net',
+                                fontSize: Global.subtitleFontSize,
+                                action: () {
+                                  Global.launchURL(
+                                      'https://www.4gamer.net/games/624/G062478/20220328106/');
+                                }),
+                          ],
+                        ),
+                        Text(
+                          'and beign part of the ',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         Row(
                           children: [
                             SimpleLink(
-                                text: '@Dave.xp',
+                                text: 'NBC\'s coverage video ',
                                 fontSize: Global.subtitleFontSize,
                                 action: () {
                                   Global.launchURL(
-                                      'https://www.instagram.com/dave.xp/');
+                                      'https://www.youtube.com/watch?v=E1uzZd4zSTw');
                                 }),
                             Text(
-                              '.',
+                              ' of the',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
-                            )
+                            ),
                           ],
+                        ),
+                        Text(
+                          'GDC 2022.',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Dollify has more than 10.000.000 downloads just on Android devices and has a rating of 4.5 in both stores (Android and Apple). I was assigned to this project to develop the Duos Update, released in July 2021, The Fantasy Pack, released in September 2021, and Ombre Update Released in February 2022.',
+                          'Currently this game is under development, but you can ',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
-                        )
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              '',
+                              style:
+                                  TextStyle(fontSize: Global.subtitleFontSize),
+                            ),
+                            SimpleLink(
+                                text: 'download a demo',
+                                fontSize: Global.subtitleFontSize,
+                                action: () {
+                                  Global.launchURL(
+                                      'https://store.steampowered.com/app/791200/Planet_Cube_Edge/');
+                                }),
+                            Text(
+                              ' and wishlist',
+                              style:
+                                  TextStyle(fontSize: Global.subtitleFontSize),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'it in STEAM.',
+                          style: TextStyle(fontSize: Global.subtitleFontSize),
+                        ),
                       ],
                     ),
                   ),
@@ -154,61 +195,21 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
                   ),
                 ),
                 SizedBox(height: 40),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ImageWithHeaderCard(
-                      cardWidth: width,
-                      imageWidth: width,
-                      picName: 'carousel/dollify/me-ella-dolls',
-                      title: 'Duos Update',
+                Container(
+                  width: width,
+                  decoration: Global.cardBoxDecoration,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      'More information and Images will be added when the game gets released!',
+                      style: TextStyle(
+                          fontSize: Global.linkFontSize,
+                          color: Colors.grey[700]),
+                      textAlign: TextAlign.center,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 40),
-                      child: ImageWithHeaderCard(
-                        cardWidth: width,
-                        imageWidth: width,
-                        picName: 'carousel/dollify/chico-bestia',
-                        title: 'Fantasy Update',
-                      ),
-                    ),
-                    ImageWithHeaderCard(
-                      cardWidth: width,
-                      imageWidth: width,
-                      picName: 'carousel/dollify/ombre-update',
-                      title: 'Ombre Update',
-                    ),
-                    SizedBox(height: 40),
-                    Container(
-                      decoration: Global.cardBoxDecoration,
-                      child: IconCard(
-                        icon: FontAwesomeIcons.android,
-                        link:
-                            'https://play.google.com/store/apps/details?id=com.ontheedge.savethepurplefrog',
-                        title: 'Download in Android',
-                        iconSize: 150,
-                        isMobile: true,
-                        containerSize: width,
-                        fontSize: 25,
-                      ),
-                    ),
-                    SizedBox(height: 40),
-                    Container(
-                      decoration: Global.cardBoxDecoration,
-                      child: IconCard(
-                        icon: FontAwesomeIcons.appStore,
-                        link:
-                            'https://apps.apple.com/us/app/save-the-purple-frog/id1569647982',
-                        title: 'Download in iOS',
-                        iconSize: 150,
-                        isMobile: true,
-                        containerSize: width,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
+                SizedBox(height: 80),
               ],
             ),
           ),
@@ -217,26 +218,31 @@ class _DollifyContentMobileState extends State<DollifyContentMobile> {
     );
   }
 
-  final List<Widget> imgList = [
-    smallImage(300, 'carousel/dollify/me-doll'),
-    smallImage(300, 'carousel/dollify/wal-zer-dolls'),
-    smallImage(300, 'carousel/dollify/avatar'),
-    smallImage(300, 'carousel/dollify/lucifer'),
+  final List<Image> qrList = [
+    Image(
+      image: AssetImage('assets/images/QR/dollify-android.png'),
+      fit: BoxFit.cover,
+    ),
+    Image(
+      image: AssetImage('assets/images/QR/dollify-iOS.png'),
+      fit: BoxFit.cover,
+    ),
   ];
 
   final List<String> devList = [
-    'Genre: Avatar Creator',
+    'Genre: 2D Platformer',
     'Engine: Unity 3D C#',
-    'Platform: Android & IOS',
+    'Platform: PC',
     'Game Mode: Single Player'
   ];
 
   final List<String> dutiesList = [
-    'UI Design',
+    'Develop Enemies',
+    'Develop Hazzards',
+    'Save/Load System',
+    'Game Modes Dev',
     'Bug Fixing',
-    'Optimization',
-    'Assets Integration',
-    'QA',
-    'Functionality Integration'
+    'UI Design',
+    'QA and UX',
   ];
 }
