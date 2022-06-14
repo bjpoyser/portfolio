@@ -5,8 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 abstract class Global {
   //Colors
   static const Color disabledColor = const Color(0xff7e7e7e);
-
-  //Colors
   static const Color accentColor = const Color(0xff003087);
   static const Color secondAccentColor = const Color(0xff2E6DB4);
 
