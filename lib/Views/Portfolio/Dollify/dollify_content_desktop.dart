@@ -8,6 +8,7 @@ import 'package:portfolio/Widgets/Cards/title_card.dart';
 
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
+import '../../../Widgets/Images/sizeable_image.dart';
 
 class DollifyContentDesktop extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class DollifyContentDesktop extends StatefulWidget {
 
 class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
   final ScrollController _scrollController = new ScrollController();
-
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -155,7 +156,7 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
                     ImageWithHeaderCard(
                       cardWidth: 240,
                       imageWidth: 130,
-                      picName: 'carousel/dollify/me-doll',
+                      picName: 'carousel/dollify/ombre-update',
                       title: 'Ombre Update',
                     ),
                   ],
@@ -191,15 +192,24 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
                         children: [
                           TitleCard(
                             width: 520,
-                            title: 'Scan to Download',
+                            title: 'Click to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
-                          Container(
-                            width: 520,
-                            child: CarouselWithIndicator(
-                              imgList: qrList,
-                              height: 330,
-                              transition: Duration(seconds: 6),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onHover: (e) => _mouseEnter(true),
+                              onExit: (e) => _mouseEnter(false),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Global.launchURL('https://qrco.de/bd68qG');
+                                },
+                                child: SizeableImage(
+                                  picName: '/QR/QR_Dollify',
+                                  width: 285,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -213,6 +223,12 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
         ),
       ),
     );
+  }
+
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
   }
 
   final List<Widget> imgList = [
@@ -235,7 +251,7 @@ class _DollifyContentDesktopState extends State<DollifyContentDesktop> {
 
   final List<String> devList = [
     'Genre: Avatar Creator',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

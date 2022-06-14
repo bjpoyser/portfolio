@@ -55,6 +55,7 @@ class _IconCardState extends State<IconCard> {
                     ? Colors.black
                     : Global.disabledColor,
               ),
+              SizedBox(height: 10),
               Text(
                 widget.title,
                 style: TextStyle(

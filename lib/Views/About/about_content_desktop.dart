@@ -99,7 +99,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                       size: 40,
                                       action: () {
                                         Global.launchURL(
-                                            'https://drive.google.com/file/d/16KLVcPmqzsx3O0oiuZ7Y_W5UfDhAs0uT/view?usp=sharing');
+                                            'https://drive.google.com/file/d/1F1VZ_aimm4SdMSlf5zlaKVSNs2LhJ69B/view?usp=sharing');
                                       }),
                                 ],
                               ),
@@ -124,7 +124,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                 child: Column(
                                   children: [
                                     Text(
-                                      'Gamer and computer systems engineer with a personal emphasis on technical game design, born in Costa Rica, living in Florida, USA. Self-taught person, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
+                                      'Gamer and computer systems engineer with a personal emphasis on technical game design, born in Costa Rica, living in Florida, USA. Avid learner, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
                                       style: TextStyle(
                                           fontSize: Global.linkFontSize,
                                           color: Colors.black),
@@ -161,7 +161,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                             height: 10,
                                           ),
                                           ListItem(
-                                            itemText: " English (B1+)",
+                                            itemText: " English (B2/C1)",
                                             fontSize: Global.linkFontSize,
                                           ),
                                           SizedBox(

@@ -5,18 +5,18 @@ import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
 import 'package:portfolio/Shared/global.dart';
-import 'package:portfolio/Views/Portfolio/Color2Prefab/c2p_content_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import 'c2p_content_desktop.dart';
-import 'c2p_content_mobile.dart';
+import 'ai_content_desktop.dart';
+import 'ai_content_mobile.dart';
+import 'ai_content_tablet.dart';
 
-class Color2PrefabView extends StatefulWidget {
+class AIView extends StatefulWidget {
   @override
-  _Color2PrefabViewState createState() => _Color2PrefabViewState();
+  _AIState createState() => _AIState();
 }
 
-class _Color2PrefabViewState extends State<Color2PrefabView> {
+class _AIState extends State<AIView> {
   final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
 
   @override
@@ -27,9 +27,9 @@ class _Color2PrefabViewState extends State<Color2PrefabView> {
         children: [
           Expanded(
               child: ScreenTypeLayout(
-            desktop: Color2PrefabContentDesktop(),
-            mobile: Color2PrefabContentMobile(),
-            tablet: Color2PrefabContentTablet(),
+            desktop: AIContentDesktop(),
+            mobile: AIContentMobile(),
+            tablet: AIContentTablet(),
           ))
         ],
       ),

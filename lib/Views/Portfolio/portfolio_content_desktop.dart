@@ -31,6 +31,13 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'Planet Cube: Edge',
+                              role: 'Programmer',
+                              picName: 'pce',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(PCERoute),
+                            ),
+                            ProjectCard(
                               title: 'Purple Frog',
                               role: 'Level Designer & Additional Programming',
                               picName: 'pf',
@@ -38,18 +45,11 @@ class PortfolioContentDesktop extends StatelessWidget {
                                   .navigateTo(PurpleFrogRoute),
                             ),
                             ProjectCard(
-                              title: 'Dollify',
-                              role: 'Developer',
-                              picName: 'dollify',
+                              title: 'AI Control System',
+                              role: 'Technical Designer & Programmer',
+                              picName: 'unreal',
                               action: () => locator<NavigationService>()
-                                  .navigateTo(DollifyRoute),
-                            ),
-                            ProjectCard(
-                              title: 'Dance Jam',
-                              role: 'Developer',
-                              picName: 'dancejam',
-                              action: () => locator<NavigationService>()
-                                  .navigateTo(DanceJamRoute),
+                                  .navigateTo(AIRoute),
                             ),
                           ],
                         ),
@@ -58,8 +58,22 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'Dollify',
+                              role: 'Programmer',
+                              picName: 'dollify',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DollifyRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Dance Jam',
+                              role: 'Programmer',
+                              picName: 'dancejam',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DanceJamRoute),
+                            ),
+                            ProjectCard(
                               title: 'Color 2 Prefab',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'c2p',
                               action: () => locator<NavigationService>()
                                   .navigateTo(C2PRoute),
@@ -74,18 +88,18 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'Planet Cube: Edge',
+                              role: 'Programmer',
+                              picName: 'pce',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(PCERoute),
+                            ),
+                            ProjectCard(
                               title: 'Purple Frog',
                               role: 'Level Designer & Additional Programming',
                               picName: 'pf',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PurpleFrogRoute),
-                            ),
-                            ProjectCard(
-                              title: 'Dollify',
-                              role: 'Developer',
-                              picName: 'dollify',
-                              action: () => locator<NavigationService>()
-                                  .navigateTo(DollifyRoute),
                             ),
                           ],
                         ),
@@ -94,15 +108,35 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'AI Control System',
+                              role: 'Technical Designer & Programmer',
+                              picName: 'unreal',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(AIRoute),
+                            ),
+                            ProjectCard(
                               title: 'Dance Jam',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'dancejam',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DanceJamRoute),
                             ),
+                          ],
+                        ),
+                        SizedBox(height: 80),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
+                              title: 'Dollify',
+                              role: 'Programmer',
+                              picName: 'dollify',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DollifyRoute),
+                            ),
                             ProjectCard(
                               title: 'Color 2 Prefab',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'c2p',
                               action: () => locator<NavigationService>()
                                   .navigateTo(C2PRoute),

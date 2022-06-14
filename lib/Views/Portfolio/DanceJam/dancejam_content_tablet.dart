@@ -1,46 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/Widgets/Cards/list_container.dart';
+import 'package:portfolio/Widgets/Cards/project_header.dart';
+import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
+import 'package:portfolio/Widgets/Texts/simple_link.dart';
 import 'package:portfolio/Widgets/Videos/video_container.dart';
+import 'package:portfolio/Widgets/Cards/title_card.dart';
 
-import '../../../Shared/global.dart';
-import '../../../Widgets/Cards/icon_card.dart';
 import '../../../Widgets/Cards/image_with_header_card.dart';
-import '../../../Widgets/Cards/list_container.dart';
-import '../../../Widgets/Texts/simple_link.dart';
+import '../../../Shared/global.dart';
+import '../../../Widgets/Images/sizeable_image.dart';
 
-class DanceJamContentMobile extends StatefulWidget {
+class DanceJamContentTablet extends StatefulWidget {
   @override
-  _DanceJamContentMobileState createState() => _DanceJamContentMobileState();
+  _DanceJamContentTabletState createState() => _DanceJamContentTabletState();
 }
 
-class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
+class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
   final ScrollController _scrollController = new ScrollController();
-
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    double width = 380;
+    double width = 730;
 
     return SingleChildScrollView(
       controller: _scrollController,
       child: Center(
         child: Container(
-          width: width,
+          width: 750,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+            padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Column(
               children: [
                 Container(
                   width: width,
-                  height: 100,
-                  decoration: Global.cardBoxDecoration,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Dance Jam - Re-Launch',
-                        style: TextStyle(fontSize: 28),
-                      ),
-                    ],
+                  child: ProjectHeader(
+                    picName: 'logos/logo-dancejam',
+                    projectTitle: 'Dance Jame - Relaunch',
+                    titleContainerSize: 560,
                   ),
                 ),
                 Padding(
@@ -55,17 +51,18 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
                   width: width,
                   decoration: Global.cardBoxDecoration,
                   child: Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(20.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Dance Jam is a game of ',
-                          style: TextStyle(fontSize: Global.subtitleFontSize),
-                        ),
                         Row(
                           children: [
+                            Text(
+                              'Dance Jam is a game of ',
+                              style:
+                                  TextStyle(fontSize: Global.subtitleFontSize),
+                            ),
                             SimpleLink(
                                 text: '@Dave.xp',
                                 fontSize: Global.subtitleFontSize,
@@ -78,10 +75,6 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
-                          ],
-                        ),
-                        Row(
-                          children: [
                             SimpleLink(
                                 text: '@SunnaStudio',
                                 fontSize: Global.subtitleFontSize,
@@ -90,14 +83,14 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
                                       'https://www.instagram.com/sunnastudio/');
                                 }),
                             Text(
-                              ' and relaunched',
+                              ' and',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
                           ],
                         ),
                         Text(
-                          'in February, 2022.',
+                          'relaunch in February, 2022.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
@@ -117,81 +110,80 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
                 SizedBox(height: 40),
                 Container(
                   width: width,
-                  child: Column(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       ListContainer(
                         listTitle: 'Development',
                         itemsList: devList,
-                        titleSize: 25,
-                        listSize: Global.textFontSize,
+                        containerHeight: 340,
+                        containerWidth: 350,
                       ),
-                      SizedBox(height: 40),
                       ListContainer(
                         listTitle: 'Resposibilities',
                         itemsList: dutiesList,
-                        titleSize: 25,
-                        listSize: Global.textFontSize,
+                        containerWidth: 350,
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: 40),
-                Column(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    ImageWithHeaderCard(
-                      cardWidth: width,
-                      imageWidth: width,
-                      picName: 'carousel/dj/dj-1',
-                      title: 'Main Menu',
-                    ),
-                    SizedBox(height: 40),
-                    ImageWithHeaderCard(
-                      cardWidth: width,
-                      imageWidth: width,
-                      picName: 'carousel/dj/dj-2',
-                      title: 'Casual Game Mode',
-                    ),
-                    SizedBox(height: 40),
-                    ImageWithHeaderCard(
-                      cardWidth: width,
-                      imageWidth: width,
-                      picName: 'carousel/dj/dj-5',
-                      title: 'Pair Matched',
-                    ),
-                    SizedBox(height: 40),
                     Container(
                       decoration: Global.cardBoxDecoration,
-                      child: IconCard(
-                        icon: FontAwesomeIcons.android,
-                        link:
-                            'https://play.google.com/store/apps/details?id=com.davexp.dancematch',
-                        title: 'Download in Android',
-                        iconSize: 150,
-                        isMobile: true,
-                        containerSize: width,
-                        fontSize: 25,
+                      child: Column(
+                        children: [
+                          TitleCard(
+                            width: 230,
+                            title: 'Results',
+                            fontSize: Global.subtitleFontSize,
+                          ),
+                          Container(
+                            width: 230,
+                            child: CarouselWithIndicator(
+                              imgList: imgList,
+                              height: 330,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(width: 20),
                     Container(
                       decoration: Global.cardBoxDecoration,
-                      child: IconCard(
-                        icon: FontAwesomeIcons.appStore,
-                        link:
-                            'https://apps.apple.com/us/app/dance-jam/id1532622112?msclkid=ea804ad3bac611eca9c30504e90bac02',
-                        title: 'Download in iOS',
-                        iconSize: 150,
-                        isMobile: true,
-                        containerSize: width,
-                        fontSize: 25,
+                      child: Column(
+                        children: [
+                          TitleCard(
+                            width: 480,
+                            title: 'Tap or Scan to Download',
+                            fontSize: Global.subtitleFontSize,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onHover: (e) => _mouseEnter(true),
+                              onExit: (e) => _mouseEnter(false),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Global.launchURL('https://qrco.de/bd68dK');
+                                },
+                                child: SizeableImage(
+                                  picName: '/QR/QR_DJ',
+                                  width: 285,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                    )
                   ],
-                ),
+                )
               ],
             ),
           ),
@@ -200,15 +192,18 @@ class _DanceJamContentMobileState extends State<DanceJamContentMobile> {
     );
   }
 
-  final List<Image> qrList = [
-    Image(
-      image: AssetImage('assets/images/QR/dollify-android.png'),
-      fit: BoxFit.cover,
-    ),
-    Image(
-      image: AssetImage('assets/images/QR/dollify-iOS.png'),
-      fit: BoxFit.cover,
-    ),
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
+  }
+
+  final List<Widget> imgList = [
+    smallImage(240, 'carousel/dj/dj-1'),
+    smallImage(240, 'carousel/dj/dj-2'),
+    smallImage(240, 'carousel/dj/dj-3'),
+    smallImage(240, 'carousel/dj/dj-4'),
+    smallImage(240, 'carousel/dj/dj-5'),
   ];
 
   final List<String> devList = [

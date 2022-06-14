@@ -5,6 +5,7 @@ import 'package:portfolio/Navigation/NavigationService.dart';
 import 'package:portfolio/Navigation/locator.dart';
 import 'package:portfolio/Navigation/router.dart';
 import 'package:portfolio/Shared/global.dart';
+import 'package:portfolio/Views/Portfolio/DanceJam/dancejam_content_tablet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'dancejam_content_desktop.dart';
@@ -28,7 +29,7 @@ class _DanceJamState extends State<DanceJamView> {
               child: ScreenTypeLayout(
             desktop: DanceJamContentDesktop(),
             mobile: DanceJamContentMobile(),
-            tablet: DanceJamContentDesktop(),
+            tablet: DanceJamContentTablet(),
           ))
         ],
       ),

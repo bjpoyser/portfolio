@@ -8,6 +8,7 @@ import 'package:portfolio/Widgets/Cards/title_card.dart';
 
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
+import '../../../Widgets/Images/sizeable_image.dart';
 
 class DollifyContentTablet extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class DollifyContentTablet extends StatefulWidget {
 
 class _DollifyContentTabletState extends State<DollifyContentTablet> {
   final ScrollController _scrollController = new ScrollController();
-
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
     double width = 730;
@@ -160,7 +161,7 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                     ImageWithHeaderCard(
                       cardWidth: 230,
                       imageWidth: 130,
-                      picName: 'carousel/dollify/me-doll',
+                      picName: 'carousel/dollify/ombre-update',
                       title: 'Ombre Update',
                     ),
                   ],
@@ -196,15 +197,24 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
                         children: [
                           TitleCard(
                             width: 480,
-                            title: 'Scan or Tap to Download',
+                            title: 'Tap or Scan to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
-                          Container(
-                            width: 480,
-                            child: CarouselWithIndicator(
-                              imgList: qrList,
-                              height: 330,
-                              transition: Duration(seconds: 6),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onHover: (e) => _mouseEnter(true),
+                              onExit: (e) => _mouseEnter(false),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Global.launchURL('https://qrco.de/bd68qG');
+                                },
+                                child: SizeableImage(
+                                  picName: '/QR/QR_Dollify',
+                                  width: 285,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -227,31 +237,15 @@ class _DollifyContentTabletState extends State<DollifyContentTablet> {
     smallImage(240, 'carousel/dollify/lucifer'),
   ];
 
-  final List<Widget> qrList = [
-    GestureDetector(
-      onTap: () {
-        Global.launchURL(
-            'https://play.google.com/store/apps/details?id=com.davexp.dollify');
-      },
-      child: Image(
-        image: AssetImage('assets/images/QR/dollify-android.png'),
-        fit: BoxFit.cover,
-      ),
-    ),
-    GestureDetector(
-      onTap: () {
-        Global.launchURL('https://apps.apple.com/us/app/dollify/id1444697551');
-      },
-      child: Image(
-        image: AssetImage('assets/images/QR/dollify-iOS.png'),
-        fit: BoxFit.cover,
-      ),
-    ),
-  ];
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
+  }
 
   final List<String> devList = [
     'Genre: Avatar Creator',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

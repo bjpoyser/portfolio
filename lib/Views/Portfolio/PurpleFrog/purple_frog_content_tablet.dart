@@ -7,6 +7,7 @@ import 'package:portfolio/Widgets/Cards/title_card.dart';
 
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Widgets/Cards/list_container.dart';
+import '../../../Widgets/Images/sizeable_image.dart';
 import '../../../Widgets/Texts/simple_link.dart';
 
 class PurpleFrogContentTablet extends StatefulWidget {
@@ -17,7 +18,7 @@ class PurpleFrogContentTablet extends StatefulWidget {
 
 class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
   final ScrollController _scrollController = new ScrollController();
-
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
     double width = 730;
@@ -212,15 +213,24 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
                         children: [
                           TitleCard(
                             width: 480,
-                            title: 'Scan to Download',
+                            title: 'Tap or Scan to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
-                          Container(
-                            width: 480,
-                            child: CarouselWithIndicator(
-                              imgList: qrList,
-                              height: 330,
-                              transition: Duration(seconds: 6),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onHover: (e) => _mouseEnter(true),
+                              onExit: (e) => _mouseEnter(false),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Global.launchURL('https://qrco.de/bd67LA');
+                                },
+                                child: SizeableImage(
+                                  picName: '/QR/QR_Frog',
+                                  width: 285,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -236,6 +246,12 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
     );
   }
 
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
+  }
+
   final List<Widget> imgList = [
     smallImage(240, 'carousel/pf/pf-1'),
     smallImage(240, 'carousel/pf/pf-2'),
@@ -244,32 +260,9 @@ class _PurpleFrogContentTabletState extends State<PurpleFrogContentTablet> {
     smallImage(240, 'carousel/pf/pf-5'),
   ];
 
-  final List<Widget> qrList = [
-    GestureDetector(
-      onTap: () {
-        Global.launchURL(
-            'https://play.google.com/store/apps/details?id=com.ontheedge.savethepurplefrog');
-      },
-      child: Image(
-        image: AssetImage('assets/images/QR/PF-android.png'),
-        fit: BoxFit.cover,
-      ),
-    ),
-    GestureDetector(
-      onTap: () {
-        Global.launchURL(
-            'https://apps.apple.com/us/app/save-the-purple-frog/id1569647982');
-      },
-      child: Image(
-        image: AssetImage('assets/images/QR/PF-iOS.png'),
-        fit: BoxFit.cover,
-      ),
-    ),
-  ];
-
   final List<String> devList = [
     'Genre: Arcade, Action',
-    'Engine: Unity 3D',
+    'Engine: Unity 3D C#',
     'Platform: Android & IOS',
     'Game Mode: Single Player'
   ];

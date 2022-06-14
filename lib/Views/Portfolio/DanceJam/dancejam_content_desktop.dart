@@ -8,6 +8,7 @@ import 'package:portfolio/Widgets/Cards/title_card.dart';
 
 import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
+import '../../../Widgets/Images/sizeable_image.dart';
 
 class DanceJamContentDesktop extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class DanceJamContentDesktop extends StatefulWidget {
 
 class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
   final ScrollController _scrollController = new ScrollController();
-
+  bool isHover = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -33,7 +34,7 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                   width: 800,
                   child: ProjectHeader(
                     picName: 'logos/logo-dancejam',
-                    projectTitle: 'Dance Jame - Relaunch',
+                    projectTitle: 'Dance Jam - Relaunch',
                   ),
                 ),
                 Padding(
@@ -80,19 +81,19 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                                       'https://www.instagram.com/sunnastudio/');
                                 }),
                             Text(
-                              ' and relaunch in',
+                              ' and relaunched',
                               style:
                                   TextStyle(fontSize: Global.subtitleFontSize),
                             ),
                           ],
                         ),
                         Text(
-                          'February, 2022.',
+                          'in February, 2022.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
                         Text(
-                          'Dance Jam is based is a classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
+                          'Dance Jam is based in the classic memory game, but this time you have to match dances. This game has the cutest characters you\'ll ever see, different scenarios and skins!',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                         SizedBox(height: 20),
@@ -152,15 +153,24 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                         children: [
                           TitleCard(
                             width: 520,
-                            title: 'Scan to Download',
+                            title: 'Click to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
-                          Container(
-                            width: 520,
-                            child: CarouselWithIndicator(
-                              imgList: qrList,
-                              height: 330,
-                              transition: Duration(seconds: 6),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              onHover: (e) => _mouseEnter(true),
+                              onExit: (e) => _mouseEnter(false),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Global.launchURL('https://qrco.de/bd68dK');
+                                },
+                                child: SizeableImage(
+                                  picName: '/QR/QR_DJ',
+                                  width: 285,
+                                ),
+                              ),
                             ),
                           ),
                         ],
@@ -175,38 +185,33 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
       ),
     );
   }
+
+  final List<Widget> imgList = [
+    smallImage(240, 'carousel/dj/dj-1'),
+    smallImage(240, 'carousel/dj/dj-2'),
+    smallImage(240, 'carousel/dj/dj-3'),
+    smallImage(240, 'carousel/dj/dj-4'),
+    smallImage(240, 'carousel/dj/dj-5'),
+  ];
+
+  void _mouseEnter(bool hovering) {
+    setState(() {
+      isHover = hovering;
+    });
+  }
+
+  final List<String> devList = [
+    'Genre: Casual',
+    'Engine: Unity 3D C#',
+    'Platform: Android & IOS',
+    'Game Mode: Single Player'
+  ];
+
+  final List<String> dutiesList = [
+    'UI Design',
+    'Bug Fixing',
+    'Assets Integration',
+    'QA',
+    'Functionality Integration'
+  ];
 }
-
-final List<Widget> imgList = [
-  smallImage(240, 'carousel/dj/dj-1'),
-  smallImage(240, 'carousel/dj/dj-2'),
-  smallImage(240, 'carousel/dj/dj-3'),
-  smallImage(240, 'carousel/dj/dj-4'),
-  smallImage(240, 'carousel/dj/dj-5'),
-];
-
-final List<Image> qrList = [
-  Image(
-    image: AssetImage('assets/images/QR/dollify-android.png'),
-    fit: BoxFit.cover,
-  ),
-  Image(
-    image: AssetImage('assets/images/QR/dollify-iOS.png'),
-    fit: BoxFit.cover,
-  ),
-];
-
-final List<String> devList = [
-  'Genre: Casual',
-  'Engine: Unity 3D',
-  'Platform: Android & IOS',
-  'Game Mode: Single Player'
-];
-
-final List<String> dutiesList = [
-  'UI Design',
-  'Bug Fixing',
-  'Assets Integration',
-  'QA',
-  'Functionality Integration'
-];

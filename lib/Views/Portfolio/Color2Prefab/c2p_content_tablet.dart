@@ -13,45 +13,45 @@ import '../../../Widgets/Cards/project_header.dart';
 import '../../../Shared/global.dart';
 import '../../../Widgets/Cards/title_card.dart';
 
-class Color2PrefabContentDesktop extends StatefulWidget {
+class Color2PrefabContentTablet extends StatefulWidget {
   @override
-  _Color2PrefabContentDesktopState createState() =>
-      _Color2PrefabContentDesktopState();
+  _Color2PrefabContentTabletState createState() =>
+      _Color2PrefabContentTabletState();
 }
 
-class _Color2PrefabContentDesktopState
-    extends State<Color2PrefabContentDesktop> {
+class _Color2PrefabContentTabletState extends State<Color2PrefabContentTablet> {
   bool isHover = false;
   final ScrollController _scrollController = new ScrollController();
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    double width = 730;
     return SingleChildScrollView(
       controller: _scrollController,
       child: Center(
         child: Container(
-          width: size.width,
+          width: 750,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 50.0),
             child: Column(
               children: [
                 Container(
-                  width: 800,
+                  width: width,
                   child: ProjectHeader(
                     picName: 'logos/logo-c2p',
                     projectTitle: 'Color 2 Prefab (Unity Tool)',
+                    titleContainerSize: 560,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 30),
                   child: VideoContainer(
-                    width: 800,
+                    width: width,
                     videoURL:
                         'https://firebasestorage.googleapis.com/v0/b/portfolio-6d4f7.appspot.com/o/demos%2FColor2Prefab.mp4?alt=media&token=1a2c226b-7737-40bd-9f1d-0da6ebe77647',
                   ),
                 ),
                 Container(
-                  width: 800,
+                  width: width,
                   decoration: Global.cardBoxDecoration,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
@@ -77,16 +77,11 @@ class _Color2PrefabContentDesktopState
                                   action: () {
                                     locator<NavigationService>()
                                         .navigateTo(PurpleFrogRoute);
-                                  }),
-                              Text(
-                                ' I needed',
-                                style: TextStyle(
-                                    fontSize: Global.subtitleFontSize),
-                              )
+                                  })
                             ],
                           ),
                           Text(
-                            'to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers, but you can use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.',
+                            'I needed to paint a Level first and then recreate it in Unity3D, but that was taking a long time. Since I use this tool, everything is easier and faster!\n\nThis tool is recommended for 2D Platformers, but you can use it to generate 3D levels of any other genre since you only have to assign a prefab to a color.',
                             style: TextStyle(fontSize: Global.subtitleFontSize),
                           )
                         ]),
@@ -94,7 +89,7 @@ class _Color2PrefabContentDesktopState
                 ),
                 SizedBox(height: 40),
                 Container(
-                  width: 800,
+                  width: width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -102,9 +97,13 @@ class _Color2PrefabContentDesktopState
                       ListContainer(
                         listTitle: 'Development',
                         itemsList: devList,
+                        containerWidth: 350,
                       ),
                       ListContainer(
-                          listTitle: 'Resposibilities', itemsList: dutiesList),
+                        listTitle: 'Resposibilities',
+                        itemsList: dutiesList,
+                        containerWidth: 350,
+                      ),
                     ],
                   ),
                 ),
@@ -118,12 +117,12 @@ class _Color2PrefabContentDesktopState
                       child: Column(
                         children: [
                           TitleCard(
-                            width: 240,
+                            width: 230,
                             title: 'Results',
                             fontSize: Global.subtitleFontSize,
                           ),
                           Container(
-                            width: 240,
+                            width: 230,
                             child: CarouselWithIndicator(
                               imgList: imgList,
                               height: 330,
@@ -132,14 +131,14 @@ class _Color2PrefabContentDesktopState
                         ],
                       ),
                     ),
-                    SizedBox(width: 40),
+                    SizedBox(width: 20),
                     Container(
                       decoration: Global.cardBoxDecoration,
                       child: Column(
                         children: [
                           TitleCard(
-                            width: 520,
-                            title: 'Click to Download',
+                            width: 480,
+                            title: 'Tap or Scan to Download',
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
