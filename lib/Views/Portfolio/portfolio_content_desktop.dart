@@ -32,7 +32,7 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Planet Cube: Edge',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'pce',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PCERoute),
@@ -46,7 +46,7 @@ class PortfolioContentDesktop extends StatelessWidget {
                             ),
                             ProjectCard(
                               title: 'AI Control System',
-                              role: 'Technical Designer & Programmer',
+                              role: 'Technical Designer & Developer',
                               picName: 'unreal',
                               action: () => locator<NavigationService>()
                                   .navigateTo(AIRoute),
@@ -59,21 +59,21 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Dollify',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'dollify',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DollifyRoute),
                             ),
                             ProjectCard(
                               title: 'Dance Jam',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'dancejam',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DanceJamRoute),
                             ),
                             ProjectCard(
                               title: 'Color 2 Prefab',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'c2p',
                               action: () => locator<NavigationService>()
                                   .navigateTo(C2PRoute),
@@ -89,7 +89,7 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Planet Cube: Edge',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'pce',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PCERoute),
@@ -109,14 +109,14 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'AI Control System',
-                              role: 'Technical Designer & Programmer',
+                              role: 'Technical Designer & Developer',
                               picName: 'unreal',
                               action: () => locator<NavigationService>()
                                   .navigateTo(AIRoute),
                             ),
                             ProjectCard(
                               title: 'Dance Jam',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'dancejam',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DanceJamRoute),
@@ -129,14 +129,14 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Dollify',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'dollify',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DollifyRoute),
                             ),
                             ProjectCard(
                               title: 'Color 2 Prefab',
-                              role: 'Programmer',
+                              role: 'Developer',
                               picName: 'c2p',
                               action: () => locator<NavigationService>()
                                   .navigateTo(C2PRoute),

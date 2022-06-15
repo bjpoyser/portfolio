@@ -19,14 +19,14 @@ class PortfolioContentMobile extends StatelessWidget {
           children: [
             ProjectCard(
               title: 'Planet Cube',
-              role: 'Programmer',
+              role: 'Developer',
               picName: 'pce',
               action: () => locator<NavigationService>().navigateTo(PCERoute),
             ),
             SizedBox(height: 50),
             ProjectCard(
               title: 'Purple Frog',
-              role: 'Level Designer & Programmer',
+              role: 'Level Designer & Programming',
               picName: 'pf',
               action: () =>
                   locator<NavigationService>().navigateTo(PurpleFrogRoute),
@@ -34,14 +34,14 @@ class PortfolioContentMobile extends StatelessWidget {
             SizedBox(height: 50),
             ProjectCard(
               title: 'AI System',
-              role: 'Technical Designer & Programmer',
+              role: 'Technical Designer & Developer',
               picName: 'unreal',
               action: () => locator<NavigationService>().navigateTo(AIRoute),
             ),
             SizedBox(height: 50),
             ProjectCard(
               title: 'Dance Jam',
-              role: 'Programmer',
+              role: 'Developer',
               picName: 'dancejam',
               action: () =>
                   locator<NavigationService>().navigateTo(DanceJamRoute),
@@ -49,14 +49,14 @@ class PortfolioContentMobile extends StatelessWidget {
             SizedBox(height: 50),
             ProjectCard(
               title: 'Color 2 Prefab',
-              role: 'Programmer',
+              role: 'Developer',
               picName: 'c2p',
               action: () => locator<NavigationService>().navigateTo(C2PRoute),
             ),
             SizedBox(height: 50),
             ProjectCard(
               title: 'Dollify',
-              role: 'Programmer',
+              role: 'Developer',
               picName: 'dollify',
               action: () =>
                   locator<NavigationService>().navigateTo(DollifyRoute),
