@@ -485,7 +485,7 @@ class AboutContentMobile extends StatelessWidget {
                           size: 40,
                           action: () {
                             Global.launchURL(
-                                'https://drive.google.com/file/d/1F1VZ_aimm4SdMSlf5zlaKVSNs2LhJ69B/view?usp=sharing');
+                                'https://drive.google.com/file/d/1Bg_DYezRlNdRv_bubl_vAewXdZTfaUIZ/view?usp=sharing');
                           }),
                     ],
                   ),

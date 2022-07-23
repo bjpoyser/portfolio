@@ -20,7 +20,7 @@ abstract class Global {
   static const BoxDecoration cardBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.black45,
+        color: Color.fromARGB(35, 0, 0, 0),
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,
@@ -32,7 +32,7 @@ abstract class Global {
   static const BoxDecoration blackBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.black45,
+        color: Color.fromARGB(35, 0, 0, 0),
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,
@@ -44,7 +44,7 @@ abstract class Global {
   static const BoxDecoration softShadowDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Colors.black26,
+        color: Color.fromARGB(35, 0, 0, 0),
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,

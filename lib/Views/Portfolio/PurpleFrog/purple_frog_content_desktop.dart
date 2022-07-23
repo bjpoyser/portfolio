@@ -204,29 +204,19 @@ class _PurpleFrogContentDesktopState extends State<PurpleFrogContentDesktop> {
                     SizedBox(width: 40),
                     Container(
                       decoration: Global.cardBoxDecoration,
+                      height: 450,
                       child: Column(
                         children: [
                           TitleCard(
                             width: 520,
-                            title: 'Click to Download',
+                            title: 'Scan',
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              onHover: (e) => _mouseEnter(true),
-                              onExit: (e) => _mouseEnter(false),
-                              child: GestureDetector(
-                                onTap: () {
-                                  Global.launchURL('https://qrco.de/bd67LA');
-                                },
-                                child: SizeableImage(
-                                  picName: '/QR/QR_Frog',
-                                  width: 285,
-                                ),
-                              ),
-                            ),
+                            padding:
+                                const EdgeInsets.only(top: 50.0, bottom: 20.0),
+                            child: SizeableImage(
+                                picName: '/QR/QR_Frog', width: 285),
                           ),
                         ],
                       ),

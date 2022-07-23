@@ -149,29 +149,19 @@ class _DanceJamContentDesktopState extends State<DanceJamContentDesktop> {
                     SizedBox(width: 40),
                     Container(
                       decoration: Global.cardBoxDecoration,
+                      height: 450,
                       child: Column(
                         children: [
                           TitleCard(
                             width: 520,
-                            title: 'Click to Download',
+                            title: 'Scan',
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              onHover: (e) => _mouseEnter(true),
-                              onExit: (e) => _mouseEnter(false),
-                              child: GestureDetector(
-                                onTap: () {
-                                  Global.launchURL('https://qrco.de/bd68dK');
-                                },
-                                child: SizeableImage(
-                                  picName: '/QR/QR_DJ',
-                                  width: 285,
-                                ),
-                              ),
-                            ),
+                            padding:
+                                const EdgeInsets.only(top: 50.0, bottom: 20.0),
+                            child:
+                                SizeableImage(picName: '/QR/QR_DJ', width: 285),
                           ),
                         ],
                       ),

@@ -154,6 +154,7 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
                     ),
                     SizedBox(width: 20),
                     Container(
+                      height: 450,
                       decoration: Global.cardBoxDecoration,
                       child: Column(
                         children: [
@@ -163,14 +164,15 @@ class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding:
+                                const EdgeInsets.only(top: 50.0, bottom: 20.0),
                             child: MouseRegion(
                               cursor: SystemMouseCursors.click,
                               onHover: (e) => _mouseEnter(true),
                               onExit: (e) => _mouseEnter(false),
                               child: GestureDetector(
                                 onTap: () {
-                                  Global.launchURL('https://qrco.de/bd68dK');
+                                  Global.launchURL('');
                                 },
                                 child: SizeableImage(
                                   picName: '/QR/QR_DJ',

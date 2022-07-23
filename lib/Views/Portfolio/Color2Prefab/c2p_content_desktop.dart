@@ -134,6 +134,7 @@ class _Color2PrefabContentDesktopState
                     ),
                     SizedBox(width: 40),
                     Container(
+                      height: 450,
                       decoration: Global.cardBoxDecoration,
                       child: Column(
                         children: [
@@ -143,7 +144,8 @@ class _Color2PrefabContentDesktopState
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding:
+                                const EdgeInsets.only(top: 50.0, bottom: 20.0),
                             child: MouseRegion(
                               cursor: SystemMouseCursors.click,
                               onHover: (e) => _mouseEnter(true),

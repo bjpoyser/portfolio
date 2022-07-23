@@ -133,6 +133,7 @@ class _Color2PrefabContentTabletState extends State<Color2PrefabContentTablet> {
                     ),
                     SizedBox(width: 20),
                     Container(
+                      height: 450,
                       decoration: Global.cardBoxDecoration,
                       child: Column(
                         children: [
@@ -142,7 +143,8 @@ class _Color2PrefabContentTabletState extends State<Color2PrefabContentTablet> {
                             fontSize: Global.subtitleFontSize,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding:
+                                const EdgeInsets.only(top: 50.0, bottom: 20.0),
                             child: MouseRegion(
                               cursor: SystemMouseCursors.click,
                               onHover: (e) => _mouseEnter(true),
