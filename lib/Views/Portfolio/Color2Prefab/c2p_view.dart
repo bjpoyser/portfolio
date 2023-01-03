@@ -36,7 +36,7 @@ class _Color2PrefabViewState extends State<Color2PrefabView> {
       floatingActionButton: Builder(
         builder: (context) => FabCircularMenu(
           key: fabKey,
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.topLeft,
           ringColor: Global.accentColor,
           ringDiameter: 500.0,
           ringWidth: 150.0,
@@ -47,6 +47,7 @@ class _Color2PrefabViewState extends State<Color2PrefabView> {
           fabOpenColor: Global.secondAccentColor,
           fabOpenIcon: Icon(Icons.menu, color: Colors.white),
           fabCloseIcon: Icon(Icons.close, color: Colors.white),
+          animationDuration: Duration(milliseconds: 400),
           children: [
             ClipOval(
               child: Material(

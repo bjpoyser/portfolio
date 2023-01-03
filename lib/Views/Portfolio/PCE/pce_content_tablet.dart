@@ -258,10 +258,8 @@ class _PCEContentTabletState extends State<PCEContentTablet> {
   ];
 
   final List<String> dutiesList = [
-    'Develop Enemies',
-    'Develop Hazzards',
-    'Save/Load System',
-    'Game Modes Dev',
+    'Gameplay Programming',
+    'Systems Development',
     'Bug Fixing',
     'UI Design',
     'QA and UX',

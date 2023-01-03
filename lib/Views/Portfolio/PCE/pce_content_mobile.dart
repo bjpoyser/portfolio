@@ -237,10 +237,8 @@ class _PCEContentMobileState extends State<PCEContentMobile> {
   ];
 
   final List<String> dutiesList = [
-    'Develop Enemies',
-    'Develop Hazzards',
-    'Save/Load System',
-    'Game Modes Dev',
+    'Gameplay Programming',
+    'Systems Development',
     'Bug Fixing',
     'UI Design',
     'QA and UX',

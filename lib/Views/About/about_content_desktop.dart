@@ -99,7 +99,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                       size: 40,
                                       action: () {
                                         Global.launchURL(
-                                            'https://drive.google.com/file/d/1Bg_DYezRlNdRv_bubl_vAewXdZTfaUIZ/view?usp=sharing');
+                                            'https://drive.google.com/file/d/18ReKS49i_t0hyhD831LhXGVGXoL2CXm3/view?usp=sharing');
                                       }),
                                 ],
                               ),
@@ -205,7 +205,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                                   left: 15.0, top: 1),
                                               child: ListItem(
                                                 itemText:
-                                                    " Full Sail University, USA, present",
+                                                    " Full Sail University, USA, 2022",
                                                 fontSize: Global.itemFontSize,
                                                 listSymbol: "-",
                                               ),
@@ -223,7 +223,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                                   left: 15.0, top: 1),
                                               child: ListItem(
                                                 itemText:
-                                                    " Fidélitas University, Costa Rica, 2021",
+                                                    " Fidélitas University, CRC, 2021",
                                                 fontSize: Global.itemFontSize,
                                                 listSymbol: "-",
                                               ),
@@ -295,19 +295,20 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                         ),
                                         ListItem(
                                             fontSize: Global.textFontSize,
-                                            itemText: "Technical Game Design"),
+                                            itemText:
+                                                "Gameplay/Engine Programming"),
                                         SizedBox(
                                           height: 20,
                                         ),
                                         ListItem(
                                             fontSize: Global.textFontSize,
-                                            itemText: "Level Design"),
+                                            itemText: "Technical Game Design"),
                                         SizedBox(
                                           height: 20,
                                         ),
                                         ListItem(
                                           fontSize: Global.textFontSize,
-                                          itemText: "Character Design",
+                                          itemText: "Game Design",
                                         ),
                                         SizedBox(
                                           height: 20,
@@ -321,7 +322,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                         ),
                                         ListItem(
                                           fontSize: Global.textFontSize,
-                                          itemText: "Programming",
+                                          itemText: "Technologies",
                                         ),
                                         Padding(
                                           padding:
@@ -339,12 +340,12 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                               ),
                                               ListItem(
                                                 fontSize: Global.textFontSize,
-                                                itemText: "C++",
+                                                itemText: "Java",
                                                 listSymbol: "- ",
                                               ),
                                               ListItem(
                                                 fontSize: Global.textFontSize,
-                                                itemText: "Java",
+                                                itemText: "Blender",
                                                 listSymbol: "- ",
                                               ),
                                               ListItem(

@@ -153,7 +153,7 @@ class _PurpleFrogContentMobileState extends State<PurpleFrogContentMobile> {
                     ImageWithHeaderCard(
                         cardWidth: width,
                         imageWidth: width,
-                        picName: '/carousel/pf/pf-1',
+                        picName: '/carousel/pf/pf-color-concept',
                         title: '1. Concept'),
                     SizedBox(height: 40),
                     ImageWithHeaderCard(

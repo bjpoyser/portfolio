@@ -11,6 +11,7 @@ import 'package:portfolio/Views/Portfolio/AI/ai_view.dart';
 import 'package:portfolio/Views/Portfolio/Color2Prefab/c2p_view.dart';
 import 'package:portfolio/Views/Portfolio/Dollify/dollify_view.dart';
 import 'package:portfolio/Views/Portfolio/PurpleFrog/purple_frog_view.dart';
+import 'package:portfolio/Views/Portfolio/SolveAndRescue/solve_and_rescue_view.dart';
 import 'package:portfolio/Views/Portfolio/portfolio_view.dart';
 
 import '../Views/Portfolio/DanceJam/dancejam_view.dart';
@@ -25,6 +26,7 @@ const String DollifyRoute = '/portfolio/dollify';
 const String PurpleFrogRoute = '/portfolio/save-the-purple-frog';
 const String DanceJamRoute = '/portfolio/DanceJam';
 const String PCERoute = '/portfolio/PCE';
+const String SolveAndRescueRoute = '/portfolio/solve-and-rescue';
 const String AIRoute = '/portfolio/AI-Control-System';
 const String UnderConstructionRoute = '/underConstruction';
 
@@ -50,6 +52,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(PCEView(), settings);
     case AIRoute:
       return _getPageRoute(AIView(), settings);
+    case SolveAndRescueRoute:
+      return _getPageRoute(SolveAndRescueView(), settings);
     default:
       return _getPageRoute(UnderConstruction(), settings);
   }

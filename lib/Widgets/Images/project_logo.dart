@@ -33,7 +33,7 @@ class ProjectLogo extends StatelessWidget {
             child: Container(
               width: picSize,
               height: picSize,
-              child: Image.asset('assets/images/logos/logo-$picName.png'),
+              child: Image.asset('assets/images/logos/logo-$picName.jpg'),
             ),
           ),
           Padding(

@@ -10,12 +10,12 @@ import '../../../Widgets/Cards/image_with_header_card.dart';
 import '../../../Shared/global.dart';
 import '../../../Widgets/Images/sizeable_image.dart';
 
-class DanceJamContentTablet extends StatefulWidget {
+class GuardianContentTablet extends StatefulWidget {
   @override
-  _DanceJamContentTabletState createState() => _DanceJamContentTabletState();
+  _GuardianContentTabletState createState() => _GuardianContentTabletState();
 }
 
-class _DanceJamContentTabletState extends State<DanceJamContentTablet> {
+class _GuardianContentTabletState extends State<GuardianContentTablet> {
   final ScrollController _scrollController = new ScrollController();
   bool isHover = false;
   @override

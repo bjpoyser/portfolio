@@ -61,7 +61,7 @@ class _PresentationCardState extends State<PresentationCard> {
                       ),
                       Image(
                         image: AssetImage(
-                            'assets/images/home/${widget.picName}.png'),
+                            'assets/images/home/${widget.picName}.jpg'),
                         fit: BoxFit.cover,
                       )
                     ],
@@ -94,7 +94,7 @@ class _PresentationCardState extends State<PresentationCard> {
                       ),
                     ),
                     Image(
-                      image: AssetImage('assets/images/${widget.picName}.png'),
+                      image: AssetImage('assets/images/${widget.picName}.jpg'),
                       fit: BoxFit.cover,
                     ),
                   ],

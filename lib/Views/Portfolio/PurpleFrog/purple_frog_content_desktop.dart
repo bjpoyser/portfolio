@@ -157,7 +157,7 @@ class _PurpleFrogContentDesktopState extends State<PurpleFrogContentDesktop> {
                     ImageWithHeaderCard(
                       cardWidth: 240,
                       imageWidth: 130,
-                      picName: '/carousel/pf/pf-1',
+                      picName: '/carousel/pf/pf-color-concept',
                       title: '1. Concept',
                     ),
                     Padding(

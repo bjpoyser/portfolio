@@ -155,7 +155,7 @@ class _PCEContentDesktopState extends State<PCEContentDesktop> {
                       ListContainer(
                         listTitle: 'Development',
                         itemsList: devList,
-                        containerHeight: 430,
+                        containerHeight: 340,
                       ),
                       ListContainer(
                           listTitle: 'Resposibilities', itemsList: dutiesList),
@@ -236,10 +236,8 @@ class _PCEContentDesktopState extends State<PCEContentDesktop> {
   ];
 
   final List<String> dutiesList = [
-    'Develop Enemies',
-    'Develop Hazzards',
-    'Save/Load System',
-    'Game Modes Development',
+    'Gameplay Programming',
+    'Systems Development',
     'Bug Fixing',
     'UI Design',
     'QA and UX',

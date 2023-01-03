@@ -33,11 +33,26 @@ class PortfolioContentMobile extends StatelessWidget {
             ),
             SizedBox(height: 50),
             ProjectCard(
-              title: 'AI System',
-              role: 'Technical Designer & Developer',
-              picName: 'unreal',
-              action: () => locator<NavigationService>().navigateTo(AIRoute),
+              title: 'Color 2 Prefab',
+              role: 'Developer',
+              picName: 'c2p',
+              action: () => locator<NavigationService>().navigateTo(C2PRoute),
             ),
+            SizedBox(height: 50),
+            ProjectCard(
+              title: 'Solve & Rescue',
+              role: 'Programmer',
+              picName: 'sr',
+              action: () =>
+                  locator<NavigationService>().navigateTo(SolveAndRescueRoute),
+            ),
+            /*ProjectCard(
+              title: 'Dollify',
+              role: 'Developer',
+              picName: 'dollify',
+              action: () =>
+                  locator<NavigationService>().navigateTo(DollifyRoute),
+            ),*/
             SizedBox(height: 50),
             ProjectCard(
               title: 'Dance Jam',
@@ -48,18 +63,10 @@ class PortfolioContentMobile extends StatelessWidget {
             ),
             SizedBox(height: 50),
             ProjectCard(
-              title: 'Color 2 Prefab',
-              role: 'Developer',
-              picName: 'c2p',
-              action: () => locator<NavigationService>().navigateTo(C2PRoute),
-            ),
-            SizedBox(height: 50),
-            ProjectCard(
-              title: 'Dollify',
-              role: 'Developer',
-              picName: 'dollify',
-              action: () =>
-                  locator<NavigationService>().navigateTo(DollifyRoute),
+              title: 'AI System',
+              role: 'Technical Designer & Developer',
+              picName: 'unreal',
+              action: () => locator<NavigationService>().navigateTo(AIRoute),
             ),
           ],
         )),

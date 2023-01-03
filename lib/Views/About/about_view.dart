@@ -29,12 +29,13 @@ class AboutView extends StatelessWidget {
       floatingActionButton: Builder(
         builder: (context) => FabCircularMenu(
           key: fabKey,
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.topLeft,
           ringColor: Global.accentColor,
           ringDiameter: 500.0,
           ringWidth: 150.0,
           fabSize: 65.0,
           fabElevation: 10.0,
+          animationDuration: Duration(milliseconds: 400),
           fabIconBorder: CircleBorder(),
           fabColor: Global.accentColor,
           fabOpenColor: Global.secondAccentColor,
@@ -46,9 +47,9 @@ class AboutView extends StatelessWidget {
                 color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(HomeRoute);
+                    locator<NavigationService>().navigateTo(ContactRoute);
                   },
-                  splashColor: Global.accentColor, // inkwell color
+                  splashColor: Global.accentColor,
                   child: Container(
                     width: 100,
                     height: 100,
@@ -56,9 +57,9 @@ class AboutView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.house, color: Colors.white),
+                        Icon(FontAwesomeIcons.phoneFlip, color: Colors.white),
                         Text(
-                          'Home',
+                          'Contact',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],
@@ -98,9 +99,9 @@ class AboutView extends StatelessWidget {
                 color: Global.accentColor, // button color
                 child: InkWell(
                   onTap: () {
-                    locator<NavigationService>().navigateTo(ContactRoute);
+                    locator<NavigationService>().navigateTo(HomeRoute);
                   },
-                  splashColor: Global.accentColor,
+                  splashColor: Global.accentColor, // inkwell color
                   child: Container(
                     width: 100,
                     height: 100,
@@ -108,9 +109,9 @@ class AboutView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(FontAwesomeIcons.phoneFlip, color: Colors.white),
+                        Icon(FontAwesomeIcons.house, color: Colors.white),
                         Text(
-                          'Contact',
+                          'Home',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ],

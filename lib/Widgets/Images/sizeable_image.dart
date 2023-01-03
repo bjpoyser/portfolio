@@ -23,7 +23,7 @@ class SizeableImage extends StatelessWidget {
           ? BoxDecoration(border: Border.all(width: 5), color: Colors.black)
           : null,
       child: Image(
-        image: AssetImage('assets/images/$picName.png'),
+        image: AssetImage('assets/images/$picName.jpg'),
         fit: BoxFit.cover,
       ),
     );

@@ -60,7 +60,7 @@ Widget smallImage(width, picName) => FullScreenWidget(
               tag: picName,
               child: ClipRRect(
                 child: Image.asset(
-                  "assets/images/$picName.png",
+                  "assets/images/$picName.jpg",
                   fit: BoxFit.cover,
                 ),
               ),

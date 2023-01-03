@@ -58,12 +58,19 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'Solve & Rescue',
+                              role: 'Programmer',
+                              picName: 'sr',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(SolveAndRescueRoute),
+                            ),
+                            /*ProjectCard(
                               title: 'Dollify',
                               role: 'Developer',
                               picName: 'dollify',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DollifyRoute),
-                            ),
+                            ),*/
                             ProjectCard(
                               title: 'Dance Jam',
                               role: 'Developer',
@@ -108,6 +115,33 @@ class PortfolioContentDesktop extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ProjectCard(
+                              title: 'Color 2 Prefab',
+                              role: 'Developer',
+                              picName: 'c2p',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(C2PRoute),
+                            ),
+                            ProjectCard(
+                              title: 'Solve & Rescue',
+                              role: 'Programmer',
+                              picName: 'sr',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(SolveAndRescueRoute),
+                            )
+                            /*ProjectCard(
+                              title: 'Dollify',
+                              role: 'Developer',
+                              picName: 'dollify',
+                              action: () => locator<NavigationService>()
+                                  .navigateTo(DollifyRoute),
+                            ),*/
+                          ],
+                        ),
+                        SizedBox(height: 80),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ProjectCard(
                               title: 'AI Control System',
                               role: 'Technical Designer & Developer',
                               picName: 'unreal',
@@ -122,27 +156,7 @@ class PortfolioContentDesktop extends StatelessWidget {
                                   .navigateTo(DanceJamRoute),
                             ),
                           ],
-                        ),
-                        SizedBox(height: 80),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            ProjectCard(
-                              title: 'Dollify',
-                              role: 'Developer',
-                              picName: 'dollify',
-                              action: () => locator<NavigationService>()
-                                  .navigateTo(DollifyRoute),
-                            ),
-                            ProjectCard(
-                              title: 'Color 2 Prefab',
-                              role: 'Developer',
-                              picName: 'c2p',
-                              action: () => locator<NavigationService>()
-                                  .navigateTo(C2PRoute),
-                            ),
-                          ],
-                        ),
+                        )
                       ],
                     ),
             ),
