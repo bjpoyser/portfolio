@@ -19,14 +19,14 @@ class PortfolioContentMobile extends StatelessWidget {
           children: [
             ProjectCard(
               title: 'Planet Cube',
-              role: 'Developer',
+              role: 'Programmer',
               picName: 'pce',
               action: () => locator<NavigationService>().navigateTo(PCERoute),
             ),
             SizedBox(height: 50),
             ProjectCard(
               title: 'Purple Frog',
-              role: 'Level Designer & Programming',
+              role: 'Level Designer & Programmer',
               picName: 'pf',
               action: () =>
                   locator<NavigationService>().navigateTo(PurpleFrogRoute),
@@ -56,7 +56,7 @@ class PortfolioContentMobile extends StatelessWidget {
             SizedBox(height: 50),
             ProjectCard(
               title: 'Dance Jam',
-              role: 'Developer',
+              role: 'Programmer',
               picName: 'dancejam',
               action: () =>
                   locator<NavigationService>().navigateTo(DanceJamRoute),
@@ -64,7 +64,7 @@ class PortfolioContentMobile extends StatelessWidget {
             SizedBox(height: 50),
             ProjectCard(
               title: 'AI System',
-              role: 'Technical Designer & Developer',
+              role: 'Technical Designer',
               picName: 'unreal',
               action: () => locator<NavigationService>().navigateTo(AIRoute),
             ),

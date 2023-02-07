@@ -63,7 +63,7 @@ class _SolveAndRescueContentMobileState
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Solve & Rescue is a math puzzle game developed by Jokey Studio with the support of Sunna Entertainment. Solve puzzle to rescue animals from the aliens, easy right?\nMy role in this game was programmer, integrating gameplay and UI features. Also, I was in-charge of connecting it to playfab, firebase, in-game purchases and ironsource to display ads.',
+                          'Solve & Rescue is a math puzzle game developed by Jokey Studio with the support of Sunna Entertainment. Solve puzzles to rescue animals from the aliens, easy right?\n\nMy role in this game was programmer, integrating gameplay and UI features. Also, I was in-charge of connecting it to playfab, firebase, in-game purchases and ironsource to display ads.',
                           style: TextStyle(fontSize: Global.subtitleFontSize),
                         ),
                       ],

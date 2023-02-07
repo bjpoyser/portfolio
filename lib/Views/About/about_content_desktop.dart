@@ -99,7 +99,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                       size: 40,
                                       action: () {
                                         Global.launchURL(
-                                            'https://drive.google.com/file/d/18ReKS49i_t0hyhD831LhXGVGXoL2CXm3/view?usp=sharing');
+                                            'https://drive.google.com/file/d/10LNe4Vc6XlxMkdEd4ttFNdY-NIbzUF94/view?usp=share_link');
                                       }),
                                 ],
                               ),
@@ -124,7 +124,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                 child: Column(
                                   children: [
                                     Text(
-                                      'Gamer and computer systems engineer with a personal emphasis on technical game design, born in Costa Rica, living in Florida, USA. Avid learner, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
+                                      'Gamer and computer systems engineer with a personal emphasis on technical game design, born in Costa Rica. Avid learner, willing to face challenges, and always giving my best in every situation.\n\nI want to learn many languages, discover music and get to know different cultures by traveling.',
                                       style: TextStyle(
                                           fontSize: Global.linkFontSize,
                                           color: Colors.black),
@@ -161,7 +161,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                             height: 10,
                                           ),
                                           ListItem(
-                                            itemText: " English (B2/C1)",
+                                            itemText: " English (C1)",
                                             fontSize: Global.linkFontSize,
                                           ),
                                           SizedBox(
@@ -260,7 +260,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Career Interests',
+                                  'Experience',
                                   style: TextStyle(
                                     fontSize: Global.title2FontSize,
                                   ),
@@ -289,14 +289,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                       children: [
                                         ListItem(
                                             fontSize: Global.textFontSize,
-                                            itemText: "AAA Video Games"),
-                                        SizedBox(
-                                          height: 20,
-                                        ),
-                                        ListItem(
-                                            fontSize: Global.textFontSize,
-                                            itemText:
-                                                "Gameplay/Engine Programming"),
+                                            itemText: "Gameplay Programming"),
                                         SizedBox(
                                           height: 20,
                                         ),
@@ -307,15 +300,21 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                           height: 20,
                                         ),
                                         ListItem(
-                                          fontSize: Global.textFontSize,
-                                          itemText: "Game Design",
-                                        ),
+                                            fontSize: Global.textFontSize,
+                                            itemText: "Shipped Video Games"),
                                         SizedBox(
                                           height: 20,
                                         ),
                                         ListItem(
                                           fontSize: Global.textFontSize,
                                           itemText: "Tools Development",
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        ListItem(
+                                          fontSize: Global.textFontSize,
+                                          itemText: "Game Design",
                                         ),
                                         SizedBox(
                                           height: 20,
@@ -335,12 +334,7 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                             children: [
                                               ListItem(
                                                 fontSize: Global.textFontSize,
-                                                itemText: "C#",
-                                                listSymbol: "- ",
-                                              ),
-                                              ListItem(
-                                                fontSize: Global.textFontSize,
-                                                itemText: "Java",
+                                                itemText: "Jira",
                                                 listSymbol: "- ",
                                               ),
                                               ListItem(
@@ -361,6 +355,11 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                               ListItem(
                                                 fontSize: Global.textFontSize,
                                                 itemText: "Unreal Engine",
+                                                listSymbol: "- ",
+                                              ),
+                                              ListItem(
+                                                fontSize: Global.textFontSize,
+                                                itemText: "C#, C++ & Java",
                                                 listSymbol: "- ",
                                               ),
                                             ],

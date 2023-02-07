@@ -32,21 +32,21 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Planet Cube: Edge',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'pce',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PCERoute),
                             ),
                             ProjectCard(
                               title: 'Purple Frog',
-                              role: 'Level Designer & Additional Programming',
+                              role: 'Level Designer & Programmer',
                               picName: 'pf',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PurpleFrogRoute),
                             ),
                             ProjectCard(
                               title: 'AI Control System',
-                              role: 'Technical Designer & Developer',
+                              role: 'Technical Designer',
                               picName: 'unreal',
                               action: () => locator<NavigationService>()
                                   .navigateTo(AIRoute),
@@ -66,14 +66,14 @@ class PortfolioContentDesktop extends StatelessWidget {
                             ),
                             /*ProjectCard(
                               title: 'Dollify',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'dollify',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DollifyRoute),
                             ),*/
                             ProjectCard(
                               title: 'Dance Jam',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'dancejam',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DanceJamRoute),
@@ -96,14 +96,14 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'Planet Cube: Edge',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'pce',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PCERoute),
                             ),
                             ProjectCard(
                               title: 'Purple Frog',
-                              role: 'Level Designer & Additional Programming',
+                              role: 'Level Designer & Programmer',
                               picName: 'pf',
                               action: () => locator<NavigationService>()
                                   .navigateTo(PurpleFrogRoute),
@@ -143,14 +143,14 @@ class PortfolioContentDesktop extends StatelessWidget {
                           children: [
                             ProjectCard(
                               title: 'AI Control System',
-                              role: 'Technical Designer & Developer',
+                              role: 'Technical Designer',
                               picName: 'unreal',
                               action: () => locator<NavigationService>()
                                   .navigateTo(AIRoute),
                             ),
                             ProjectCard(
                               title: 'Dance Jam',
-                              role: 'Developer',
+                              role: 'Programmer',
                               picName: 'dancejam',
                               action: () => locator<NavigationService>()
                                   .navigateTo(DanceJamRoute),
