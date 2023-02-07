@@ -87,11 +87,11 @@ class _AboutContentDesktopState extends State<AboutContentDesktop> {
                                       }),
                                   SizedBox(width: 20),
                                   ClickableIcon(
-                                      icon: FontAwesomeIcons.graduationCap,
+                                      icon: FontAwesomeIcons.github,
                                       size: 45,
                                       action: () {
                                         Global.launchURL(
-                                            'https://express.adobe.com/page/j9EzXl3iA50tk/');
+                                            'https://github.com/bjpoyser');
                                       }),
                                   SizedBox(width: 20),
                                   ClickableIcon(

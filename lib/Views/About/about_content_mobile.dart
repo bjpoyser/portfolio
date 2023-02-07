@@ -471,12 +471,11 @@ class AboutContentMobile extends StatelessWidget {
                           }),
                       SizedBox(width: 20),
                       ClickableIcon(
-                          icon: FontAwesomeIcons.graduationCap,
+                          icon: FontAwesomeIcons.github,
                           normalColor: Colors.black,
                           size: 45,
                           action: () {
-                            Global.launchURL(
-                                'https://express.adobe.com/page/j9EzXl3iA50tk/');
+                            Global.launchURL('https://github.com/bjpoyser');
                           }),
                       SizedBox(width: 20),
                       ClickableIcon(
