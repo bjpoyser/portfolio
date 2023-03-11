@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'Navigation/NavigationService.dart';
+import 'package:url_strategy/url_strategy.dart';
 import 'Navigation/locator.dart';
 import 'Navigation/router.dart';
 
 void main() {
   setupLocator();
+  setPathUrlStrategy();
   runApp(MyApp());
 }
 
