@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.1
-  font_awesome_flutter: ^10.1.0
+  font_awesome_flutter: ^10.4.0
 
   responsive_builder: ^0.4.1
 
@@ -61,6 +61,8 @@ flutter:
     - assets/images/carousel/ai/
     - assets/images/carousel/sr/
     - assets/images/about/
+    - assets/images/UI/
+    - assets/images/snapshots/
 
   fonts:
     - family: Open Sans

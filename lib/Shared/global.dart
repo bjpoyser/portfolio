@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +24,7 @@ abstract class Global {
   static const BoxDecoration cardBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Color.fromARGB(35, 0, 0, 0),
+        color: primaryColor,
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,
@@ -34,7 +36,7 @@ abstract class Global {
   static const BoxDecoration blackBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Color.fromARGB(35, 0, 0, 0),
+        color: primaryColor,
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,
@@ -46,7 +48,7 @@ abstract class Global {
   static const BoxDecoration softShadowDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
-        color: Color.fromARGB(35, 0, 0, 0),
+        color: primaryColor,
         offset: Offset(0, 0),
         blurRadius: 10.0,
         spreadRadius: 1.0,
@@ -71,4 +73,88 @@ abstract class Global {
     );
     await launch('$mailtoLink');
   }
+
+  //Revamp Globals
+
+  //Colors
+  static const Color primaryColor = Color.fromARGB(255, 0, 45, 59);
+
+  //Text Styles
+  static const TextStyle TitleStyle = TextStyle(
+    fontSize: 60,
+    color: primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle Title2Style = TextStyle(
+    fontSize: 35,
+    color: primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle SubtitleStyle = TextStyle(
+    fontSize: 22,
+    color: primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle SubtitleStyle2 = TextStyle(
+    fontSize: 18,
+    color: primaryColor,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle NormalStyle = TextStyle(
+    fontSize: 16,
+    color: primaryColor,
+  );
+
+  static const TextStyle NormalBoldStyle = TextStyle(
+    fontSize: 16,
+    color: primaryColor,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle AltTitleStyle = TextStyle(
+    fontSize: 60,
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle AltTitle2Style = TextStyle(
+    fontSize: 35,
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle AltSubtitleStyle = TextStyle(
+    fontSize: 22,
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle AltSubtitleStyle2 = TextStyle(
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle AltNormalStyle = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+  );
+
+  static const TextStyle AltNormalBoldStyle = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
+
+  //Container Decorations
+  static const Border DefaultBorder = Border(
+    top: BorderSide(color: Global.primaryColor, width: 5),
+    left: BorderSide(color: Global.primaryColor, width: 5),
+    right: BorderSide(color: Global.primaryColor, width: 5),
+    bottom: BorderSide(color: Global.primaryColor, width: 5),
+  );
 }

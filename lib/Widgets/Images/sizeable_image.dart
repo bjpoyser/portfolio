@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Shared/global.dart';
 
 class SizeableImage extends StatelessWidget {
   final String picName;
@@ -20,7 +21,10 @@ class SizeableImage extends StatelessWidget {
       width: width,
       height: height,
       decoration: hasBorder
-          ? BoxDecoration(border: Border.all(width: 5), color: Colors.black)
+          ? BoxDecoration(
+              border: Border.all(width: 5),
+              color: Global.primaryColor,
+            )
           : null,
       child: Image(
         image: AssetImage('assets/images/$picName.jpg'),
