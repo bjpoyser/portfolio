@@ -15,6 +15,7 @@ class ProfessionalProject extends StatefulWidget {
   final PlatformsWidget platforms;
   final String tasks;
   final String trailerURL;
+  final Function action;
 
   const ProfessionalProject({
     Key key,
@@ -25,6 +26,7 @@ class ProfessionalProject extends StatefulWidget {
     @required this.platforms,
     @required this.tasks,
     @required this.trailerURL,
+    this.action,
   }) : super(key: key);
 
   @override
@@ -90,7 +92,10 @@ class _ProfessionalProjectState extends State<ProfessionalProject> {
                             ),
                           ),
                         ),
-                        TextButtonWidget(label: 'More')
+                        TextButtonWidget(
+                          label: 'More',
+                          action: widget.action,
+                        )
                       ],
                     ),
                   )

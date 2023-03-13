@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Shared/global.dart';
+import 'package:portfolio/Widgets/Cards/icon_card.dart';
+import 'package:portfolio/Widgets/Images/carousel_with_indicator.dart';
+import 'package:portfolio/Widgets/Images/sizeable_image.dart';
+import 'package:portfolio/Widgets/Revamp/personalProject.dart';
 import 'package:portfolio/Widgets/Revamp/platforms_widget.dart';
 import 'package:portfolio/Widgets/Revamp/professional_project.dart';
 import 'package:portfolio/Widgets/Revamp/separator_widget.dart';
+import 'package:portfolio/Widgets/Revamp/data.dart';
+import 'package:portfolio/Widgets/Revamp/text_button_widget.dart';
 import '../Widgets/NavBar/top_bar_contents.dart';
+import '../Widgets/Revamp/carousel_project.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -202,7 +210,176 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Separator(title: 'University Projects'),
+            CarouselWithIndicator(
+              imgList: Data.universityProjects,
+              height: 230,
+              autoplay: true,
+            ),
+            Separator(title: 'Personal Projects'),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: PersonalProject(
+                        projectName: 'Color 2 Prefab',
+                        description: 'Level Design Tool',
+                        availableAt: 'Available at the Unity Asset Store',
+                        platform: 'Unity | C#',
+                        image: 'logos/logo-c2p',
+                        action: () {},
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: PersonalProject(
+                        projectName: 'Frienemies',
+                        description: 'Fighting Game',
+                        availableAt: 'Available to play here!',
+                        platform: 'Unity | C#',
+                        image: 'logos/logo-frienemies',
+                        action: () {},
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: PersonalProject(
+                        projectName: 'Space Me Out!',
+                        description: 'Mobile Game',
+                        availableAt: 'APK Available (under development)',
+                        platform: 'Unity | C#',
+                        image: 'logos/logo-smo',
+                        action: () {},
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: PersonalProject(
+                        projectName: 'School Day',
+                        description: 'Memory Game',
+                        availableAt: 'Available to play here!',
+                        platform: 'Unity | C#',
+                        image: 'logos/logo-school-day',
+                        action: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Separator(title: 'Workshops'),
+            CarouselWithIndicator(
+              imgList: Data.universityProjects,
+              height: 230,
+              autoplay: false,
+            ),
             SizedBox(height: 160),
+            Container(
+              width: screenSize.width,
+              height: 400,
+              color: Global.primaryColor,
+              child: Container(
+                width: 1000,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Contact Me!', style: Global.AltTitleStyle),
+                    SizedBox(height: 50),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Global.launchURL(''),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.linkedin,
+                                  color: Colors.white,
+                                  size: 150,
+                                ),
+                                Text(
+                                  'LinkedIn',
+                                  style: Global.AltSubtitleStyle,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 40),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Global.launchURL(''),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.instagram,
+                                  color: Colors.white,
+                                  size: 150,
+                                ),
+                                Text(
+                                  'Instagram',
+                                  style: Global.AltSubtitleStyle,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 40),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Global.launchMailto(),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  FontAwesomeIcons.envelope,
+                                  color: Colors.white,
+                                  size: 150,
+                                ),
+                                Text(
+                                  'bjpoyser23@gmail.com',
+                                  style: Global.AltSubtitleStyle,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 40),
+                        Column(
+                          children: [
+                            Icon(
+                              FontAwesomeIcons.locationDot,
+                              color: Colors.white,
+                              size: 150,
+                            ),
+                            Text(
+                              'Chicago, Il, USA',
+                              style: Global.AltSubtitleStyle,
+                            )
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

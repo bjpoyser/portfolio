@@ -8,7 +8,7 @@ class CarouselWithIndicator extends StatefulWidget {
   final List<Widget> imgList;
   final Duration transition;
   final EdgeInsetsGeometry carouselPadding;
-  final bool optimaze;
+  final bool autoplay;
 
   const CarouselWithIndicator({
     Key key,
@@ -17,7 +17,7 @@ class CarouselWithIndicator extends StatefulWidget {
     this.transition = const Duration(seconds: 4),
     this.carouselPadding =
         const EdgeInsets.only(top: 20, bottom: 15, left: 20, right: 20),
-    this.optimaze = false,
+    this.autoplay = false,
   }) : super(key: key);
 
   @override
@@ -38,17 +38,15 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
       child: Column(children: [
         Container(
           height: widget.height,
+          width: 800,
           child: CarouselSlider(
             carouselController: carouselController,
             items: widget.imgList,
             options: CarouselOptions(
                 height: widget.height,
-                enlargeCenterPage: !widget.optimaze,
-                autoPlayCurve:
-                    widget.optimaze ? Curves.linear : Curves.fastOutSlowIn,
-                pageSnapping: !widget.optimaze,
+                enlargeCenterPage: true,
                 viewportFraction: 1,
-                autoPlay: true,
+                autoPlay: widget.autoplay,
                 autoPlayInterval: widget.transition,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -76,7 +74,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicator> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == index
-                        ? Global.secondAccentColor
+                        ? Global.primaryColor
                         : Global.disabledColor,
                     boxShadow: [
                       BoxShadow(

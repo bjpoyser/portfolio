@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/Shared/global.dart';
 
 class TopBarContents extends StatefulWidget {
   TopBarContents();
@@ -51,7 +52,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                   onTap: () {},
                   child: MenuItem(
                     isHovering: _isHovering,
-                    label: 'Work',
+                    label: 'Projects',
                     index: 1,
                   ),
                 ),
@@ -90,7 +91,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       value ? _isHovering[3] = true : _isHovering[3] = false;
                     });
                   },
-                  onTap: () {},
+                  onTap: () => Global.launchURL('https://linktr.ee/bjpoyser'),
                   child: MenuItem(
                     isHovering: _isHovering,
                     label: 'LinkTree',

@@ -20,15 +20,17 @@ class SizeableImage extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: hasBorder
-          ? BoxDecoration(
-              border: Border.all(width: 5),
-              color: Global.primaryColor,
-            )
-          : null,
-      child: Image(
-        image: AssetImage('assets/images/$picName.jpg'),
-        fit: BoxFit.cover,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(35)),
+        border: hasBorder ? Global.DefaultBorder : null,
+        color: Global.primaryColor,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(30)),
+        child: Image(
+          image: AssetImage('assets/images/$picName.jpg'),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

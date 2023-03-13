@@ -32,7 +32,7 @@ dependencies:
 
   video_player: ^2.3.0
 
-  carousel_slider: ^4.0.0
+  carousel_slider: ^4.2.1
 
   full_screen_image: ^1.0.2
 
